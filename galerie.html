@@ -16,6 +16,16 @@
     <style>
       /* ========== GALERIE PAGE SPECIFIC STYLES ========== */
 
+      .mobile-only {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .mobile-only {
+          display: block;
+        }
+      }
+
       /* ========== PAGE HEADER (dark variant) ========== */
       /* .page-header {
         background: #2d2d2d;
@@ -237,13 +247,13 @@
           </div>
         </div>
         <div class="gallery-item">
-          <img src="img/galerie-gelato-5.png" alt="Gelato s oplatkami" />
+          <img src="img/vlastni-vyroba.jpg" alt="Gelato s oplatkami" />
           <div class="gallery-item-overlay">
             <span>Děláno s láskou</span>
           </div>
         </div>
-        <div class="gallery-item">
-          <img src="img/galerie-1.jpg" alt="Gelato catering" />
+        <div class="gallery-item mobile-only">
+          <img src="img/catering-2.jpg" alt="Gelato catering" />
           <div class="gallery-item-overlay">
             <span>Catering</span>
           </div>
