@@ -291,7 +291,7 @@ img {
 }
 
 .btn-outline {
-  border: 2px solid var(--dark);
+  border: 1px solid var(--dark);
   color: var(--dark);
   background: transparent;
 }
@@ -300,6 +300,215 @@ img {
   background: var(--dark);
   color: var(--white);
   transform: translateY(-2px);
+}
+
+/* ========== SPARK EFFECT (add .btn-spark class) ========== */
+@keyframes shimmerText {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+@keyframes moveAround {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes shimmerIcon {
+  0%, 100% {
+    stroke: var(--primary-dark);
+  }
+  25% {
+    stroke: var(--primary);
+  }
+  50% {
+    stroke: #5de6e0;
+  }
+  75% {
+    stroke: var(--primary);
+  }
+}
+
+/* Outline button with spark effect */
+.btn-outline.btn-spark {
+  position: relative;
+  border: 1px solid var(--primary-dark);
+  background: var(--white);
+  color: var(--primary);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-outline.btn-spark:hover {
+  background: var(--white);
+  color: var(--primary);
+}
+
+/* Spark element that follows border path */
+.btn-outline.btn-spark::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(
+    circle,
+    #79faf4 0%,
+    #67e2dc 10%,
+    #5de6e0 20%,
+    #fff 50%,
+    #fff 100%
+  );
+  border-radius: 50%;
+  offset-path: rect(0 100% 100% 0 round 50px);
+  offset-distance: 0%;
+  animation: moveAround 5s linear infinite;
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* Inner fill to mask spark inside */
+.btn-outline.btn-spark::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--white);
+  border-radius: 50px;
+  z-index: 5;
+}
+
+.btn-outline.btn-spark > * {
+  position: relative;
+  z-index: 6;
+}
+
+/* Shimmer text effect - requires .shimmer-text class */
+.btn-outline.btn-spark .shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--primary)  0%,
+    var(--primary-dark) 40%,
+    var(--primary) 45%,
+    #fff 50%,
+    var(--primary) 55%,
+    var(--primary-dark) 60%,
+    var(--primary)  100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerText 5s ease-in-out infinite;
+}
+
+/* Shimmer icon effect - requires .shimmer-icon class */
+.btn-outline.btn-spark .shimmer-icon {
+  stroke: var(--primary-dark);
+  animation: shimmerIcon 5s ease-in-out infinite;
+}
+
+/* ========== SPARK EFFECT FOR PRIMARY BUTTON ========== */
+.btn-primary.btn-spark {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+}
+
+.btn-primary.btn-spark::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.3) 10%,
+    var(--primary) 35%,
+    var(--primary) 100%
+  );
+  border-radius: 50%;
+  offset-path: rect(0 100% 100% 0 round 50px);
+  offset-distance: 0%;
+  animation: moveAround 5s linear infinite;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Inner fill to mask spark inside */
+.btn-primary.btn-spark::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: var(--primary);
+  border-radius: 50px;
+  z-index: 11;
+}
+
+.btn-primary.btn-spark span,
+.btn-primary.btn-spark svg {
+  position: relative;
+  z-index: 12;
+}
+
+/* Shimmer text for primary button - requires .shimmer-text class */
+.btn-primary.btn-spark .shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #fff 0%,
+    #fff 40%,
+    rgba(255, 255, 255, 0.7) 45%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.7) 55%,
+    #fff 60%,
+    #fff 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTextLight 5s ease-in-out infinite;
+}
+
+@keyframes shimmerTextLight {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+/* Shimmer icon for primary button - requires .shimmer-icon class */
+.btn-primary.btn-spark .shimmer-icon {
+  animation: shimmerIconLight 5s ease-in-out infinite;
+}
+
+@keyframes shimmerIconLight {
+  0%, 100% {
+    stroke: #fff;
+  }
+  25% {
+    stroke: rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    stroke: rgba(255, 255, 255, 0.6);
+  }
+  75% {
+    stroke: rgba(255, 255, 255, 0.8);
+  }
 }
 
 /* ========== BADGE ========== */
@@ -605,9 +814,12 @@ img {
   }
 
   .btn-outline {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    border: 2px solid var(--dark);
+  }
+
+  .btn-outline::after {
+    background: rgba(255, 255, 255, 0.95);
   }
 
   .footer {
