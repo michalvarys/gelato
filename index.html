@@ -22,6 +22,157 @@
         box-shadow: none;
       }
 
+      /* Header scrolled state - add background */
+      .header.transparent.scrolled {
+        background: var(--white);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* ========== HERO DECOR - Ingredience ========== */
+      .hero-decor {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .decor-item {
+        position: absolute;
+        will-change: transform;
+        --px: 0px;
+        --py: 0px;
+      }
+
+      /* Floating animace - každá ingredience má vlastní timing */
+      @keyframes float1 {
+        0%,
+        100% {
+          transform: translate(var(--px), var(--py)) translateY(0px)
+            rotate(0deg);
+        }
+        50% {
+          transform: translate(var(--px), var(--py)) translateY(-12px)
+            rotate(2deg);
+        }
+      }
+      @keyframes float2 {
+        0%,
+        100% {
+          transform: translate(var(--px), var(--py)) translateY(0px)
+            rotate(0deg);
+        }
+        50% {
+          transform: translate(var(--px), var(--py)) translateY(-18px)
+            rotate(-3deg);
+        }
+      }
+      @keyframes float3 {
+        0%,
+        100% {
+          transform: translate(var(--px), var(--py)) translateY(0px)
+            rotate(0deg);
+        }
+        50% {
+          transform: translate(var(--px), var(--py)) translateY(-10px)
+            rotate(3deg);
+        }
+      }
+      @keyframes float4 {
+        0%,
+        100% {
+          transform: translate(var(--px), var(--py)) translateY(0px)
+            rotate(0deg);
+        }
+        50% {
+          transform: translate(var(--px), var(--py)) translateY(-15px)
+            rotate(-2deg);
+        }
+      }
+      @keyframes float5 {
+        0%,
+        100% {
+          transform: translate(var(--px), var(--py)) translateY(0px)
+            rotate(0deg);
+        }
+        50% {
+          transform: translate(var(--px), var(--py)) translateY(-8px)
+            rotate(2deg);
+        }
+      }
+      @keyframes float6 {
+        0%,
+        100% {
+          transform: translate(var(--px), var(--py)) translateY(0px)
+            rotate(0deg);
+        }
+        50% {
+          transform: translate(var(--px), var(--py)) translateY(-14px)
+            rotate(-3deg);
+        }
+      }
+
+      /* Pozice jednotlivých ingrediencí */
+      .decor-leaf-1 {
+        top: 15%;
+        left: 5%;
+        width: 60px;
+        opacity: 0.85;
+        animation: float1 4s ease-in-out infinite;
+      }
+
+      .decor-coconut {
+        bottom: 10%;
+        left: -5%;
+        width: 250px;
+        animation: float2 5s ease-in-out infinite;
+        animation-delay: -1s;
+      }
+
+      .decor-berry {
+        bottom: 18%;
+        left: 8%;
+        width: 55px;
+        animation: float3 3.5s ease-in-out infinite;
+        animation-delay: -2s;
+      }
+
+      .decor-pistachio {
+        bottom: 0%;
+        left: -50px;
+        width: 200px;
+        animation: float4 4.5s ease-in-out infinite;
+        animation-delay: -0.5s;
+      }
+
+      .decor-chocolate {
+        top: 52%;
+        right: 6%;
+        width: 80px;
+        animation: float5 3.8s ease-in-out infinite;
+        animation-delay: -1.5s;
+      }
+
+      .decor-leaf-2 {
+        bottom: 22%;
+        right: 4%;
+        width: 75px;
+        opacity: 0.85;
+        animation: float6 4.2s ease-in-out infinite;
+        animation-delay: -2.5s;
+      }
+
+      .kornout {
+        bottom: -50px;
+        right: -50px;
+        width: 300px;
+        animation: float6 4.2s ease-in-out infinite;
+        animation-delay: -2.5s;
+      }
+
       /* ========== HERO ========== */
       .hero {
         min-height: 100vh;
@@ -297,6 +448,54 @@
       }
 
       @media (max-width: 768px) {
+        /* Ingredience na mobilu - menší a blíže k okrajům */
+        .decor-leaf-1 {
+          top: 8%;
+          left: -2%;
+          width: 35px;
+        }
+
+        .decor-coconut {
+          display: none;
+          width: 150px;
+          bottom: -2%;
+          left: -10%;
+        }
+
+        .decor-berry {
+          bottom: 25%;
+          left: 3%;
+          width: 40px;
+        }
+
+        .decor-pistachio {
+          /* display: none; */
+          bottom: 0%;
+          left: -15%;
+          width: 140px;
+        }
+
+        .decor-chocolate {
+          bottom: 0;
+          top: unset;
+          right: -50px;
+          width: 150px;
+        }
+
+        .decor-leaf-2 {
+          bottom: 5%;
+          right: -2%;
+          width: 45px;
+        }
+
+        .kornout {
+          bottom: -20px;
+          right: -6%;
+          width: 120px;
+          animation: float6 4.2s ease-in-out infinite;
+          animation-delay: -2.5s;
+        }
+
         .hero {
           min-height: 100vh;
           padding: 40px 0 80px;
@@ -389,7 +588,7 @@
       <div class="container header-inner">
         <a href="index.html" class="logo">Gelato<span>!</span></a>
         <nav class="nav">
-          <a href="nabidka.html">Nabídka</a>
+          <!-- <a href="nabidka.html">Nabídka</a> -->
           <a href="galerie.html">Galerie</a>
           <a href="o-nas.html">O nás</a>
           <a href="recenze.html">Recenze</a>
@@ -406,7 +605,7 @@
 
     <!-- MOBILE NAV -->
     <nav class="mobile-nav" id="mobileNav">
-      <a href="nabidka.html">Nabídka</a>
+      <!-- <a href="nabidka.html">Nabídka</a> -->
       <a href="galerie.html">Galerie</a>
       <a href="o-nas.html">O nás</a>
       <a href="recenze.html">Recenze</a>
@@ -423,6 +622,52 @@
 
     <!-- HERO -->
     <section class="hero" id="hero">
+      <!-- Dekorativní ingredience s parallax efektem -->
+      <div class="hero-decor">
+        <img
+          src="img/decor/kornout-3.png"
+          class="decor-item kornout"
+          data-speed="0.8"
+          alt=""
+        />
+        <!-- <img
+          src="img/decor/list-1.png"
+          class="decor-item decor-leaf-1"
+          data-speed="0.8"
+          alt=""
+        /> 
+        <img
+          src="img/decor/kokos.png"
+          class="decor-item decor-coconut"
+          data-speed="1.5"
+          alt=""
+        />
+        <img
+          src="img/decor/ostruzina.png"
+          class="decor-item decor-berry"
+          data-speed="1.0"
+          alt=""
+        /> -->
+        <img
+          src="img/decor/pistacie.png"
+          class="decor-item decor-pistachio"
+          data-speed="1.8"
+          alt=""
+        />
+        <!-- <img
+          src="img/decor/cokolada.png"
+          class="decor-item decor-chocolate"
+          data-speed="1.2"
+          alt=""
+        /> -->
+        <img
+          src="img/decor/list-2.png"
+          class="decor-item decor-leaf-2"
+          data-speed="0.6"
+          alt=""
+        />
+      </div>
+
       <div class="hero-content">
         <h1>
           První Italské <span>Gelato!</span><small>V Karlových Varech</small>
@@ -711,6 +956,46 @@
         hamburger.classList.toggle("active");
         mobileNav.classList.toggle("active");
       });
+
+      // Parallax efekt pro ingredience v hero sekci
+      const heroDecor = document.querySelector(".hero-decor");
+      if (heroDecor) {
+        const decorItems = heroDecor.querySelectorAll(".decor-item");
+        let mouseX = 0,
+          mouseY = 0;
+        let currentX = [],
+          currentY = [];
+
+        // Inicializace pozic
+        decorItems.forEach(() => {
+          currentX.push(0);
+          currentY.push(0);
+        });
+
+        document.addEventListener("mousemove", (e) => {
+          mouseX = (e.clientX - window.innerWidth / 2) * 0.02;
+          mouseY = (e.clientY - window.innerHeight / 2) * 0.02;
+        });
+
+        // Plynulá animace pomocí requestAnimationFrame
+        function animateDecor() {
+          decorItems.forEach((item, i) => {
+            const speed = parseFloat(item.dataset.speed) || 1 + i * 0.3;
+            const targetX = mouseX * speed;
+            const targetY = mouseY * speed;
+
+            // Lerp - plynulý přechod (0.08 = rychlost vyhlazení)
+            currentX[i] += (targetX - currentX[i]) * 0.08;
+            currentY[i] += (targetY - currentY[i]) * 0.08;
+
+            // Přidej parallax k existující floating animaci
+            item.style.setProperty("--px", currentX[i] + "px");
+            item.style.setProperty("--py", currentY[i] + "px");
+          });
+          requestAnimationFrame(animateDecor);
+        }
+        animateDecor();
+      }
 
       mobileNav.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
