@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recenze | Gelato! - Karlovy Vary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/scroll-to-top.css" />
+    <link rel="stylesheet" href="css/scroll-animations.css" />
+    <style>
+      /* ========== RECENZE PAGE SPECIFIC STYLES ========== */
+
+      /* ========== PAGE HEADER ========== */
+      .page-header {
+        padding: 140px 0 60px;
+      }
+
+      /* ========== REVIEWS MARQUEE ========== */
+      .reviews-wrapper {
+        overflow: hidden;
+        padding: 80px 0;
+        background: var(--light-gray);
+        border-bottom: 2px solid var(--primary);
+      }
+
+      .marquee-row {
+        display: flex;
+        gap: 24px;
+        animation: scroll 40s linear infinite;
+        width: max-content;
+        margin-bottom: 24px;
+      }
+
+      .marquee-row:hover {
+        animation-play-state: paused;
+      }
+
+      .track-bottom {
+        animation-direction: reverse;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .review-card {
+        background: var(--white);
+        padding: 28px;
+        border-radius: 12px;
+        min-width: 340px;
+        max-width: 340px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        flex-shrink: 0;
+      }
+
+      .review-stars {
+        color: #ffc107;
+        font-size: 1rem;
+        margin-bottom: 14px;
+        letter-spacing: 2px;
+      }
+
+      .review-text {
+        color: var(--dark);
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .review-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .review-avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        font-weight: 600;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+
+      .color-1 { background: #ef5350; }
+      .color-2 { background: #ab47bc; }
+      .color-3 { background: #5c6bc0; }
+      .color-4 { background: #26a69a; }
+      .color-5 { background: #ffa726; }
+      .color-6 { background: #8d6e63; }
+
+      .review-author-info h4 {
+        font-family: "Poppins", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+
+      .review-author-info span {
+        font-size: 0.75rem;
+        color: var(--gray);
+      }
+
+      /* ========== GOOGLE REVIEWS LINK ========== */
+      .google-reviews-link {
+        text-align: center;
+        padding: 40px 24px;
+      }
+
+      .google-reviews-link a {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 32px;
+        background: var(--white);
+        border: 2px solid var(--light-gray);
+        border-radius: 12px;
+        color: var(--dark);
+        font-weight: 500;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .google-reviews-link a:hover {
+        border-color: var(--primary);
+        box-shadow: 0 8px 25px rgba(62, 205, 198, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .google-reviews-link svg {
+        flex-shrink: 0;
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 768px) {
+        .page-header {
+          padding: 100px 0 40px;
+        }
+
+        .reviews-wrapper {
+          padding: 40px 0;
+        }
+
+        .review-card {
+          min-width: 280px;
+          padding: 24px;
+        }
+
+        .review-text {
+          font-size: 0.9rem;
+        }
+
+        .google-reviews-link {
+          padding: 30px 16px;
+        }
+
+        .google-reviews-link a {
+          padding: 14px 20px;
+          font-size: 0.9rem;
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .review-card {
+          min-width: 260px;
+        }
+
+        .google-reviews-link a {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">Gelato<span>!</span></a>
+        <nav class="nav">
+          <a href="nabidka.html">Nabídka</a>
+          <a href="galerie.html">Galerie</a>
+          <a href="o-nas.html">O nás</a>
+          <a href="recenze.html" class="active">Recenze</a>
+          <a href="pobocka.html">Pobočka</a>
+        </nav>
+        <a href="poptavka.html" class="header-cta">Nezávazná poptávka</a>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="nabidka.html">Nabídka</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="o-nas.html">O nás</a>
+      <a href="recenze.html" class="active">Recenze</a>
+      <a href="pobocka.html">Pobočka</a>
+      <a href="poptavka.html" class="mobile-cta">Nezávazná poptávka</a>
+    </nav>
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+      <svg viewBox="0 0 24 24">
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="container reveal">
+        <span class="section-badge">Recenze</span>
+        <h1>Co o nás říkají</h1>
+        <p>Přečtěte si, proč nás naši zákazníci milují</p>
+      </div>
+    </section>
+
+    <!-- REVIEWS MARQUEE -->
+    <section class="reviews-wrapper">
+      <div class="marquee-row track-top">
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-1">T</div>
+            <div class="review-author-info">
+              <h4>Tereza Herodesová</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Vynikající zmrzlina!!! Vyrovná se pravé, italské .. plus jejich auto
+            je špička včetně SPZ
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-2">K</div>
+            <div class="review-author-info">
+              <h4>Karolina Šauerová</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Výborné gelato! Sorbety osvěžující, citron kyselý jak má být, mango
+            sladké...za mě nejlepší.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-3">V</div>
+            <div class="review-author-info">
+              <h4>Veronika Valešová</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Luxusní zmrzlina, opravdu jedna z nejlepších. Porce jsou obrovské.
+            Velmi milá obsluha a příjemné posezení.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-4">M</div>
+            <div class="review-author-info">
+              <h4>Martin Dvořák</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Skvělá káva a zmrzlina ....snad nejlepší co jsem ochutnal. Personál
+            vstřícný, vše super.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-5">L</div>
+            <div class="review-author-info">
+              <h4>Las Pegas</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Nejlepší zmrzlina ve Varech! Kvalitní suroviny a skvělá káva.
+            Naprostá spokojenost.
+          </p>
+        </article>
+
+        <!-- Duplikované pro plynulou animaci -->
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-1">T</div>
+            <div class="review-author-info">
+              <h4>Tereza Herodesová</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Vynikající zmrzlina!!! Vyrovná se pravé, italské .. plus jejich auto
+            je špička včetně SPZ
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-2">K</div>
+            <div class="review-author-info">
+              <h4>Karolina Šauerová</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Výborné gelato! Sorbety osvěžující, citron kyselý jak má být, mango
+            sladké...za mě nejlepší.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-3">V</div>
+            <div class="review-author-info">
+              <h4>Veronika Valešová</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Luxusní zmrzlina, opravdu jedna z nejlepších. Porce jsou obrovské.
+            Velmi milá obsluha a příjemné posezení.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-4">M</div>
+            <div class="review-author-info">
+              <h4>Martin Dvořák</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Skvělá káva a zmrzlina ....snad nejlepší co jsem ochutnal. Personál
+            vstřícný, vše super.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-5">L</div>
+            <div class="review-author-info">
+              <h4>Las Pegas</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Nejlepší zmrzlina ve Varech! Kvalitní suroviny a skvělá káva.
+            Naprostá spokojenost.
+          </p>
+        </article>
+      </div>
+
+      <div class="marquee-row track-bottom">
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-6">M</div>
+            <div class="review-author-info">
+              <h4>Marek Veit</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Návštěvu tohoto podniku si nemohu vynachválit. Zážitek vyplývající z
+            kvality a chutí zmrzlin výrazně převyšuje její cenu.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-1">A</div>
+            <div class="review-author-info">
+              <h4>Adam Eschka</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Pravé gelato v KV! Super milá obsluha. Pistaciová a raffaelo úplně
+            geniální!
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-2">D</div>
+            <div class="review-author-info">
+              <h4>Daniel Vidlak</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Rozmazlený z pražských zmrzlináren musím uznat, že toto je skvost.
+            Kvalitní příchutě, ale především úžasná konzistence.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-3">A</div>
+            <div class="review-author-info">
+              <h4>Antonín Petras</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Škoda toho místa na Sokolovské, ale stojí za to si tam tu zmrzku
+            dát. Vždycky je nejen dobrá, ale v ideální teplotě pro výdej.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-4">L</div>
+            <div class="review-author-info">
+              <h4>Lukáš Gala</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Pokud chcete zažít úžasnou chuť kvalitní zmrzliny tak určitě
+            vyhledejte. V Karlových Varech lepší zmrzlinu nenajdete.
+          </p>
+        </article>
+
+        <!-- Duplikované pro plynulou animaci -->
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-6">M</div>
+            <div class="review-author-info">
+              <h4>Marek Veit</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Návštěvu tohoto podniku si nemohu vynachválit. Zážitek vyplývající z
+            kvality a chutí zmrzlin výrazně převyšuje její cenu.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-1">A</div>
+            <div class="review-author-info">
+              <h4>Adam Eschka</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Pravé gelato v KV! Super milá obsluha. Pistaciová a raffaelo úplně
+            geniální!
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-2">D</div>
+            <div class="review-author-info">
+              <h4>Daniel Vidlak</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Rozmazlený z pražských zmrzlináren musím uznat, že toto je skvost.
+            Kvalitní příchutě, ale především úžasná konzistence.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-3">A</div>
+            <div class="review-author-info">
+              <h4>Antonín Petras</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Škoda toho místa na Sokolovské, ale stojí za to si tam tu zmrzku
+            dát. Vždycky je nejen dobrá, ale v ideální teplotě pro výdej.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-author">
+            <div class="review-avatar color-4">L</div>
+            <div class="review-author-info">
+              <h4>Lukáš Gala</h4>
+              <span>Místní průvodce</span>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            Pokud chcete zažít úžasnou chuť kvalitní zmrzliny tak určitě
+            vyhledejte. V Karlových Varech lepší zmrzlinu nenajdete.
+          </p>
+        </article>
+      </div>
+
+      <!-- Google Reviews Link -->
+      <div class="google-reviews-link">
+        <a href="https://www.google.com/maps/place/Gelato!/@50.2340807,12.8545382,17z/data=!4m8!3m7!1s0x47a099d6b7241ecb:0x796ab8eb9a069042!8m2!3d50.2339055!4d12.8546059!9m1!1b1!16s%2Fg%2F11fl8drt3y?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+          Zobrazit všechny recenze na Google
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container reveal">
+        <h2>Přijďte ochutnat</h2>
+        <p>Přesvědčte se sami o kvalitě našeho gelata</p>
+        <a href="pobocka.html" class="btn">Najít pobočku</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">Gelato<span>!</span></a>
+            <p>Pravé italské gelato vyráběné s láskou v Karlových Varech.</p>
+            <div class="footer-social">
+              <a href="https://instagram.com/gelatokarlovyvary" target="_blank" aria-label="Instagram">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/>
+                </svg>
+              </a>
+              <a href="https://facebook.com/gelatokarlovyvary" target="_blank" aria-label="Facebook">
+                <svg viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h4>Navigace</h4>
+            <ul>
+              <li><a href="nabidka.html">Nabídka</a></li>
+              <li><a href="galerie.html">Galerie</a></li>
+              <li><a href="o-nas.html">O nás</a></li>
+              <li><a href="recenze.html">Recenze</a></li>
+              <li><a href="pobocka.html">Pobočka</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Kontakt</h4>
+            <ul>
+              <li><a href="tel:+420773095809">+420 773 09 58 09</a></li>
+              <li><a href="mailto:info@gelato.cz">info@gelato.cz</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Adresa</h4>
+            <ul>
+              <li>Sokolovská 101</li>
+              <li>Karlovy Vary 360 05</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Gelato! Karlovy Vary</p>
+          <p>Vytvořeno s láskou k zmrzlině</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const mobileNav = document.getElementById("mobileNav");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileNav.classList.toggle("active");
+      });
+    </script>
+    <script src="js/scroll-to-top.js"></script>
+    <script src="js/scroll-animations.js"></script>
+  </body>
+</html>

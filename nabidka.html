@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nabídka | Gelato! - Karlovy Vary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/scroll-to-top.css" />
+    <link rel="stylesheet" href="css/scroll-animations.css" />
+    <style>
+      /* ========== NABIDKA PAGE SPECIFIC STYLES ========== */
+
+      /* ========== MENU SECTION ========== */
+      .menu-section {
+        padding: 80px 0;
+        background: var(--light-gray);
+      }
+
+      .menu-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .menu-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+        color: var(--dark);
+      }
+
+      .menu-header p {
+        color: var(--gray);
+        font-size: 1.05rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* ========== MENU GRID ========== */
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 24px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .menu-item {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background: var(--white);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .menu-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .menu-item-image {
+        position: relative;
+        aspect-ratio: 3/4;
+        overflow: hidden;
+      }
+
+      .menu-item-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .menu-item:hover .menu-item-image img {
+        transform: scale(1.1);
+      }
+
+      .menu-item-badge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: var(--primary);
+        color: var(--white);
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        z-index: 2;
+      }
+
+      .menu-item-info {
+        padding: 16px;
+        text-align: center;
+      }
+
+      .menu-item-info h3 {
+        font-family: "Poppins", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--dark);
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      /* ========== FLAVOR CATEGORIES ========== */
+      .flavor-category {
+        margin-bottom: 60px;
+      }
+
+      .flavor-category:last-child {
+        margin-bottom: 0;
+      }
+
+      .flavor-category-title {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+
+      .flavor-category-title h3 {
+        font-size: 1.5rem;
+        color: var(--dark);
+        margin: 0;
+      }
+
+      .flavor-category-title::after {
+        content: "";
+        flex: 1;
+        height: 2px;
+        background: linear-gradient(to right, var(--primary), transparent);
+      }
+
+      /* ========== INFO NOTE ========== */
+      .menu-note {
+        text-align: center;
+        padding: 40px 24px;
+        background: var(--white);
+        border-radius: 16px;
+        margin-top: 60px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .menu-note p {
+        color: var(--gray);
+        font-size: 0.95rem;
+        margin: 0;
+      }
+
+      .menu-note p strong {
+        color: var(--dark);
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 1024px) {
+        .menu-grid {
+          grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .menu-section {
+          padding: 40px 0;
+        }
+
+        .menu-header {
+          margin-bottom: 40px;
+        }
+
+        .menu-header h2 {
+          font-size: 1.8rem;
+        }
+
+        .menu-header p {
+          font-size: 0.95rem;
+        }
+
+        .menu-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+        }
+
+        .menu-item-info {
+          padding: 12px;
+        }
+
+        .menu-item-info h3 {
+          font-size: 0.85rem;
+        }
+
+        .menu-item-badge {
+          padding: 4px 10px;
+          font-size: 0.7rem;
+        }
+
+        .flavor-category-title h3 {
+          font-size: 1.2rem;
+        }
+
+        .menu-note {
+          padding: 24px 16px;
+          margin-top: 40px;
+        }
+
+        .menu-note p {
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .menu-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+
+        .menu-item-info h3 {
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">Gelato<span>!</span></a>
+        <nav class="nav">
+          <a href="nabidka.html" class="active">Nabídka</a>
+          <a href="galerie.html">Galerie</a>
+          <a href="o-nas.html">O nás</a>
+          <a href="recenze.html">Recenze</a>
+          <a href="pobocka.html">Pobočka</a>
+        </nav>
+        <a href="poptavka.html" class="header-cta">Nezávazná poptávka</a>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="nabidka.html" class="active">Nabídka</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="o-nas.html">O nás</a>
+      <a href="recenze.html">Recenze</a>
+      <a href="pobocka.html">Pobočka</a>
+      <a href="poptavka.html" class="mobile-cta">Nezávazná poptávka</a>
+    </nav>
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+      <svg viewBox="0 0 24 24">
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="container reveal">
+        <span class="section-badge">Nabídka</span>
+        <h1>Naše příchutě</h1>
+        <p>Objevte rozmanitost chutí pravého italského gelata</p>
+      </div>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section class="menu-section">
+      <div class="container">
+        <!-- Výběr / Oblíbené -->
+        <div class="flavor-category">
+          <div class="flavor-category-title reveal">
+            <h3>Oblíbené příchutě</h3>
+          </div>
+          <div class="menu-grid reveal-stagger">
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <span class="menu-item-badge">Oblíbené</span>
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweryh17Wc0_fI-dhdMBPVPS-4JmzDbPyxmLP-7JfmxWfPK7RdKl1v8IoK4lYfKDFTeDUFueQ-JvGcG0zdc9Pgc4bp-WgRnK5M6ZfY2tr5LHGgW1kgfHVeo3EnBYA-h2ki3-8QQE=w172-h224-p-k-no" alt="Zmrzlina" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Klasické Gelato</h3>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwerBdV0HeHtkjAyjgzs8c-_2z_KQFkMUcUTFBmQ8ZXl-VfkkDQ9xH17IZWr2ocCztTIEnvxhj2Ex_YtCrF78Ut_P5iL-snDkcA04TeUkdn42mrz8zSAupCDG26-R4q-WEh92DxId7A=w172-h224-p-k-no" alt="Borůvková a čokoládová" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Borůvková & Čokoládová</h3>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwep3FV-KMzfPuk201pD08Fze3zwL9Gi7VmhUNJl8b3_4_xcPdnTbwhUPS7n72AuEvYa0cHzPLM89xg1B6zMH8OMoDSB_vG1wsenv91NDULfJS5DzaveZ5AOuRXedVJqUS-vjLAhg=w172-h224-p-k-no" alt="Slaný karamel a espresso" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Slaný Karamel & Espresso</h3>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweoK4Er3VpkBIobzgXI4vdFWBy6q3apMh8iHBGKpAF_EHfHGGMw88vtjA4bTXa4u1YiYVjipOccCB-JpozpgecFz9ayBUVbHOTMlOad4kMGB-qXKelxeUEQ-oI0FvcF6-O0YPmUl=w172-h224-p-k-no" alt="Latte a mango" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Latte & Mango</h3>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweo0MuhcuZfYtRBIJw3XeHxP0Q0Fjw9Fg4ZoL569Brybgvb91WGtf4aEzU6qbgTfts7rp2-LhFTPfnielvX7XSueMdy0vhkOgtvQtG83q6oIDNVD9DiujCQYVXq2NxJ9rjw8hqW8Hw=w172-h224-p-k-no" alt="Jahoda a vanilka" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Jahoda & Vanilka</h3>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweot9t0NVy6uyoe51T21hW-BuB_l3_T_FQw60AtnR2jtnscKbRyz3lkrnb2Oj4L_I2Ia9fRLoXKQV8H5CdIFonry0puCuolsy4AwzK1xbQIVR8xGB2WLTlaT0WT_MScIkVVOMnjhPw=w172-h224-p-k-no" alt="Slaný karamel" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Slaný Karamel</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Další příchutě -->
+        <div class="flavor-category">
+          <div class="flavor-category-title reveal">
+            <h3>Další příchutě</h3>
+          </div>
+          <div class="menu-grid reveal-stagger">
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweoqJKk-z8xl0bEci5MY3URakgW5yJlTFMIBiPep7L0ScKw9g7yGTS9TLTR9eEWKHt-tX7P19AC9ifRXTAzbCdIE_UlQxM2lPBp4pCHMc1c7bnHCUBcA0oFVU6Kgb0B2hgLGWDQH=w172-h224-p-k-no" alt="Gelato" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Pistácie</h3>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweoRJw2pGi2sYN0u8XlB5BQgLvWc5rmPY1rZgCOvtRM1uUeGCjGRhR2OhZn5wJa3xrD42EisFCB1yFrq9OgJdi8O5AwTZU7LfIc8PQ9jQ2KZ-1_BaTyBRCfv2rS5jncobnj9gqr7fQ=w172-h224-p-k-no" alt="Gelato" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Čokoláda</h3>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwepIxAkkb5upax7EGgzWlRus3hQfA8pqvalxbBRHgfJvyY6Es8MyUwP_zYrt3Yh2O_OMzF2s9hME8-9NPo8ttUjnN8qKFdTgAwYHzHmXG02X9JDdDCM3qdl2c5O7r4CAwn9EcJCv=w172-h224-p-k-no" alt="Gelato" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Raffaello</h3>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweo0yCkis_Ou4HYE7asz3tOEPSWdgQ2Utntu8ad0WGWhI36e4DRKtH27F9sbtZ0gRYMU7JJR2ZqYzWnExxHaE-39CvGdwVJxfOcM_XGeP-g4L0NRt2W1jfZEPBwAsWMk_6J5NLnQFw=w172-h224-p-k-no" alt="Gelato" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Citron</h3>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweqT2S6np_txHm1bNOolaw6vdRgQcRjLJ67KtKPTvW2OlOpA6gYeKf70AkFw5zitv2RDYN1M9a9DgBz0Vuq9GZM0MSvsUiwBs14OBF4LTqmpqIvNJWgCllgHMSYO4kZxP6Zid890=w172-h224-p-k-no" alt="Gelato" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Malina</h3>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweo0NkyN6cRt_c6Ss_tOLN92ySyp-WIhYnyYQA9tYDdu5D4NtHfH9J7IwZf6wIhQrJuUhtI2erkyKNNJWvlmP9qESLVDDVBrvAZtLD0PQ-BoeQHuY52Iku-NowFLA3nABjzJS1d3=w172-h224-p-k-no" alt="Gelato" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Kokos</h3>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweoMPFzx7iDn9_RYHdr8FxpDlOllVHyuR-t8dN83C9HTvyspHqgW3tX-1z7qI94N4i047-BIHmOaANLtnZtOojRC5yND63eC9B7GZiEC_VAogSryoxvrrjdDEcfgyMCUvBlBtOx5wQ=w172-h224-p-k-no" alt="Gelato" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Jogurt</h3>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweqAbFY7gcxOzFDpX_ncLGVBVuAC068Ndt5eaT84dRxpDGBhQ6KnKqI1SXGjnU-EwEXEin6nE5v57iTXiYx1IciZzoR4Ap3QgR5fGAh5g-8d1tlv5O2tLSV4eR-Yy22k2GWlWy0=w172-h224-p-k-no" alt="Gelato" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Stracciatella</h3>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwepr6KDs2lqtLymQKvl_iPeq35tX0OiThXU-oaoJXHtU129Ef2LsYnNpg0ROlXViFir0vjQ5JlqkXT2jSP2hlQx_ukadUG2Xg-r_Ub88NiJ6XXDLPb6GJmAf7cX_0wyotUgAMS-f=w172-h224-p-k-no" alt="Gelato" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Oříšek</h3>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwepbk4wCcqWRE6oJjT8vdlDkind63A7AB2lzf289aq2V6pTb4-VxxDorNZ8qdbZX54YVn3qKbXgVkfMPTmzC7tBL2-mhORcFWBY0MrdI3Ocy1ZaFEzr1pNyjJG1iphgG9gE8xQE=w172-h224-p-k-no" alt="Gelato" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Vanilka</h3>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item-image">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweqC1LM0NjKzyuUQ7E8Q92uCfrFvWoZ4CGw1XimajVktahwXDoV79Cp3RANjMMAB7fza_oqgtt3mZNh583ePFarhNYF56xIHu6vbSwlchghpCqjDrrCbpRVAT-V5TUY8H-CRCSfV=w172-h224-p-k-no" alt="Gelato" />
+              </div>
+              <div class="menu-item-info">
+                <h3>Mascarpone</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info note -->
+        <div class="menu-note reveal">
+          <p>
+            <strong>Nabídka příchutí se denně mění</strong> podle sezóny a dostupnosti čerstvých surovin.
+            Pro aktuální nabídku nás navštivte nebo sledujte náš
+            <a href="https://instagram.com/gelatokarlovyvary" target="_blank" style="color: var(--primary);">Instagram</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container reveal">
+        <h2>Přijďte ochutnat</h2>
+        <p>Navštivte naši prodejnu v Karlových Varech</p>
+        <a href="pobocka.html" class="btn">Kde nás najdete</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">Gelato<span>!</span></a>
+            <p>Pravé italské gelato vyráběné s láskou v Karlových Varech.</p>
+            <div class="footer-social">
+              <a href="https://instagram.com/gelatokarlovyvary" target="_blank" aria-label="Instagram">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/>
+                </svg>
+              </a>
+              <a href="https://facebook.com/gelatokarlovyvary" target="_blank" aria-label="Facebook">
+                <svg viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h4>Navigace</h4>
+            <ul>
+              <li><a href="nabidka.html">Nabídka</a></li>
+              <li><a href="galerie.html">Galerie</a></li>
+              <li><a href="o-nas.html">O nás</a></li>
+              <li><a href="recenze.html">Recenze</a></li>
+              <li><a href="pobocka.html">Pobočka</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Kontakt</h4>
+            <ul>
+              <li><a href="tel:+420773095809">+420 773 09 58 09</a></li>
+              <li><a href="mailto:info@gelato.cz">info@gelato.cz</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Adresa</h4>
+            <ul>
+              <li>Sokolovská 101</li>
+              <li>Karlovy Vary 360 05</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Gelato! Karlovy Vary</p>
+          <p>Vytvořeno s láskou k zmrzlině</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const mobileNav = document.getElementById("mobileNav");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileNav.classList.toggle("active");
+      });
+    </script>
+    <script src="js/scroll-to-top.js"></script>
+    <script src="js/scroll-animations.js"></script>
+  </body>
+</html>

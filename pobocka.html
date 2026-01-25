@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pobočka | Gelato! - Karlovy Vary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/scroll-to-top.css" />
+    <link rel="stylesheet" href="css/scroll-animations.css" />
+    <style>
+      /* ========== POBOCKA PAGE SPECIFIC STYLES ========== */
+
+      /* ========== LOCATION ========== */
+      .location {
+        padding: 100px 0;
+      }
+
+      .location-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: start;
+      }
+
+      .location-images {
+        position: relative;
+        height: 500px;
+      }
+
+      .location-images img {
+        position: absolute;
+        width: 300px;
+        height: 380px;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      }
+
+      .location-images img:first-child {
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      .location-images img:last-child {
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+      }
+
+      .location-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 24px;
+      }
+
+      .location-content > p {
+        color: var(--gray);
+        font-size: 1.05rem;
+        margin-bottom: 40px;
+      }
+
+      .location-info {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      /* ========== MAP ========== */
+      .map-section {
+        padding: 0;
+      }
+
+      .map-container {
+        height: 450px;
+        overflow: hidden;
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 1024px) {
+        .location-inner {
+          grid-template-columns: 1fr;
+          gap: 60px;
+        }
+
+        .location-images {
+          height: 400px;
+          max-width: 500px;
+          margin: 0 auto;
+        }
+
+        .location-images img {
+          width: 250px;
+          height: 320px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .location {
+          padding: 16px 0;
+        }
+
+        .location-inner {
+          gap: 40px;
+        }
+
+        .location-content h2 {
+          font-size: 1.6rem;
+        }
+
+        .location-content > p {
+          font-size: 0.95rem;
+        }
+
+        .location-images {
+          position: relative;
+          display: flex;
+          gap: 12px;
+          height: auto;
+          margin-top: 20px;
+        }
+
+        .location-images img {
+          position: relative;
+          top: auto;
+          left: auto;
+          right: auto;
+          bottom: auto;
+          width: calc(50% - 6px);
+          height: 200px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container {
+          height: 300px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .location-images {
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        .location-images img {
+          width: 100%;
+          height: 180px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .location-content h2 {
+          font-size: 1.4rem;
+        }
+
+        .location-images img {
+          height: 150px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">Gelato<span>!</span></a>
+        <nav class="nav">
+          <a href="nabidka.html">Nabídka</a>
+          <a href="galerie.html">Galerie</a>
+          <a href="o-nas.html">O nás</a>
+          <a href="recenze.html">Recenze</a>
+          <a href="pobocka.html" class="active">Pobočka</a>
+        </nav>
+        <a href="poptavka.html" class="header-cta">Nezávazná poptávka</a>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="nabidka.html">Nabídka</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="o-nas.html">O nás</a>
+      <a href="recenze.html">Recenze</a>
+      <a href="pobocka.html" class="active">Pobočka</a>
+      <a href="poptavka.html" class="mobile-cta">Nezávazná poptávka</a>
+    </nav>
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+      <svg viewBox="0 0 24 24">
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="container reveal">
+        <span class="section-badge">Pobočka</span>
+        <h1>Navštivte nás</h1>
+        <p>
+          Přijďte si pro svou porci štěstí do naší pobočky v Karlových Varech
+        </p>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="location">
+      <div class="container location-inner">
+        <div class="location-images">
+          <img src="img/pobocka.webp" alt="Interiér pobočky" />
+          <img src="img/pobocka2.webp" alt="Exteriér pobočky" />
+        </div>
+        <div class="location-content reveal-left">
+          <h2>Kde nás najdete</h2>
+          <p>
+            Naše prodejna se nachází na Sokolovské ulici v Karlových Varech.
+            Přijďte ochutnat pravé italské gelato a užijte si příjemnou
+            atmosféru.
+          </p>
+
+          <div class="location-info">
+            <div class="location-item">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              <div>
+                <h4>Telefon</h4>
+                <p>+420 773 09 58 09</p>
+                <span class="badge">Catering</span>
+                <span class="badge">Svatby</span>
+                <span class="badge">Festivaly</span>
+                <span class="badge">Workshopy</span>
+              </div>
+            </div>
+
+            <div class="location-item">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <div>
+                <h4>Adresa</h4>
+                <p>Sokolovská 101<br />Karlovy Vary 360 05</p>
+                <span class="badge">Sezónní provoz</span>
+              </div>
+            </div>
+
+            <div class="location-item">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <div>
+                <h4>Otevírací doba</h4>
+                <p>Po - Ne: 12:00 - 18:00</p>
+              </div>
+            </div>
+
+            <div class="location-item">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <div>
+                <h4>E-mail</h4>
+                <p>info@gelato.cz</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="map-section">
+      <div class="map-container reveal-scale">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2548.8!2d12.8744!3d50.2297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a11d9c8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sSokolovsk%C3%A1%20101%2C%20360%2005%20Karlovy%20Vary!5e0!3m2!1scs!2scz!4v1700000000000!5m2!1scs!2scz"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container reveal">
+        <h2>Máte zájem o catering?</h2>
+        <p>Udělejte z vaší akce nezapomenutelný zážitek</p>
+        <a href="poptavka.html" class="btn">Nezávazná poptávka</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">Gelato<span>!</span></a>
+            <p>Pravé italské gelato vyráběné s láskou v Karlových Varech.</p>
+            <div class="footer-social">
+              <a
+                href="https://instagram.com/gelatokarlovyvary"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://facebook.com/gelatokarlovyvary"
+                target="_blank"
+                aria-label="Facebook"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h4>Navigace</h4>
+            <ul>
+              <li><a href="nabidka.html">Nabídka</a></li>
+              <li><a href="galerie.html">Galerie</a></li>
+              <li><a href="o-nas.html">O nás</a></li>
+              <li><a href="recenze.html">Recenze</a></li>
+              <li><a href="pobocka.html">Pobočka</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Kontakt</h4>
+            <ul>
+              <li><a href="tel:+420773095809">+420 773 09 58 09</a></li>
+              <li><a href="mailto:info@gelato.cz">info@gelato.cz</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Adresa</h4>
+            <ul>
+              <li>Sokolovská 101</li>
+              <li>Karlovy Vary 360 05</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Gelato! Karlovy Vary</p>
+          <p>Vytvořeno s láskou k zmrzlině</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const mobileNav = document.getElementById("mobileNav");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileNav.classList.toggle("active");
+      });
+    </script>
+    <script src="js/scroll-to-top.js"></script>
+    <script src="js/scroll-animations.js"></script>
+  </body>
+</html>

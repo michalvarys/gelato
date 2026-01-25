@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nezávazná poptávka | Gelato! - Karlovy Vary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/scroll-to-top.css" />
+    <link rel="stylesheet" href="css/scroll-animations.css" />
+    <style>
+      /* ========== POPTAVKA PAGE SPECIFIC STYLES ========== */
+
+      /* ========== INQUIRY SECTION ========== */
+      .inquiry {
+        padding: 100px 0;
+      }
+
+      .inquiry-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: start;
+      }
+
+      .inquiry-info h2 {
+        font-size: 2.5rem;
+        margin-bottom: 24px;
+        color: var(--dark);
+      }
+
+      .inquiry-info h2 span {
+        color: var(--primary);
+      }
+
+      .inquiry-info > p {
+        color: var(--gray);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin-bottom: 40px;
+      }
+
+      .inquiry-features {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .inquiry-feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .inquiry-feature-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(62, 205, 198, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .inquiry-feature-icon svg {
+        width: 24px;
+        height: 24px;
+        stroke: var(--primary);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .inquiry-feature h4 {
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 4px;
+      }
+
+      .inquiry-feature p {
+        font-size: 0.9rem;
+        color: var(--gray);
+        margin: 0;
+      }
+
+      /* ========== FORM ========== */
+      .inquiry-form {
+        background: var(--light-gray);
+        padding: 40px;
+        border-radius: 16px;
+      }
+
+      .inquiry-form h3 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+        color: var(--dark);
+      }
+
+      .inquiry-form > p {
+        color: var(--gray);
+        margin-bottom: 32px;
+        font-size: 0.95rem;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .form-group {
+        margin-bottom: 16px;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--dark);
+        margin-bottom: 8px;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 14px 18px;
+        border: 2px solid transparent;
+        border-radius: 12px;
+        background: var(--white);
+        font-family: inherit;
+        font-size: 1rem;
+        color: var(--dark);
+        transition: all 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 4px rgba(62, 205, 198, 0.1);
+      }
+
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: #aaa;
+      }
+
+      .form-group textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .form-group select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+        background-size: 18px;
+        padding-right: 48px;
+        cursor: pointer;
+      }
+
+      .btn-submit {
+        width: 100%;
+        padding: 16px 32px;
+        background: var(--primary);
+        color: var(--white);
+        border: none;
+        border-radius: 12px;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 8px;
+      }
+
+      .btn-submit:hover {
+        background: var(--dark);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn-submit svg {
+        width: 20px;
+        height: 20px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .form-note {
+        text-align: center;
+        margin-top: 16px;
+        font-size: 0.8rem;
+        color: var(--gray);
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 1024px) {
+        .inquiry-inner {
+          grid-template-columns: 1fr;
+          gap: 60px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .inquiry {
+          padding: 40px 0;
+        }
+
+        .inquiry-info h2 {
+          font-size: 1.8rem;
+        }
+
+        .inquiry-info > p {
+          font-size: 0.95rem;
+          margin-bottom: 32px;
+        }
+
+        .inquiry-feature-icon {
+          width: 44px;
+          height: 44px;
+        }
+
+        .inquiry-feature-icon svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        .inquiry-feature h4 {
+          font-size: 0.95rem;
+        }
+
+        .inquiry-feature p {
+          font-size: 0.85rem;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+
+        .inquiry-form {
+          padding: 24px 20px;
+          border-radius: 12px;
+        }
+
+        .inquiry-form h3 {
+          font-size: 1.3rem;
+        }
+
+        .inquiry-form > p {
+          font-size: 0.9rem;
+          margin-bottom: 24px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+          padding: 12px 14px;
+          font-size: 0.95rem;
+          border-radius: 10px;
+        }
+
+        .btn-submit {
+          padding: 14px 24px;
+          font-size: 0.95rem;
+          border-radius: 10px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .inquiry-info h2 {
+          font-size: 1.5rem;
+        }
+
+        .inquiry-form {
+          padding: 20px 16px;
+        }
+
+        .inquiry-form h3 {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">Gelato<span>!</span></a>
+        <nav class="nav">
+          <a href="nabidka.html">Nabídka</a>
+          <a href="galerie.html">Galerie</a>
+          <a href="o-nas.html">O nás</a>
+          <a href="recenze.html">Recenze</a>
+          <a href="pobocka.html">Pobočka</a>
+        </nav>
+        <a href="poptavka.html" class="header-cta active">Nezávazná poptávka</a>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="nabidka.html">Nabídka</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="o-nas.html">O nás</a>
+      <a href="recenze.html">Recenze</a>
+      <a href="pobocka.html">Pobočka</a>
+      <a href="poptavka.html" class="mobile-cta">Nezávazná poptávka</a>
+    </nav>
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+      <svg viewBox="0 0 24 24">
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="container reveal">
+        <span class="section-badge">Catering</span>
+        <h1>Nezávazná poptávka</h1>
+        <p>Udělejte z vaší akce nezapomenutelný zážitek s pravým italským gelatem</p>
+      </div>
+    </section>
+
+    <!-- INQUIRY -->
+    <section class="inquiry">
+      <div class="container inquiry-inner">
+        <div class="inquiry-info reveal-left">
+          <h2>Máte zájem o catering<span>?</span></h2>
+          <p>
+            Udělejte z vaší akce nezapomenutelný zážitek. Svatby, firemní večírky,
+            festivaly nebo workshopy – přivezeme gelato přímo k vám včetně profesionálního servisu.
+          </p>
+
+          <div class="inquiry-features">
+            <div class="inquiry-feature">
+              <div class="inquiry-feature-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <path d="M2 17l10 5 10-5"/>
+                  <path d="M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Kompletní servis</h4>
+                <p>Přivezeme vše potřebné včetně vybavení</p>
+              </div>
+            </div>
+
+            <div class="inquiry-feature">
+              <div class="inquiry-feature-icon">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Flexibilní termíny</h4>
+                <p>Přizpůsobíme se vašemu programu</p>
+              </div>
+            </div>
+
+            <div class="inquiry-feature">
+              <div class="inquiry-feature-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Osobní přístup</h4>
+                <p>Každou akci řešíme individuálně</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="inquiry-form reveal-right" action="#" method="POST">
+          <h3>Vyplňte formulář</h3>
+          <p>Ozveme se vám do 24 hodin.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Jméno a příjmení *</label>
+              <input type="text" id="name" name="name" placeholder="Jan Novák" required />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email" placeholder="jan@email.cz" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Telefon</label>
+              <input type="tel" id="phone" name="phone" placeholder="+420 123 456 789" />
+            </div>
+            <div class="form-group">
+              <label for="event-type">Typ akce *</label>
+              <select id="event-type" name="event-type" required>
+                <option value="" disabled selected>Vyberte typ akce</option>
+                <option value="svatba">Svatba</option>
+                <option value="firemni-akce">Firemní akce</option>
+                <option value="narozeniny">Narozeniny / Oslava</option>
+                <option value="festival">Festival / Veřejná akce</option>
+                <option value="workshop">Workshop</option>
+                <option value="jine">Jiné</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Předpokládaný termín</label>
+              <input type="date" id="date" name="date" />
+            </div>
+            <div class="form-group">
+              <label for="guests">Počet hostů</label>
+              <input type="number" id="guests" name="guests" placeholder="cca 50" min="1" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Zpráva</label>
+            <textarea id="message" name="message" placeholder="Popište nám vaši akci, místo konání a další detaily..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            Odeslat poptávku
+            <svg viewBox="0 0 24 24">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+
+          <p class="form-note">* Povinné pole. Vaše údaje zpracováváme v souladu s GDPR.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">Gelato<span>!</span></a>
+            <p>Pravé italské gelato vyráběné s láskou v Karlových Varech.</p>
+            <div class="footer-social">
+              <a href="https://instagram.com/gelatokarlovyvary" target="_blank" aria-label="Instagram">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/>
+                </svg>
+              </a>
+              <a href="https://facebook.com/gelatokarlovyvary" target="_blank" aria-label="Facebook">
+                <svg viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h4>Navigace</h4>
+            <ul>
+              <li><a href="nabidka.html">Nabídka</a></li>
+              <li><a href="galerie.html">Galerie</a></li>
+              <li><a href="o-nas.html">O nás</a></li>
+              <li><a href="recenze.html">Recenze</a></li>
+              <li><a href="pobocka.html">Pobočka</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Kontakt</h4>
+            <ul>
+              <li><a href="tel:+420773095809">+420 773 09 58 09</a></li>
+              <li><a href="mailto:info@gelato.cz">info@gelato.cz</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Adresa</h4>
+            <ul>
+              <li>Sokolovská 101</li>
+              <li>Karlovy Vary 360 05</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Gelato! Karlovy Vary</p>
+          <p>Vytvořeno s láskou k zmrzlině</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const mobileNav = document.getElementById("mobileNav");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileNav.classList.toggle("active");
+      });
+    </script>
+    <script src="js/scroll-to-top.js"></script>
+    <script src="js/scroll-animations.js"></script>
+  </body>
+</html>
