@@ -1006,6 +1006,13 @@ img {
   right: -80px;
   width: 400px;
   transition-delay: 0.35s;
+  /* Animace zprava místo zoom-in */
+  opacity: 0;
+  transform: translateX(150px) translateY(40px);
+}
+.kornout.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
 }
 .kornout.floating { animation: decor-float6 4.2s ease-in-out infinite both; animation-delay: -2.5s; }
 

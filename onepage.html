@@ -1210,6 +1210,22 @@
 
     <!-- HERO -->
     <section class="hero" id="hero">
+      <!-- Dekorativní ingredience s parallax efektem -->
+      <div class="hero-decor">
+        <img
+          src="img/decor/kornout-hero.png"
+          class="decor-item kornout"
+          data-speed="0.8"
+          alt=""
+        />
+        <img
+          src="img/decor/karamel.png"
+          class="decor-item decor-karamel"
+          data-speed="0.6"
+          alt=""
+        />
+      </div>
+
       <div class="hero-content">
         <h1>
           První Italské <span>Gelato!</span>
@@ -2138,6 +2154,72 @@
           }
         });
       });
+
+      // Ingredience - Intersection Observer pro animaci při načtení
+      const heroDecor = document.querySelector(".hero-decor");
+      if (heroDecor) {
+        const decorItems = heroDecor.querySelectorAll(".decor-item");
+        let mouseX = 0,
+          mouseY = 0;
+        let currentX = [],
+          currentY = [];
+        let decorVisible = false;
+
+        // Inicializace pozic
+        decorItems.forEach(() => {
+          currentX.push(0);
+          currentY.push(0);
+        });
+
+        // Intersection Observer - spustí animaci když je hero ve viewportu
+        const decorObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && !decorVisible) {
+                decorVisible = true;
+                // Postupně zobrazit ingredience
+                decorItems.forEach((item, i) => {
+                  setTimeout(() => {
+                    item.classList.add("visible");
+                    // Po fade-in animaci přidat floating s delším timeoutem pro plynulý přechod
+                    setTimeout(() => {
+                      item.classList.add("floating");
+                    }, 1200);
+                  }, i * 150);
+                });
+              }
+            });
+          },
+          { threshold: 0.3 },
+        );
+        decorObserver.observe(heroDecor);
+
+        // Parallax efekt na pohyb myši
+        document.addEventListener("mousemove", (e) => {
+          mouseX = (e.clientX - window.innerWidth / 2) * 0.02;
+          mouseY = (e.clientY - window.innerHeight / 2) * 0.02;
+        });
+
+        // Plynulá animace pomocí requestAnimationFrame
+        function animateDecor() {
+          decorItems.forEach((item, i) => {
+            if (!item.classList.contains("floating")) return;
+
+            const speed = parseFloat(item.dataset.speed) || 1 + i * 0.3;
+            const targetX = mouseX * speed;
+            const targetY = mouseY * speed;
+
+            // Lerp - plynulý přechod
+            currentX[i] += (targetX - currentX[i]) * 0.08;
+            currentY[i] += (targetY - currentY[i]) * 0.08;
+
+            item.style.setProperty("--px", currentX[i] + "px");
+            item.style.setProperty("--py", currentY[i] + "px");
+          });
+          requestAnimationFrame(animateDecor);
+        }
+        animateDecor();
+      }
     </script>
   </body>
 </html>
