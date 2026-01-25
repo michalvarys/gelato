@@ -855,7 +855,7 @@
 
         .hero::after {
           content: "";
-          position: fixed;
+          position: absolute;
           top: 0;
           left: 0;
           width: 100%;
@@ -863,6 +863,11 @@
           background: url(img/vlastni-vyroba.jpg) no-repeat center/cover;
           z-index: -2;
           pointer-events: none;
+        }
+
+        .hero {
+          position: relative;
+          overflow: hidden;
         }
 
         .hero::before {
