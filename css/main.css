@@ -225,6 +225,7 @@ img {
   padding: 140px 0 80px;
   background: var(--light-gray);
   text-align: center;
+  border-bottom: 1px solid var(--primary);
 }
 
 .page-header.dark {
