@@ -607,3 +607,157 @@ img {
     font-size: 1.5rem;
   }
 }
+
+/* ========== HERO DECOR - Ingredience ========== */
+.hero-decor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.decor-item {
+  position: absolute;
+  will-change: transform;
+  --px: 0px;
+  --py: 0px;
+  opacity: 0;
+  transform: translateY(40px) scale(0.8);
+  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.decor-item.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Floating animace - spustí se až po .visible */
+@keyframes decor-float1 {
+  0%, 100% { transform: translate(var(--px), var(--py)) translateY(0px) rotate(0deg); }
+  50% { transform: translate(var(--px), var(--py)) translateY(-12px) rotate(2deg); }
+}
+@keyframes decor-float2 {
+  0%, 100% { transform: translate(var(--px), var(--py)) translateY(0px) rotate(0deg); }
+  50% { transform: translate(var(--px), var(--py)) translateY(-18px) rotate(-3deg); }
+}
+@keyframes decor-float3 {
+  0%, 100% { transform: translate(var(--px), var(--py)) translateY(0px) rotate(0deg); }
+  50% { transform: translate(var(--px), var(--py)) translateY(-10px) rotate(3deg); }
+}
+@keyframes decor-float4 {
+  0%, 100% { transform: translate(var(--px), var(--py)) translateY(0px) rotate(0deg); }
+  50% { transform: translate(var(--px), var(--py)) translateY(-15px) rotate(-2deg); }
+}
+@keyframes decor-float5 {
+  0%, 100% { transform: translate(var(--px), var(--py)) translateY(0px) rotate(0deg); }
+  50% { transform: translate(var(--px), var(--py)) translateY(-8px) rotate(2deg); }
+}
+@keyframes decor-float6 {
+  0%, 100% { transform: translate(var(--px), var(--py)) translateY(0px) rotate(0deg); }
+  50% { transform: translate(var(--px), var(--py)) translateY(-14px) rotate(-3deg); }
+}
+
+/* Pozice jednotlivých ingrediencí */
+.decor-leaf-1 {
+  top: 15%;
+  left: 5%;
+  width: 60px;
+  transition-delay: 0.1s;
+}
+.decor-leaf-1.floating { animation: decor-float1 4s ease-in-out infinite both; }
+
+.decor-coconut {
+  bottom: 10%;
+  left: -5%;
+  width: 250px;
+  transition-delay: 0.2s;
+}
+.decor-coconut.floating { animation: decor-float2 5s ease-in-out infinite both; animation-delay: -1s; }
+
+.decor-berry {
+  bottom: 18%;
+  left: 8%;
+  width: 55px;
+  transition-delay: 0.15s;
+}
+.decor-berry.floating { animation: decor-float3 3.5s ease-in-out infinite both; animation-delay: -2s; }
+
+.decor-pistachio {
+  bottom: 0%;
+  left: -50px;
+  width: 200px;
+  transition-delay: 0.25s;
+}
+.decor-pistachio.floating { animation: decor-float4 4.5s ease-in-out infinite both; animation-delay: -0.5s; }
+
+.decor-chocolate {
+  top: 52%;
+  right: 6%;
+  width: 80px;
+  transition-delay: 0.3s;
+}
+.decor-chocolate.floating { animation: decor-float5 3.8s ease-in-out infinite both; animation-delay: -1.5s; }
+
+.decor-leaf-2 {
+  bottom: 22%;
+  right: 4%;
+  width: 75px;
+  transition-delay: 0.2s;
+}
+.decor-leaf-2.floating { animation: decor-float6 4.2s ease-in-out infinite both; animation-delay: -2.5s; }
+
+.kornout {
+  bottom: -50px;
+  right: -50px;
+  width: 300px;
+  transition-delay: 0.35s;
+}
+.kornout.floating { animation: decor-float6 4.2s ease-in-out infinite both; animation-delay: -2.5s; }
+
+/* Responzivní ingredience */
+@media (max-width: 768px) {
+  .decor-leaf-1 {
+    top: 8%;
+    left: -2%;
+    width: 35px;
+  }
+
+  .decor-coconut {
+    display: none;
+  }
+
+  .decor-berry {
+    bottom: 25%;
+    left: 3%;
+    width: 40px;
+  }
+
+  .decor-pistachio {
+    bottom: 0%;
+    left: -15%;
+    width: 140px;
+  }
+
+  .decor-chocolate {
+    bottom: 0;
+    top: unset;
+    right: -50px;
+    width: 150px;
+  }
+
+  .decor-leaf-2 {
+    bottom: 5%;
+    right: -2%;
+    width: 45px;
+  }
+
+  .kornout {
+    bottom: -20px;
+    right: -6%;
+    width: 120px;
+  }
+}
