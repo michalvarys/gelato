@@ -67,7 +67,11 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 50%);
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.5) 0%,
+          transparent 50%
+        );
         opacity: 0;
         transition: opacity 0.3s;
       }
@@ -148,13 +152,18 @@
       <div class="container header-inner">
         <a href="index.html" class="logo">Gelato<span>!</span></a>
         <nav class="nav">
-          <a href="nabidka.html">Nabídka</a>
+          <!-- <a href="nabidka.html">Nabídka</a> -->
           <a href="galerie.html" class="active">Galerie</a>
-          <a href="o-nas.html">O nás</a>
+          <a href="o-nas.html">Co děláme</a>
           <a href="recenze.html">Recenze</a>
           <a href="pobocka.html">Pobočka</a>
         </nav>
-        <a href="poptavka.html" class="header-cta">Nezávazná poptávka</a>
+        <a href="poptavka.html" class="header-cta">
+          Nezávazná poptávka
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
         <div class="hamburger" id="hamburger">
           <span></span>
           <span></span>
@@ -167,7 +176,7 @@
     <nav class="mobile-nav" id="mobileNav">
       <a href="nabidka.html">Nabídka</a>
       <a href="galerie.html" class="active">Galerie</a>
-      <a href="o-nas.html">O nás</a>
+      <a href="o-nas.html">Co děláme</a>
       <a href="recenze.html">Recenze</a>
       <a href="pobocka.html">Pobočka</a>
       <a href="poptavka.html" class="mobile-cta">Nezávazná poptávka</a>
@@ -226,7 +235,9 @@
 
       <div class="instagram-link">
         více na instagramu
-        <a href="https://instagram.com/gelatokarlovyvary" target="_blank">@gelatokarlovyvary</a>
+        <a href="https://instagram.com/gelatokarlovyvary" target="_blank"
+          >@gelatokarlovyvary</a
+        >
       </div>
     </section>
 
@@ -242,9 +253,9 @@
           <div class="footer-column">
             <h4>Navigace</h4>
             <ul>
-              <li><a href="nabidka.html">Nabídka</a></li>
+              <!-- <li><a href="nabidka.html">Nabídka</a></li> -->
               <li><a href="galerie.html">Galerie</a></li>
-              <li><a href="o-nas.html">O nás</a></li>
+              <li><a href="o-nas.html">Co děláme</a></li>
               <li><a href="recenze.html">Recenze</a></li>
               <li><a href="pobocka.html">Pobočka</a></li>
             </ul>
@@ -257,14 +268,26 @@
               <li><a href="mailto:info@gelato.cz">info@gelato.cz</a></li>
             </ul>
             <div class="footer-social">
-              <a href="https://instagram.com/gelatokarlovyvary" target="_blank" aria-label="Instagram">
+              <a
+                href="https://instagram.com/gelatokarlovyvary"
+                target="_blank"
+                aria-label="Instagram"
+              >
                 <svg viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/>
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"
+                  />
                 </svg>
               </a>
-              <a href="https://facebook.com/gelatokarlovyvary" target="_blank" aria-label="Facebook">
+              <a
+                href="https://facebook.com/gelatokarlovyvary"
+                target="_blank"
+                aria-label="Facebook"
+              >
                 <svg viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
                 </svg>
               </a>
             </div>
