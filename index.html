@@ -327,6 +327,7 @@
           min-height: 100dvh;
           padding: 40px 0 80px;
           background: url(img/vlastni-vyroba.jpg) no-repeat center/cover;
+          background-attachment: fixed;
           gap: 32px;
         }
 
@@ -442,6 +443,122 @@
         .quick-links-header h2,
         .contact-content h2 {
           font-size: 1.5rem;
+        }
+      }
+
+      /* ========== GALLERY ========== */
+      .gallery {
+        padding: 80px 0 0;
+        background: #2d2d2d;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .gallery-item {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        aspect-ratio: 1;
+        cursor: pointer;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .gallery-item::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.5) 0%,
+          transparent 50%
+        );
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .gallery-item:hover::after {
+        opacity: 1;
+      }
+
+      .gallery-item-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        color: white;
+        transform: translateY(100%);
+        transition: transform 0.3s;
+        z-index: 2;
+      }
+
+      .gallery-item:hover .gallery-item-overlay {
+        transform: translateY(0);
+      }
+
+      .instagram-link {
+        text-align: center;
+        padding: 40px 0;
+        color: var(--white);
+      }
+
+      .instagram-link a {
+        color: var(--primary);
+        transition: color 0.2s;
+      }
+
+      .instagram-link a:hover {
+        color: var(--primary-dark);
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 1024px) {
+        .gallery-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .gallery {
+          padding: 30px 0;
+        }
+
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+          padding: 0 16px;
+        }
+
+        .gallery-item {
+          border-radius: 10px;
+        }
+
+        .instagram-link {
+          padding: 30px 0;
+          font-size: 0.95rem;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .gallery-grid {
+          gap: 8px;
         }
       }
     </style>
@@ -709,6 +826,49 @@
             </p>
           </a>
         </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery">
+      <div class="gallery-grid reveal-stagger">
+        <div class="gallery-item">
+          <img src="img/galerie-gelato-1.png" alt="Gelato v kelímku" />
+          <div class="gallery-item-overlay">
+            <span>Klasický kelímek</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/galerie-gelato-2.png" alt="Dva kelímky gelata" />
+          <div class="gallery-item-overlay">
+            <span>Dvojitá porce termoboxů</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/galerie-gelato-3.png" alt="Kornouty v vitríně" />
+          <div class="gallery-item-overlay">
+            <span>Čerstvé kornouty</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/galerie-gelato-4.png" alt="Affogato" />
+          <div class="gallery-item-overlay">
+            <span>Affogato</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/galerie-gelato-5.png" alt="Gelato s oplatkami" />
+          <div class="gallery-item-overlay">
+            <span>Děláno s láskou</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="instagram-link">
+        více na instagramu
+        <a href="https://instagram.com/gelatokarlovyvary" target="_blank"
+          >@gelatokarlovyvary</a
+        >
       </div>
     </section>
 
