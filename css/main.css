@@ -8,8 +8,8 @@
 
 /* ========== CSS VARIABLES ========== */
 :root {
-  --primary: #3ecdc6;
-  --primary-dark: #2db3ad;
+  --primary: #35b2ae;
+  --primary-dark: #346f69;
   --dark: #1d1d1b;
   --gray: #666;
   --light-gray: #f8f8f8;
@@ -46,6 +46,10 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.relative {
+  position: relative;
 }
 
 .container {
@@ -627,7 +631,7 @@ img {
   --py: 0px;
   opacity: 0;
   transform: translateY(40px) scale(0.8);
-  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .decor-item.visible {
@@ -686,12 +690,22 @@ img {
 }
 .decor-berry.floating { animation: decor-float3 3.5s ease-in-out infinite both; animation-delay: -2s; }
 
+.decor-karamel {
+  bottom: 0%;
+  right: 50px;
+  width: 200px;
+  transition-delay: 0.25s;
+}
+
+.decor-karamel.floating { animation: decor-float3 5.5s ease-in-out infinite both; animation-delay: -3s; }
+
 .decor-pistachio {
   bottom: 0%;
   left: -50px;
   width: 200px;
   transition-delay: 0.25s;
 }
+
 .decor-pistachio.floating { animation: decor-float4 4.5s ease-in-out infinite both; animation-delay: -0.5s; }
 
 .decor-chocolate {
@@ -711,9 +725,9 @@ img {
 .decor-leaf-2.floating { animation: decor-float6 4.2s ease-in-out infinite both; animation-delay: -2.5s; }
 
 .kornout {
-  bottom: -50px;
-  right: -50px;
-  width: 300px;
+  bottom: -80px;
+  right: -80px;
+  width: 400px;
   transition-delay: 0.35s;
 }
 .kornout.floating { animation: decor-float6 4.2s ease-in-out infinite both; animation-delay: -2.5s; }
@@ -734,6 +748,12 @@ img {
     bottom: 25%;
     left: 3%;
     width: 40px;
+  }
+
+  .decor-karamel {
+    bottom: 0%;
+    right: 10%;
+    width: 90px;
   }
 
   .decor-pistachio {
