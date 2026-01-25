@@ -19,6 +19,11 @@
       .mobile-hidden {
         display: inline-block;
       }
+
+      .mobile-only {
+        display: none;
+      }
+
       /* Header transparent on homepage */
       .header.transparent {
         background: transparent;
@@ -323,6 +328,11 @@
         .mobile-hidden {
           display: none;
         }
+
+        .mobile-only {
+          display: block;
+        }
+
         .hero {
           min-height: 100vh;
           min-height: 100dvh;
@@ -588,6 +598,7 @@
           <a href="o-nas.html">Co děláme</a>
           <a href="recenze.html">Recenze</a>
           <a href="pobocka.html">Pobočka</a>
+          <a href="onepage.html">Jednostránková</a>
         </nav>
         <a href="poptavka.html" class="header-cta btn btn-primary btn-spark">
           <span class="shimmer-text">Nezávazná poptávka</span>
@@ -619,6 +630,7 @@
       <a href="o-nas.html">Co děláme</a>
       <a href="recenze.html">Recenze</a>
       <a href="pobocka.html">Pobočka</a>
+      <a href="onepage.html">Jednostránková</a>
       <a href="poptavka.html" class="mobile-cta btn btn-primary btn-spark"
         ><span class="shimmer-text full-center">Nezávazná poptávka</span>
       </a>
@@ -876,7 +888,7 @@
             <span>Děláno s láskou</span>
           </div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item mobile-only">
           <img src="img/galerie-1.jpg" alt="Gelato catering" />
           <div class="gallery-item-overlay">
             <span>Catering</span>
