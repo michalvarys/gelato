@@ -155,7 +155,8 @@
       }
 
       @keyframes chevronPulse {
-        0%, 100% {
+        0%,
+        100% {
           opacity: 0.2;
           transform: translateY(0);
         }
@@ -302,7 +303,9 @@
           min-height: 100vh;
           min-height: 100dvh;
           padding: 40px 0 80px;
-          background-attachment: scroll;
+          background: url(img/vlastni-vyroba.jpg) no-repeat center/cover;
+          background-blend-mode: overlay;
+          background-color: rgba(255, 255, 255, 0.8);
           gap: 32px;
         }
 
@@ -500,13 +503,34 @@
       <a href="#quick-links" class="scroll-indicator">
         <div class="scroll-chevrons">
           <svg viewBox="0 0 30 18" class="chevron chevron-1">
-            <path d="M2 2L15 15L28 2" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path
+              d="M2 2L15 15L28 2"
+              stroke="currentColor"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"
+            />
           </svg>
           <svg viewBox="0 0 30 18" class="chevron chevron-2">
-            <path d="M2 2L15 15L28 2" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path
+              d="M2 2L15 15L28 2"
+              stroke="currentColor"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"
+            />
           </svg>
           <svg viewBox="0 0 30 18" class="chevron chevron-3">
-            <path d="M2 2L15 15L28 2" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path
+              d="M2 2L15 15L28 2"
+              stroke="currentColor"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"
+            />
           </svg>
         </div>
       </a>
