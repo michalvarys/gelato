@@ -781,6 +781,7 @@ img {
   }
 
   .decor-karamel {
+    display: none;
     bottom: 0%;
     right: 10%;
     width: 90px;
@@ -806,6 +807,7 @@ img {
   }
 
   .kornout {
+    display: none;
     bottom: -20px;
     right: -6%;
     width: 120px;
