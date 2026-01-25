@@ -884,6 +884,10 @@ img {
   }
 }
 
+.full-center {
+  width: 100%;
+  text-align: center;
+}
 /* ========== HERO DECOR - Ingredience ========== */
 .hero-decor {
   position: absolute !important;
