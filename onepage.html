@@ -698,7 +698,7 @@
         position: relative;
       }
 
-      .about-image img {
+      .about-image img:not(.about-ingredient) {
         width: 100%;
         height: 400px;
         object-fit: cover;
@@ -858,6 +858,29 @@
       .location-images {
         position: relative;
         height: 500px;
+      }
+
+      .location-images::before {
+        content: "";
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        width: 400px;
+        height: 400px;
+        background: url("../img/element-bg.png") no-repeat center;
+        background-size: contain;
+        z-index: 0;
+        opacity: 0.6;
+        animation: spinBlob 20s linear infinite;
+      }
+
+      @keyframes spinBlob {
+        from {
+          transform: translateX(-50%) rotate(0deg);
+        }
+        to {
+          transform: translateX(-50%) rotate(360deg);
+        }
       }
 
       .location-images img {
@@ -1374,7 +1397,7 @@
           margin-bottom: 12px;
         }
 
-        .about-image img {
+        .about-image img:not(.about-ingredient) {
           height: 250px;
         }
 
@@ -1416,6 +1439,12 @@
           width: 320px;
           max-width: 100%;
           margin: 0 auto 20px;
+        }
+
+        .location-images::before {
+          width: 250px;
+          height: 250px;
+          bottom: -20px;
         }
 
         .location-images img {
@@ -1521,7 +1550,7 @@
           font-size: 3rem;
         }
 
-        .about-image img {
+        .about-image img:not(.about-ingredient) {
           height: 200px;
         }
 
@@ -1782,17 +1811,41 @@
       <!-- Dekorativní ingredience s parallax efektem -->
       <div class="hero-decor">
         <img
+          src="img/gelato-kornout-2.png"
+          class="decor-item kornout"
+          data-speed="0.1"
+          alt=""
+        />
+        <img
+          src="img/decor/boruvka.webp"
+          class="decor-item decor-boruvka"
+          data-speed="0.6"
+          alt=""
+        />
+        <img
+          src="img/decor/jahoda.png"
+          class="decor-item decor-jahoda"
+          data-speed="0.6"
+          alt=""
+        />
+        <img
+          src="img/decor/angrest.png"
+          class="decor-item decor-berry"
+          data-speed="0.6"
+          alt=""
+        />
+        <!-- <img
           src="img/decor/kornout-hero.png"
           class="decor-item kornout"
           data-speed="0.8"
           alt=""
-        />
+        /> 
         <img
           src="img/decor/karamel.png"
           class="decor-item decor-karamel"
           data-speed="0.6"
           alt=""
-        />
+        />-->
       </div>
 
       <!-- Gelato scoop decorations -->
@@ -1921,6 +1974,18 @@
           </div>
           <div class="about-image reveal-right">
             <img src="img/vyroba.jpg" alt="Výroba gelata" />
+            <img
+              src="img/decor/jahoda.png"
+              class="about-ingredient about-ing-1"
+              data-speed="0.5"
+              alt=""
+            />
+            <img
+              src="img/decor/pistacie.png"
+              class="about-ingredient about-ing-2"
+              data-speed="0.3"
+              alt=""
+            />
           </div>
         </div>
       </section>
@@ -1939,6 +2004,8 @@
           </div>
           <div class="about-image reveal-left">
             <img src="img/galerie-gelato-4.png" alt="Prodejna gelata" />
+            <!-- <img src="img/decor/boruvka.webp" class="about-ingredient about-ing-1" data-speed="0.4" alt="" />
+            <img src="img/decor/angrest.png" class="about-ingredient about-ing-4" data-speed="0.6" alt="" /> -->
           </div>
         </div>
       </section>
@@ -1957,6 +2024,8 @@
           </div>
           <div class="about-image reveal-right">
             <img src="img/galerie-gelato-2.png" alt="Distribuce gelata" />
+            <!-- <img src="img/decor/kokos.png" class="about-ingredient about-ing-3" data-speed="0.5" alt="" />
+            <img src="img/decor/karamel.png" class="about-ingredient about-ing-4" data-speed="0.35" alt="" /> -->
           </div>
         </div>
       </section>
@@ -1975,6 +2044,8 @@
           </div>
           <div class="about-image reveal-left">
             <img src="img/catering-2.jpg" alt="Catering gelata" />
+            <!-- <img src="img/decor/jahoda.png" class="about-ingredient about-ing-1" data-speed="0.45" alt="" />
+            <img src="img/decor/ostruzina.png" class="about-ingredient about-ing-2" data-speed="0.55" alt="" /> -->
           </div>
         </div>
       </section>
@@ -2861,7 +2932,7 @@
               item.classList.add("visible");
               setTimeout(() => {
                 item.classList.add("floating");
-              }, 1000);
+              }, 200);
             }, i * 200);
           });
         }, 300);
@@ -2888,6 +2959,68 @@
           requestAnimationFrame(animateDecor);
         }
         animateDecor();
+      }
+
+      // About section ingredients - mouse parallax
+      const aboutIngredients = document.querySelectorAll(".about-ingredient");
+      if (aboutIngredients.length > 0) {
+        let aboutMouseX = 0,
+          aboutMouseY = 0;
+        let aboutCurrentX = [],
+          aboutCurrentY = [];
+
+        aboutIngredients.forEach(() => {
+          aboutCurrentX.push(0);
+          aboutCurrentY.push(0);
+        });
+
+        // Intersection observer - zobrazit ingredience když jsou viditelné
+        const ingredientObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const ingredients =
+                  entry.target.querySelectorAll(".about-ingredient");
+                ingredients.forEach((ing, i) => {
+                  setTimeout(() => {
+                    ing.classList.add("visible");
+                    setTimeout(() => {
+                      ing.classList.add("floating");
+                    }, 300);
+                  }, i * 150);
+                });
+              }
+            });
+          },
+          { threshold: 0.3 },
+        );
+
+        document.querySelectorAll(".about-image").forEach((section) => {
+          ingredientObserver.observe(section);
+        });
+
+        document.addEventListener("mousemove", (e) => {
+          aboutMouseX = (e.clientX - window.innerWidth / 2) * 0.025;
+          aboutMouseY = (e.clientY - window.innerHeight / 2) * 0.025;
+        });
+
+        function animateAboutIngredients() {
+          aboutIngredients.forEach((item, i) => {
+            if (!item.classList.contains("floating")) return;
+
+            const speed = parseFloat(item.dataset.speed) || 1;
+            const targetX = aboutMouseX * speed;
+            const targetY = aboutMouseY * speed;
+
+            aboutCurrentX[i] += (targetX - aboutCurrentX[i]) * 0.05;
+            aboutCurrentY[i] += (targetY - aboutCurrentY[i]) * 0.05;
+
+            item.style.setProperty("--px", aboutCurrentX[i] + "px");
+            item.style.setProperty("--py", aboutCurrentY[i] + "px");
+          });
+          requestAnimationFrame(animateAboutIngredients);
+        }
+        animateAboutIngredients();
       }
     </script>
   </body>

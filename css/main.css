@@ -907,7 +907,7 @@ img {
   --px: 0px;
   --py: 0px;
   opacity: 0;
-  transform: translateY(40px) scale(0.8);
+  transform: translateY(40px) scale(.8);
   transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -960,11 +960,21 @@ img {
 .decor-coconut.floating { animation: decor-float2 5s ease-in-out infinite both; animation-delay: -1s; }
 
 .decor-berry {
-  bottom: 18%;
-  left: 8%;
-  width: 55px;
+  bottom: 22%;
+  right: 8%;
+  width: 105px;
   transition-delay: 0.15s;
 }
+
+.decor-jahoda{
+  bottom: 25%;
+  right: 1%;
+  width: 80px;
+  transition-delay: 0.25s;
+  z-index: -1;
+}
+
+.decor-jahoda.floating,
 .decor-berry.floating { animation: decor-float3 3.5s ease-in-out infinite both; animation-delay: -2s; }
 
 .decor-karamel {
@@ -974,6 +984,24 @@ img {
   transition-delay: 0.25s;
 }
 
+.decor-boruvka {
+  bottom: 28%;
+  right: 10%;
+  width: 80px;
+  transition-delay: 0.25s; 
+  z-index: -1;
+}
+
+.decor-boruvka.floating { animation: decor-float3 8.5s ease-in-out infinite both; animation-delay: -0.5s; }
+
+.decor-ostruzina {
+  bottom: 24%;
+  right: 8%;
+  width: 80px;
+  transition-delay: 0.25s;
+}
+
+.decor-ostruzina.floating,
 .decor-karamel.floating { animation: decor-float3 5.5s ease-in-out infinite both; animation-delay: -3s; }
 
 .decor-pistachio {
@@ -1034,6 +1062,10 @@ img {
     width: 40px;
   }
 
+  .decor-boruvka,
+  .decor-berry,
+  .decor-jahoda,
+  .decor-ostruzina,
   .decor-karamel {
     display: none;
     bottom: 0%;
@@ -1065,5 +1097,136 @@ img {
     bottom: -20px;
     right: -6%;
     width: 120px;
+  }
+}
+
+/* ========== ABOUT SECTION INGREDIENTS ========== */
+
+/* Rotující element-bg pod obrázkem */
+.about-image::before {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  width: 350px;
+  height: 350px;
+  z-index: -1;
+  opacity: 0.5;
+  /* animation: spinBlob 25s linear infinite; */
+}
+
+/* Obrázek vpravo (normální) - element v pravém rohu */
+.about-inner:not(.reverse) .about-image::before {
+  bottom: -80px;
+  right: -80px;  
+  background: url('../img/decor/element-bg-2.png') no-repeat center;
+  background-size: contain;
+  left: auto;
+}
+
+/* Obrázek vlevo (reverse) - element v levém rohu */
+.about-inner.reverse .about-image::before {
+  bottom: -80px;
+  left: -80px;  
+  background: url('../img/decor/element-bg.png') no-repeat center;
+  background-size: contain;
+  right: auto;
+}
+
+/* Střídání barev - šedá (#2d2d2d), modrá, šedá, modrá */
+.about-section:nth-child(4n+1) .about-image::before {
+  /* 1. sekce - tmavě šedá jako galerie #2d2d2d */
+  filter: brightness(0) saturate(100%) invert(89%) sepia(10%) saturate(500%) hue-rotate(131deg) brightness(95%) contrast(90%);
+  /* filter: brightness(0) invert(16%) sepia(0%) saturate(0%) brightness(100%) contrast(100%); */
+}
+
+.about-section:nth-child(4n+2) .about-image::before {
+  /* 2. sekce - modrá */
+  filter: brightness(0) saturate(100%) invert(89%) sepia(10%) saturate(500%) hue-rotate(131deg) brightness(95%) contrast(90%);
+}
+
+.about-section:nth-child(4n+3) .about-image::before {
+  /* 3. sekce - tmavě šedá jako galerie #2d2d2d */
+  filter: brightness(0) saturate(100%) invert(89%) sepia(10%) saturate(500%) hue-rotate(131deg) brightness(95%) contrast(90%);
+  /* filter: brightness(0) invert(16%) sepia(0%) saturate(0%) brightness(100%) contrast(100%); */
+}
+
+.about-section:nth-child(4n) .about-image::before {
+  /* 4. sekce - modrá */
+  filter: brightness(0) saturate(100%) invert(89%) sepia(10%) saturate(500%) hue-rotate(131deg) brightness(95%) contrast(90%);
+}
+
+.about-ingredient {
+  position: absolute;
+  will-change: transform;
+  --px: 0px;
+  --py: 0px;
+  opacity: 0;
+  transform: translateY(10px) scale(0.9);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about-ingredient.visible {
+  opacity: 0.85;
+  transform: translateY(0) scale(1);
+}
+
+.about-ingredient.floating {
+  animation: about-ingredient-float 5s ease-in-out infinite;
+}
+
+@keyframes about-ingredient-float {
+  0%, 100% { transform: translate(var(--px), var(--py)) translateY(0px); }
+  50% { transform: translate(var(--px), var(--py)) translateY(-5px); }
+}
+
+/* Pozice ingrediencí v kartách */
+.about-ing-1 {
+  top: 8%;
+  right: 6%;
+  width: 70px;
+  height: auto;
+}
+
+.about-ing-2 {
+  bottom: 8%;
+  left: 6%;
+  width: 65px;
+  height: auto;
+}
+
+.about-ing-3 {
+  top: 35%;
+  left: 5%;
+  width: 60px;
+  height: auto;
+}
+
+.about-ing-4 {
+  bottom: 6%;
+  right: 8%;
+  width: 68px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .about-ingredient {
+    max-width: 28px !important;
+    width: 28px !important;
+  }
+
+  .about-image::before {
+    width: 250px !important;
+    height: 250px !important;
+    bottom: -20px !important;
+  }
+
+  .about-inner:not(.reverse) .about-image::before {
+    right: 40% !important;
+  }
+
+  .about-inner.reverse .about-image::before {
+    left: 40% !important;
   }
 }
