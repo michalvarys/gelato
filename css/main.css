@@ -619,6 +619,8 @@ img {
   width: 18px;
   height: 18px;
   fill: var(--white);
+  stroke: var(--white);
+  color: var(--white);
 }
 
 .footer-column h4 {
@@ -844,7 +846,8 @@ img {
   }
 
   .footer-social {
-    justify-content: center;
+    padding-top: 8px;
+    justify-content: start;
   }
 
   .footer-column {
