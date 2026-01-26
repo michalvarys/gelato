@@ -49,33 +49,235 @@
         justify-content: center;
         text-align: center;
         padding: 80px 0 100px;
-        background: url(img/pobocka.webp) no-repeat center/cover;
-        background-attachment: fixed;
+        background: linear-gradient(to bottom, #f9fafb, #ffffff);
         position: relative;
-        border-bottom: 1px solid var(--primary);
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-color: rgba(255, 255, 255, 0.9);
-        animation: heroOverlayFade 1.5s ease-out forwards;
-        z-index: 0;
-      }
-
-      @keyframes heroOverlayFade {
-        0% {
-          background-color: rgba(255, 255, 255, 0);
-        }
-        100% {
-          background-color: rgba(255, 255, 255, 0.9);
-        }
+        overflow: hidden;
       }
 
       .hero > * {
         position: relative;
         z-index: 1;
+      }
+
+      /* Gelato Scoop Shapes */
+      .scoop {
+        position: absolute;
+        border-radius: 50%;
+        transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Large scoop - top right */
+      .scoop-1 {
+        top: -120px;
+        right: -80px;
+        width: 400px;
+        height: 400px;
+        background: linear-gradient(
+          135deg,
+          rgba(6, 182, 212, 0.15),
+          rgba(20, 184, 166, 0.1)
+        );
+        opacity: 0;
+        transform: scale(0.3) translateY(100px);
+        transition-delay: 0.1s;
+      }
+
+      /* Medium scoop - left side */
+      .scoop-2 {
+        top: 30%;
+        left: -100px;
+        width: 280px;
+        height: 280px;
+        background: linear-gradient(
+          145deg,
+          rgba(6, 182, 212, 0.2),
+          rgba(34, 211, 238, 0.12)
+        );
+        opacity: 0;
+        transform: scale(0.3) translateX(-100px);
+        transition-delay: 0.3s;
+      }
+
+      /* Small scoop - bottom right */
+      .scoop-3 {
+        bottom: 15%;
+        right: 5%;
+        width: 180px;
+        height: 180px;
+        background: linear-gradient(
+          160deg,
+          rgba(6, 182, 212, 0.25),
+          rgba(20, 184, 166, 0.15)
+        );
+        opacity: 0;
+        transform: scale(0) rotate(45deg);
+        transition-delay: 0.5s;
+      }
+
+      /* Tiny accent scoop - top left */
+      .scoop-4 {
+        top: 15%;
+        left: 10%;
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(
+          135deg,
+          rgba(34, 211, 238, 0.3),
+          rgba(6, 182, 212, 0.2)
+        );
+        opacity: 0;
+        transform: scale(0);
+        transition-delay: 0.7s;
+      }
+
+      /* Medium scoop - bottom left */
+      .scoop-5 {
+        bottom: 5%;
+        left: 15%;
+        width: 220px;
+        height: 220px;
+        background: linear-gradient(
+          150deg,
+          rgba(6, 182, 212, 0.12),
+          rgba(20, 184, 166, 0.08)
+        );
+        opacity: 0;
+        transform: scale(0.3) translateY(50px);
+        transition-delay: 0.4s;
+      }
+
+      /* Decorative ring */
+      .scoop-ring {
+        position: absolute;
+        border-radius: 50%;
+        border: 3px dashed rgba(6, 182, 212, 0.2);
+        top: 50%;
+        left: 50%;
+        width: 600px;
+        height: 600px;
+        transform: translate(-50%, -50%) scale(0.5) rotate(45deg);
+        opacity: 0;
+        transition: all 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0.2s;
+      }
+
+      /* Bottom wave sweep */
+      .hero-wave {
+        position: absolute;
+        bottom: 0;
+        left: -10%;
+        width: 120%;
+        height: 300px;
+        background: linear-gradient(
+          to top,
+          rgba(6, 182, 212, 0.08),
+          transparent
+        );
+        border-radius: 100% 100% 0 0;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0.1s;
+      }
+
+      /* Revealed states */
+      .hero.revealed .scoop-1 {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+
+      .hero.revealed .scoop-2 {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+      }
+
+      .hero.revealed .scoop-3 {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+
+      .hero.revealed .scoop-4 {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .hero.revealed .scoop-5 {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+
+      .hero.revealed .scoop-ring {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+      }
+
+      .hero.revealed .hero-wave {
+        transform: translateY(40%);
+        opacity: 1;
+      }
+
+      /* Floating particles */
+      .hero-particle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(6, 182, 212, 0.4);
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+
+      .hero.revealed .hero-particle {
+        opacity: 1;
+      }
+
+      .hero-particle-1 {
+        top: 20%;
+        left: 15%;
+        width: 8px;
+        height: 8px;
+      }
+      .hero-particle-2 {
+        top: 35%;
+        left: 85%;
+        width: 12px;
+        height: 12px;
+      }
+      .hero-particle-3 {
+        top: 75%;
+        left: 20%;
+        width: 6px;
+        height: 6px;
+      }
+      .hero-particle-4 {
+        top: 65%;
+        left: 80%;
+        width: 10px;
+        height: 10px;
+      }
+      .hero-particle-5 {
+        top: 25%;
+        left: 70%;
+        width: 7px;
+        height: 7px;
+      }
+
+      /* Decorative line */
+      .hero-line {
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(to right, #06b6d4, #14b8a6);
+        border-radius: 9999px;
+        margin: 0 auto 2rem;
+        transform: scaleX(0);
+        opacity: 0;
+        transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0.6s;
+      }
+
+      .hero.revealed .hero-line {
+        transform: scaleX(1);
+        opacity: 1;
       }
 
       .hero-content {
@@ -85,6 +287,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        z-index: 10;
       }
 
       .hero-content h1 {
@@ -94,11 +297,20 @@
         color: var(--dark);
         opacity: 0;
         transform: translateY(30px);
-        animation: heroFadeUp 0.8s ease-out 0.2s forwards;
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0.7s;
+      }
+
+      .hero.revealed .hero-content h1 {
+        opacity: 1;
+        transform: translateY(0);
       }
 
       .hero-content h1 span {
-        color: var(--primary);
+        background: linear-gradient(to right, #06b6d4, #22d3d1, #14b8a6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
       }
 
       .hero-content h1 small {
@@ -106,6 +318,57 @@
         font-size: 1.5rem;
         font-weight: 300;
         margin-top: 10px;
+        color: #9ca3af;
+        letter-spacing: 0.05em;
+      }
+
+      /* Scoop on V letter - ice cream cone effect */
+      .scoop-letter {
+        position: relative;
+        display: inline-block;
+      }
+
+      .scoop-dot {
+        position: absolute;
+        background: #6ee9ff !important;
+        -webkit-background-clip: padding-box !important;
+        background-clip: padding-box !important;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 1.2s;
+        box-shadow: 0 2px 8px rgba(6, 182, 212, 0.4);
+        /* Base squished state */
+        width: 16px;
+        height: 9px;
+        border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
+      }
+
+      .hero.revealed .scoop-dot {
+        transform: translateX(-50%) translateY(10px) scale(1);
+        opacity: 1;
+        animation: scoopBounce 2.5s ease-in-out infinite;
+        animation-delay: 2s;
+      }
+
+      @keyframes scoopBounce {
+        0%,
+        100% {
+          /* Squished - wider and shorter at bottom */
+          transform: translateX(-50%) translateY(10px);
+          width: 16px;
+          height: 9px;
+          border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
+        }
+        50% {
+          /* Round - equal width and height at top */
+          transform: translateX(-50%) translateY(-6px);
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+        }
       }
 
       .hero-content p {
@@ -114,11 +377,18 @@
         margin-bottom: 40px;
         opacity: 0;
         transform: translateY(20px);
-        animation: heroFadeUp 0.8s ease-out 0.5s forwards;
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0.9s;
+      }
+
+      .hero.revealed .hero-content p {
+        opacity: 1;
+        transform: translateY(0);
       }
 
       .hero-content p b {
-        color: var(--primary);
+        color: #0891b2;
+        font-weight: 500;
       }
 
       .hero-buttons {
@@ -128,7 +398,28 @@
         flex-wrap: wrap;
         opacity: 0;
         transform: translateY(20px);
-        animation: heroFadeUp 0.8s ease-out 0.8s forwards;
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 1.1s;
+      }
+
+      .hero.revealed .hero-buttons {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .hero-tagline {
+        margin-top: 2rem;
+        font-size: 0.8rem;
+        color: #9ca3af;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        transition-delay: 1.4s;
+      }
+
+      .hero.revealed .hero-tagline {
+        opacity: 1;
       }
 
       @keyframes heroFadeUp {
@@ -849,39 +1140,63 @@
           min-height: 100vh;
           min-height: 100dvh;
           padding: 40px 0 80px;
-          background: none;
           gap: 32px;
         }
 
-        .hero::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: url(img/vlastni-vyroba.jpg) no-repeat center/cover;
-          z-index: -2;
-          pointer-events: none;
+        .scoop-1 {
+          width: 250px;
+          height: 250px;
+          top: -80px;
+          right: -60px;
         }
 
-        .hero {
-          position: relative;
-          overflow: hidden;
+        .scoop-2 {
+          width: 180px;
+          height: 180px;
+          left: -60px;
         }
 
-        .hero::before {
-          z-index: -1;
-          animation: heroOverlayFade 1.5s ease-out forwards;
+        .scoop-3 {
+          width: 120px;
+          height: 120px;
         }
 
-        @keyframes heroOverlayFade {
-          0% {
-            background-color: rgba(255, 255, 255, 0);
+        .scoop-4 {
+          width: 70px;
+          height: 70px;
+        }
+
+        .scoop-5 {
+          width: 150px;
+          height: 150px;
+        }
+
+        .scoop-ring {
+          width: 350px;
+          height: 350px;
+        }
+
+        .scoop-dot {
+          width: 10px;
+          height: 6px;
+          top: -5px;
+        }
+
+        @keyframes scoopBounce {
+          0%, 100% {
+            transform: translateX(-50%) translateY(6px);
+            width: 10px;
+            height: 6px;
           }
-          100% {
-            background-color: rgba(255, 255, 255, 0.8);
+          50% {
+            transform: translateX(-50%) translateY(-3px);
+            width: 8px;
+            height: 8px;
           }
+        }
+
+        .hero-wave {
+          height: 200px;
         }
 
         .hero-content {
@@ -1103,6 +1418,12 @@
           font-size: 0.95rem;
           border-radius: 10px;
         }
+        .hero-buttons .btn {
+          width: 100%;
+          max-width: 300px;
+          justify-content: center;
+          align-self: center;
+        }
       }
 
       @media (max-width: 380px) {
@@ -1186,7 +1507,9 @@
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
           cursor: pointer;
           border: none;
-          transition: transform 0.3s ease, background 0.3s ease;
+          transition:
+            transform 0.3s ease,
+            background 0.3s ease;
         }
 
         .mobile-fab-toggle:active {
@@ -1245,7 +1568,9 @@
           align-items: center;
           justify-content: center;
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
         }
 
         .mobile-fab-item:active .mobile-fab-item-icon {
@@ -1281,7 +1606,6 @@
           <a href="#o-nas">Co děláme</a>
           <a href="#recenze">Recenze</a>
           <a href="#pobocka">Pobočka</a>
-          <a href="index.html">Vícestránková</a>
         </nav>
         <a href="#poptavka" class="header-cta btn btn-primary btn-spark">
           <span class="shimmer-text">Nezávazná poptávka</span>
@@ -1312,7 +1636,6 @@
       <a href="#o-nas">Co děláme</a>
       <a href="#recenze">Recenze</a>
       <a href="#pobocka">Pobočka</a>
-      <a href="index.html">Vícestránková</a>
       <a href="#poptavka" class="mobile-cta btn btn-primary btn-spark">
         <span class="shimmer-text full-center">Nezávazná poptávka</span>
       </a>
@@ -1331,16 +1654,22 @@
         <a href="tel:+420773095809" class="mobile-fab-item">
           <span class="mobile-fab-item-icon">
             <svg viewBox="0 0 24 24">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              />
             </svg>
           </span>
           <span class="mobile-fab-item-label">Zavolat</span>
         </a>
-        <a href="https://maps.google.com/?q=Sokolovská+101,+Karlovy+Vary" target="_blank" class="mobile-fab-item">
+        <a
+          href="https://maps.google.com/?q=Sokolovská+101,+Karlovy+Vary"
+          target="_blank"
+          class="mobile-fab-item"
+        >
           <span class="mobile-fab-item-icon">
             <svg viewBox="0 0 24 24">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3" fill="white"/>
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" fill="white" />
             </svg>
           </span>
           <span class="mobile-fab-item-label">Navigovat</span>
@@ -1348,8 +1677,24 @@
       </div>
       <button class="mobile-fab-toggle" aria-label="Kontakt">
         <svg viewBox="0 0 24 24">
-          <line x1="12" y1="5" x2="12" y2="19" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          <line x1="5" y1="12" x2="19" y2="12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line
+            x1="12"
+            y1="5"
+            x2="12"
+            y2="19"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <line
+            x1="5"
+            y1="12"
+            x2="19"
+            y2="12"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
         </svg>
       </button>
     </div>
@@ -1372,10 +1717,33 @@
         />
       </div>
 
+      <!-- Gelato scoop decorations -->
+      <div class="scoop scoop-1"></div>
+      <div class="scoop scoop-2"></div>
+      <div class="scoop scoop-3"></div>
+      <div class="scoop scoop-4"></div>
+      <div class="scoop scoop-5"></div>
+      <div class="scoop-ring"></div>
+
+      <!-- Bottom wave -->
+      <div class="hero-wave"></div>
+
+      <!-- Floating particles -->
+      <div class="hero-particle hero-particle-1"></div>
+      <div class="hero-particle hero-particle-2"></div>
+      <div class="hero-particle hero-particle-3"></div>
+      <div class="hero-particle hero-particle-4"></div>
+      <div class="hero-particle hero-particle-5"></div>
+
       <div class="hero-content">
+        <div class="hero-line"></div>
         <h1>
           První Italské <span>Gelato!</span>
-          <small>V Karlových Varech</small>
+          <small>
+            V Karlo<span class="scoop-letter"
+              ><span class="scoop-dot"></span>v</span
+            >ých Varech
+          </small>
         </h1>
         <p>
           <span class="line-bgg"
@@ -1385,10 +1753,10 @@
           <span class="mobile-hidden">
             Zajišťujeme kompletní servis a rozvoz po celém kraji.
           </span>
-          <br /><b class="line-bgg">Neděláme jen zmrzlinu, tvoříme zážitek.</b>
+          <!-- <br /><b class="line-bgg">Neděláme jen zmrzlinu, tvoříme zážitek.</b> -->
         </p>
         <div class="hero-buttons">
-          <a href="#pobocka" class="btn btn-outline">
+          <!-- <a href="#pobocka" class="btn btn-outline">
             <svg
               viewBox="0 0 24 24"
               width="18"
@@ -1403,7 +1771,7 @@
               <circle cx="12" cy="9" r="2.5" />
             </svg>
             <span>Najít pobočku</span>
-          </a>
+          </a> -->
           <a href="#galerie" class="btn btn-primary">
             <span class="shimmer-text">Prohlédnout nabídku</span>
             <svg
@@ -1420,6 +1788,7 @@
             </svg>
           </a>
         </div>
+        <p class="hero-tagline">Neděláme jen zmrzlinu, tvoříme zážitek.</p>
       </div>
 
       <a href="#galerie" class="scroll-indicator">
@@ -2325,66 +2694,116 @@
         });
       });
 
-      // Ingredience - Intersection Observer pro animaci při načtení
+      // Hero reveal animation
+      const heroSection = document.getElementById("hero");
+      if (heroSection) {
+        // Trigger reveal animation after a short delay
+        setTimeout(() => {
+          heroSection.classList.add("revealed");
+        }, 100);
+
+        // Parallax effect on mouse move for scoops and particles
+        const scoops = heroSection.querySelectorAll(".scoop");
+        const particles = heroSection.querySelectorAll(".hero-particle");
+        let mouseX = 0,
+          mouseY = 0;
+
+        // Arrays for smooth interpolation
+        let scoopX = [],
+          scoopY = [];
+        let particleX = [],
+          particleY = [];
+
+        // Different speeds for variety
+        const scoopSpeeds = [0.3, 0.5, 0.7, 0.4, 0.6];
+        const particleSpeeds = [1.5, 2.2, 1.0, 1.8, 1.3];
+
+        scoops.forEach(() => {
+          scoopX.push(0);
+          scoopY.push(0);
+        });
+        particles.forEach(() => {
+          particleX.push(0);
+          particleY.push(0);
+        });
+
+        document.addEventListener("mousemove", (e) => {
+          mouseX = (e.clientX - window.innerWidth / 2) * 0.015;
+          mouseY = (e.clientY - window.innerHeight / 2) * 0.015;
+        });
+
+        function animateHeroElements() {
+          // Animate scoops (slower, subtle)
+          scoops.forEach((scoop, i) => {
+            const speed = scoopSpeeds[i] || 0.5;
+            const targetX = mouseX * speed;
+            const targetY = mouseY * speed;
+
+            scoopX[i] += (targetX - scoopX[i]) * 0.05;
+            scoopY[i] += (targetY - scoopY[i]) * 0.05;
+
+            scoop.style.transform = `translate(${scoopX[i]}px, ${scoopY[i]}px)`;
+          });
+
+          // Animate particles (faster, more responsive)
+          particles.forEach((particle, i) => {
+            const speed = particleSpeeds[i] || 1.5;
+            const targetX = mouseX * speed;
+            const targetY = mouseY * speed;
+
+            particleX[i] += (targetX - particleX[i]) * 0.08;
+            particleY[i] += (targetY - particleY[i]) * 0.08;
+
+            particle.style.transform = `translate(${particleX[i]}px, ${particleY[i]}px)`;
+          });
+
+          requestAnimationFrame(animateHeroElements);
+        }
+        animateHeroElements();
+      }
+
+      // Ingredience (kornout, karamel) - parallax animace
       const heroDecor = document.querySelector(".hero-decor");
       if (heroDecor) {
         const decorItems = heroDecor.querySelectorAll(".decor-item");
-        let mouseX = 0,
-          mouseY = 0;
-        let currentX = [],
-          currentY = [];
-        let decorVisible = false;
+        let decorMouseX = 0, decorMouseY = 0;
+        let decorCurrentX = [], decorCurrentY = [];
 
-        // Inicializace pozic
         decorItems.forEach(() => {
-          currentX.push(0);
-          currentY.push(0);
+          decorCurrentX.push(0);
+          decorCurrentY.push(0);
         });
 
-        // Intersection Observer - spustí animaci když je hero ve viewportu
-        const decorObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting && !decorVisible) {
-                decorVisible = true;
-                // Postupně zobrazit ingredience
-                decorItems.forEach((item, i) => {
-                  setTimeout(() => {
-                    item.classList.add("visible");
-                    // Po fade-in animaci přidat floating s delším timeoutem pro plynulý přechod
-                    setTimeout(() => {
-                      item.classList.add("floating");
-                    }, 1200);
-                  }, i * 150);
-                });
-              }
-            });
-          },
-          { threshold: 0.3 },
-        );
-        decorObserver.observe(heroDecor);
+        // Zobrazit ingredience po načtení
+        setTimeout(() => {
+          decorItems.forEach((item, i) => {
+            setTimeout(() => {
+              item.classList.add("visible");
+              setTimeout(() => {
+                item.classList.add("floating");
+              }, 1000);
+            }, i * 200);
+          });
+        }, 300);
 
-        // Parallax efekt na pohyb myši
         document.addEventListener("mousemove", (e) => {
-          mouseX = (e.clientX - window.innerWidth / 2) * 0.02;
-          mouseY = (e.clientY - window.innerHeight / 2) * 0.02;
+          decorMouseX = (e.clientX - window.innerWidth / 2) * 0.02;
+          decorMouseY = (e.clientY - window.innerHeight / 2) * 0.02;
         });
 
-        // Plynulá animace pomocí requestAnimationFrame
         function animateDecor() {
           decorItems.forEach((item, i) => {
             if (!item.classList.contains("floating")) return;
 
-            const speed = parseFloat(item.dataset.speed) || 1 + i * 0.3;
-            const targetX = mouseX * speed;
-            const targetY = mouseY * speed;
+            const speed = parseFloat(item.dataset.speed) || 1;
+            const targetX = decorMouseX * speed;
+            const targetY = decorMouseY * speed;
 
-            // Lerp - plynulý přechod
-            currentX[i] += (targetX - currentX[i]) * 0.08;
-            currentY[i] += (targetY - currentY[i]) * 0.08;
+            decorCurrentX[i] += (targetX - decorCurrentX[i]) * 0.06;
+            decorCurrentY[i] += (targetY - decorCurrentY[i]) * 0.06;
 
-            item.style.setProperty("--px", currentX[i] + "px");
-            item.style.setProperty("--py", currentY[i] + "px");
+            item.style.setProperty("--px", decorCurrentX[i] + "px");
+            item.style.setProperty("--py", decorCurrentY[i] + "px");
           });
           requestAnimationFrame(animateDecor);
         }
