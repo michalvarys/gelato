@@ -52,22 +52,23 @@
         border-bottom: 1px solid var(--primary);
       }
 
-      /* Animated overlay - starts transparent, fades to white */
+      /* Animated overlay - starts transparent, fades to gradient */
       .hero::before {
         content: "";
         position: absolute;
         inset: 0;
-        background-color: rgba(255, 255, 255, 0.9);
+        background: linear-gradient(to bottom, #f9fafb, #ffffff);
+        opacity: 0;
         animation: heroOverlayFade 1.5s ease-out forwards;
         z-index: 0;
       }
 
       @keyframes heroOverlayFade {
         0% {
-          background-color: rgba(255, 255, 255, 0);
+          opacity: 0;
         }
         100% {
-          background-color: rgba(255, 255, 255, 0.9);
+          opacity: 0.94;
         }
       }
 
@@ -134,6 +135,364 @@
         to {
           opacity: 1;
           transform: translateY(0);
+        }
+      }
+
+      /* ========== GELATO SCOOP SHAPES ========== */
+      .scoop {
+        position: absolute;
+        border-radius: 50%;
+        transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Large scoop - top right */
+      .scoop-1 {
+        top: -120px;
+        right: -80px;
+        width: 400px;
+        height: 400px;
+        background: linear-gradient(
+          135deg,
+          rgba(6, 182, 212, 0.15),
+          rgba(20, 184, 166, 0.1)
+        );
+        opacity: 0;
+        transform: scale(0.3) translateY(100px);
+        transition-delay: 0.1s;
+      }
+
+      /* Medium scoop - left side */
+      .scoop-2 {
+        top: 30%;
+        left: -100px;
+        width: 280px;
+        height: 280px;
+        background: linear-gradient(
+          145deg,
+          rgba(6, 182, 212, 0.2),
+          rgba(34, 211, 238, 0.12)
+        );
+        opacity: 0;
+        transform: scale(0.3) translateX(-100px);
+        transition-delay: 0.3s;
+      }
+
+      /* Small scoop - bottom right */
+      .scoop-3 {
+        bottom: 15%;
+        right: 5%;
+        width: 180px;
+        height: 180px;
+        background: linear-gradient(
+          160deg,
+          rgba(6, 182, 212, 0.25),
+          rgba(20, 184, 166, 0.15)
+        );
+        opacity: 0;
+        transform: scale(0) rotate(45deg);
+        transition-delay: 0.5s;
+      }
+
+      /* Tiny accent scoop - top left */
+      .scoop-4 {
+        top: 15%;
+        left: 10%;
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(
+          135deg,
+          rgba(34, 211, 238, 0.3),
+          rgba(6, 182, 212, 0.2)
+        );
+        opacity: 0;
+        transform: scale(0);
+        transition-delay: 0.7s;
+      }
+
+      /* Medium scoop - bottom left */
+      .scoop-5 {
+        bottom: 5%;
+        left: 15%;
+        width: 220px;
+        height: 220px;
+        background: linear-gradient(
+          150deg,
+          rgba(6, 182, 212, 0.12),
+          rgba(20, 184, 166, 0.08)
+        );
+        opacity: 0;
+        transform: scale(0.3) translateY(50px);
+        transition-delay: 0.4s;
+      }
+
+      /* Decorative ring */
+      .scoop-ring {
+        position: absolute;
+        border-radius: 50%;
+        border: 3px dashed rgba(6, 182, 212, 0.2);
+        top: 10%;
+        left: 0;
+        width: 600px;
+        height: 600px;
+        transform: translate(-50%, -50%) scale(0.5) rotate(45deg);
+        opacity: 0;
+        transition: all 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0.2s;
+      }
+
+      /* Bottom wave sweep */
+      .hero-wave {
+        position: absolute;
+        bottom: 0;
+        left: -10%;
+        width: 120%;
+        height: 300px;
+        background: linear-gradient(
+          to top,
+          rgba(6, 182, 212, 0.08),
+          transparent
+        );
+        border-radius: 100% 100% 0 0;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0.1s;
+      }
+
+      /* Floating particles */
+      .hero-particle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(6, 182, 212, 0.4);
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+
+      .hero-particle-1 {
+        top: 20%;
+        left: 15%;
+        width: 8px;
+        height: 8px;
+      }
+      .hero-particle-2 {
+        top: 35%;
+        left: 85%;
+        width: 12px;
+        height: 12px;
+      }
+      .hero-particle-3 {
+        top: 75%;
+        left: 20%;
+        width: 6px;
+        height: 6px;
+      }
+      .hero-particle-4 {
+        top: 65%;
+        left: 80%;
+        width: 10px;
+        height: 10px;
+      }
+      .hero-particle-5 {
+        top: 25%;
+        left: 70%;
+        width: 7px;
+        height: 7px;
+      }
+
+      /* Decorative line */
+      .hero-line {
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(to right, #06b6d4, #14b8a6);
+        border-radius: 9999px;
+        margin: 0 auto 2rem;
+        transform: scaleX(0);
+        opacity: 0;
+        transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0.6s;
+      }
+
+      /* Scoop on V letter - ice cream cone effect */
+      .scoop-letter {
+        position: relative;
+        display: inline-block;
+      }
+
+      .scoop-dot {
+        position: absolute;
+        background: var(--primary) !important;
+        -webkit-background-clip: padding-box !important;
+        background-clip: padding-box !important;
+        top: -8px;
+        left: 48%;
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 1.2s;
+        box-shadow: 0 2px 8px rgba(6, 182, 212, 0.4);
+        /* Base squished state */
+        width: 16px;
+        height: 9px;
+        border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
+      }
+
+      /* ========== REVEALED STATES ========== */
+      .hero.revealed .scoop-1 {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        animation: scoopPulse1 8s ease-in-out infinite;
+        animation-delay: 1.5s;
+      }
+
+      .hero.revealed .scoop-2 {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+        animation: scoopPulse2 10s ease-in-out infinite;
+        animation-delay: 2s;
+      }
+
+      .hero.revealed .scoop-3 {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        animation: scoopPulse3 7s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+
+      .hero.revealed .scoop-4 {
+        opacity: 1;
+        transform: scale(1);
+        animation: scoopPulse4 9s ease-in-out infinite;
+        animation-delay: 2.5s;
+      }
+
+      .hero.revealed .scoop-5 {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        animation: scoopPulse5 11s ease-in-out infinite;
+        animation-delay: 0.5s;
+      }
+
+      .hero.revealed .scoop-ring {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+        animation: ringPulse 12s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+
+      .hero.revealed .hero-wave {
+        transform: translateY(40%);
+        opacity: 1;
+      }
+
+      .hero.revealed .hero-particle {
+        opacity: 1;
+      }
+
+      .hero.revealed .hero-line {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+
+      .hero.revealed .scoop-dot {
+        transform: translateX(-50%) translateY(10px) scale(1);
+        opacity: 1;
+        animation: scoopBounce 2.5s ease-in-out infinite;
+        animation-delay: 2s;
+      }
+
+      .hero-tagline {
+        margin-top: 2rem;
+        font-size: 0.8rem;
+        color: #9ca3af;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        transition-delay: 1.4s;
+      }
+
+      .hero.revealed .hero-tagline {
+        opacity: 1;
+      }
+
+      /* ========== SCOOP BREATHING ANIMATIONS ========== */
+      @keyframes scoopPulse1 {
+        0%,
+        100% {
+          transform: scale(1) translateY(0);
+        }
+        50% {
+          transform: scale(1.08) translateY(-10px);
+        }
+      }
+
+      @keyframes scoopPulse2 {
+        0%,
+        100% {
+          transform: scale(1) translateX(0);
+        }
+        50% {
+          transform: scale(1.06) translateX(8px);
+        }
+      }
+
+      @keyframes scoopPulse3 {
+        0%,
+        100% {
+          transform: scale(1) rotate(0deg);
+        }
+        50% {
+          transform: scale(1.1) rotate(3deg);
+        }
+      }
+
+      @keyframes scoopPulse4 {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.15);
+        }
+      }
+
+      @keyframes scoopPulse5 {
+        0%,
+        100% {
+          transform: scale(1) translateY(0);
+        }
+        50% {
+          transform: scale(1.05) translateY(-8px);
+        }
+      }
+
+      @keyframes ringPulse {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) scale(1) rotate(0deg);
+        }
+        50% {
+          transform: translate(-50%, -50%) scale(1.03) rotate(5deg);
+        }
+      }
+
+      @keyframes scoopBounce {
+        0%,
+        100% {
+          /* Squished - wider and shorter at bottom */
+          transform: translateX(-50%) translateY(10px);
+          width: 16px;
+          height: 9px;
+          border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
+        }
+        50% {
+          /* Round - equal width and height at top */
+          transform: translateX(-50%) translateY(-6px);
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
         }
       }
 
@@ -341,6 +700,64 @@
           gap: 32px;
         }
 
+        /* Scoop shapes - smaller on mobile */
+        .scoop-1 {
+          width: 250px;
+          height: 250px;
+          top: -80px;
+          right: -60px;
+        }
+
+        .scoop-2 {
+          width: 180px;
+          height: 180px;
+          left: -60px;
+        }
+
+        .scoop-3 {
+          width: 120px;
+          height: 120px;
+        }
+
+        .scoop-4 {
+          width: 70px;
+          height: 70px;
+        }
+
+        .scoop-5 {
+          width: 150px;
+          height: 150px;
+        }
+
+        .scoop-ring {
+          width: 250px;
+          height: 250px;
+        }
+
+        .hero-wave {
+          height: 200px;
+        }
+
+        .scoop-dot {
+          width: 10px;
+          height: 6px;
+          top: -5px;
+        }
+
+        @keyframes scoopBounce {
+          0%,
+          100% {
+            transform: translateX(-50%) translateY(6px);
+            width: 10px;
+            height: 6px;
+          }
+          50% {
+            transform: translateX(-50%) translateY(-3px);
+            width: 8px;
+            height: 8px;
+          }
+        }
+
         /* Mobile hero background - absolute positioned within hero section */
         .hero::after {
           content: "";
@@ -361,15 +778,17 @@
 
         .hero::before {
           z-index: -1;
+          background: linear-gradient(to bottom, #f9fafb, #ffffff);
+          opacity: 0;
           animation: heroOverlayFade 1.5s ease-out forwards;
         }
 
         @keyframes heroOverlayFade {
           0% {
-            background-color: rgba(255, 255, 255, 0);
+            opacity: 0;
           }
           100% {
-            background-color: rgba(255, 255, 255, 0.8);
+            opacity: 0.92;
           }
         }
 
@@ -616,7 +1035,9 @@
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
           cursor: pointer;
           border: none;
-          transition: transform 0.3s ease, background 0.3s ease;
+          transition:
+            transform 0.3s ease,
+            background 0.3s ease;
         }
 
         .mobile-fab-toggle:active {
@@ -675,7 +1096,9 @@
           align-items: center;
           justify-content: center;
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
         }
 
         .mobile-fab-item:active .mobile-fab-item-icon {
@@ -763,16 +1186,22 @@
         <a href="tel:+420773095809" class="mobile-fab-item">
           <span class="mobile-fab-item-icon">
             <svg viewBox="0 0 24 24">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              />
             </svg>
           </span>
           <span class="mobile-fab-item-label">Zavolat</span>
         </a>
-        <a href="https://maps.google.com/?q=Sokolovská+101,+Karlovy+Vary" target="_blank" class="mobile-fab-item">
+        <a
+          href="https://maps.google.com/?q=Sokolovská+101,+Karlovy+Vary"
+          target="_blank"
+          class="mobile-fab-item"
+        >
           <span class="mobile-fab-item-icon">
             <svg viewBox="0 0 24 24">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3" fill="white"/>
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" fill="white" />
             </svg>
           </span>
           <span class="mobile-fab-item-label">Navigovat</span>
@@ -780,8 +1209,24 @@
       </div>
       <button class="mobile-fab-toggle" aria-label="Kontakt">
         <svg viewBox="0 0 24 24">
-          <line x1="12" y1="5" x2="12" y2="19" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          <line x1="5" y1="12" x2="19" y2="12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line
+            x1="12"
+            y1="5"
+            x2="12"
+            y2="19"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <line
+            x1="5"
+            y1="12"
+            x2="19"
+            y2="12"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
         </svg>
       </button>
     </div>
@@ -843,10 +1288,33 @@
         />
       </div>
 
+      <!-- Gelato scoop decorations -->
+      <div class="scoop scoop-1"></div>
+      <div class="scoop scoop-2"></div>
+      <div class="scoop scoop-3"></div>
+      <div class="scoop scoop-4"></div>
+      <div class="scoop scoop-5"></div>
+      <div class="scoop-ring"></div>
+
+      <!-- Bottom wave -->
+      <div class="hero-wave"></div>
+
+      <!-- Floating particles -->
+      <div class="hero-particle hero-particle-1"></div>
+      <div class="hero-particle hero-particle-2"></div>
+      <div class="hero-particle hero-particle-3"></div>
+      <div class="hero-particle hero-particle-4"></div>
+      <div class="hero-particle hero-particle-5"></div>
+
       <div class="hero-content">
+        <div class="hero-line"></div>
         <h1>
           První Italské <span>Gelato!</span>
-          <small>V Karlových Varech</small>
+          <small
+            >V Karlo<span class="scoop-letter"
+              ><span class="scoop-dot"></span>v</span
+            >ých Varech</small
+          >
         </h1>
         <p>
           <span class="line-bgg"
@@ -856,27 +1324,9 @@
           <span class="mobile-hidden">
             Zajišťujeme kompletní servis a rozvoz po celém kraji.
           </span>
-          <br /><b class="line-bgg">Neděláme jen zmrzlinu, tvoříme zážitek.</b>
         </p>
         <div class="hero-buttons">
-          <a href="pobocka.html" class="btn btn-outline">
-            <svg
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M12 21c-4-4-8-7.5-8-12a8 8 0 1116 0c0 4.5-4 8-8 12z" />
-              <circle cx="12" cy="9" r="2.5" />
-            </svg>
-            <span>Najít pobočku</span>
-          </a>
-
-          <a href="galerie.html" class="btn btn-primary">
+          <a href="o-nas.html" class="btn btn-primary">
             <span class="shimmer-text">Prohlédnout nabídku</span>
             <svg
               viewBox="0 0 24 24"
@@ -892,6 +1342,7 @@
             </svg>
           </a>
         </div>
+        <p class="hero-tagline">Neděláme jen zmrzlinu, tvoříme zážitek.</p>
       </div>
 
       <a href="#quick-links" class="scroll-indicator">
@@ -1237,6 +1688,15 @@
       const header = document.getElementById("header");
       const hamburger = document.getElementById("hamburger");
       const mobileNav = document.getElementById("mobileNav");
+      const hero = document.querySelector(".hero");
+
+      // Trigger hero reveal animations after short delay
+      // This allows the background image to be visible first
+      setTimeout(() => {
+        if (hero) {
+          hero.classList.add("revealed");
+        }
+      }, 100);
 
       window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
