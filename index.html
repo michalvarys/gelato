@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gelato! - Pravé italské gelato v Karlových Varech</title>
+    <meta
+      name="description"
+      content="Pravé italské gelato v Karlových Varech. Objednejte až ke dveřím nebo si užijte catering na vaší akci. Zajišťujeme kompletní servis a rozvoz."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,6 +17,8 @@
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/scroll-to-top.css" />
     <link rel="stylesheet" href="css/scroll-animations.css" />
+    <!-- Preload LCP background image -->
+    <link rel="preload" href="img/pobocka.webp" as="image" fetchpriority="high" />
     <style>
       /* ========== INDEX PAGE SPECIFIC STYLES ========== */
 
@@ -1318,9 +1324,9 @@
     <header class="header transparent" id="header">
       <div class="container header-inner">
         <a href="index.html" class="logo">
-          <img src="img/gelato-logo-dark.svg" />
+          <img src="img/gelato-logo-dark.svg" alt="Gelato! logo" width="472" height="146" />
         </a>
-        <nav class="nav">
+        <nav class="nav" aria-label="Hlavní navigace">
           <!-- <a href="nabidka.html">Nabídka</a> -->
           <a href="galerie.html">Galerie</a>
           <a href="o-nas.html">Co děláme</a>
@@ -1343,16 +1349,16 @@
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
-        <div class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
       </div>
     </header>
 
     <!-- MOBILE NAV -->
-    <nav class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobilní navigace">
       <!-- <a href="nabidka.html">Nabídka</a> -->
       <a href="galerie.html">Galerie</a>
       <a href="o-nas.html">Co děláme</a>
@@ -1386,7 +1392,7 @@
         </a>
         <a
           href="https://maps.google.com/?q=Sokolovská+101,+Karlovy+Vary"
-          target="_blank"
+          target="_blank" rel="noopener noreferrer"
           class="mobile-fab-item"
         >
           <span class="mobile-fab-item-icon">
@@ -1422,6 +1428,7 @@
       </button>
     </div>
 
+    <main>
     <!-- HERO -->
     <section class="hero" id="hero">
       <!-- Dekorativní ingredience s parallax efektem -->
@@ -1616,39 +1623,40 @@
 
     <!-- GALLERY -->
     <section class="gallery">
+      <h2 class="sr-only">Galerie</h2>
       <div class="gallery-grid reveal-stagger">
         <div class="gallery-item">
-          <img src="img/galerie-gelato-1.webp" alt="Gelato v kelímku" />
+          <img src="img/galerie-gelato-1.webp" alt="Gelato v kelímku" width="478" height="597" loading="lazy" decoding="async" />
           <div class="gallery-item-overlay">
             <span>Klasický kelímek</span>
           </div>
         </div>
         <div class="gallery-item">
-          <img src="img/galerie-gelato-2.webp" alt="Dva kelímky gelata" />
+          <img src="img/galerie-gelato-2.webp" alt="Dva kelímky gelata" width="654" height="820" loading="lazy" decoding="async" />
           <div class="gallery-item-overlay">
             <span>Dvojitá porce termoboxů</span>
           </div>
         </div>
         <div class="gallery-item">
-          <img src="img/galerie-gelato-3.webp" alt="Kornouty v vitríně" />
+          <img src="img/galerie-gelato-3.webp" alt="Kornouty v vitríně" width="656" height="818" loading="lazy" decoding="async" />
           <div class="gallery-item-overlay">
             <span>Čerstvé kornouty</span>
           </div>
         </div>
         <div class="gallery-item">
-          <img src="img/galerie-gelato-4.webp" alt="Affogato" />
+          <img src="img/galerie-gelato-4.webp" alt="Affogato" width="652" height="816" loading="lazy" decoding="async" />
           <div class="gallery-item-overlay">
             <span>Affogato</span>
           </div>
         </div>
         <div class="gallery-item">
-          <img src="img/galerie-gelato-5.webp" alt="Gelato s oplatkami" />
+          <img src="img/galerie-gelato-5.webp" alt="Gelato s oplatkami" width="652" height="816" loading="lazy" decoding="async" />
           <div class="gallery-item-overlay">
             <span>Děláno s láskou</span>
           </div>
         </div>
         <div class="gallery-item mobile-only">
-          <img src="img/galerie-1.webp" alt="Gelato catering" />
+          <img src="img/galerie-1.webp" alt="Gelato catering" width="680" height="347" loading="lazy" decoding="async" />
           <div class="gallery-item-overlay">
             <span>Catering</span>
           </div>
@@ -1657,7 +1665,7 @@
 
       <div class="instagram-link">
         více na instagramu
-        <a href="https://instagram.com/gelatokarlovyvary" target="_blank"
+        <a href="https://instagram.com/gelatokarlovyvary" target="_blank" rel="noopener noreferrer"
           >@gelatokarlovyvary</a
         >
       </div>
@@ -1734,6 +1742,7 @@
         <div class="contact-map reveal-right">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2548.8!2d12.8744!3d50.2297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a11d9c8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sSokolovsk%C3%A1%20101%2C%20360%2005%20Karlovy%20Vary!5e0!3m2!1scs!2scz!4v1700000000000!5m2!1scs!2scz"
+            title="Mapa - Gelato! Karlovy Vary, Sokolovská 101"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -1753,7 +1762,7 @@
         <div class="cta-buttons">
           <a
             href="https://instagram.com/gelatokarlovyvary"
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
             class="btn"
           >
             <svg viewBox="0 0 24 24">
@@ -1765,7 +1774,7 @@
           </a>
           <a
             href="https://facebook.com/gelatokarlovyvary"
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
             class="btn"
           >
             <svg viewBox="0 0 24 24">
@@ -1779,13 +1788,15 @@
       </div>
     </section>
 
+    </main>
+
     <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
         <div class="footer-inner">
           <div class="footer-brand">
             <a href="index.html" class="logo">
-              <img src="img/gelato-logo-white.svg" />
+              <img src="img/gelato-logo-white.svg" alt="Gelato! logo" width="472" height="146" loading="lazy" />
             </a>
             <p>Pravé italské gelato vyráběné s láskou v Karlových Varech.</p>
           </div>
@@ -1810,7 +1821,7 @@
             <div class="footer-social">
               <a
                 href="https://instagram.com/gelatokarlovyvary"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 aria-label="Instagram"
               >
                 <svg viewBox="0 0 24 24">
@@ -1821,7 +1832,7 @@
               </a>
               <a
                 href="https://facebook.com/gelatokarlovyvary"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 aria-label="Facebook"
               >
                 <svg viewBox="0 0 24 24">
@@ -1876,6 +1887,8 @@
       hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
         mobileNav.classList.toggle("active");
+        const expanded = hamburger.classList.contains("active");
+        hamburger.setAttribute("aria-expanded", expanded);
       });
 
       // Mobile FAB toggle
@@ -1972,6 +1985,7 @@
         link.addEventListener("click", () => {
           hamburger.classList.remove("active");
           mobileNav.classList.remove("active");
+          hamburger.setAttribute("aria-expanded", "false");
         });
       });
 
