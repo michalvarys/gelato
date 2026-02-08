@@ -582,6 +582,123 @@
         }
       }
 
+      /* ========== WHY GELATO ========== */
+      .why-gelato {
+        padding: 100px 0;
+        background: var(--white);
+        overflow: hidden;
+      }
+
+      .why-gelato-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .why-gelato-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+      }
+
+      .why-gelato-header h2 span {
+        color: var(--primary);
+      }
+
+      .why-gelato-header p {
+        color: var(--gray);
+        font-size: 1.05rem;
+      }
+
+      .why-gelato-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+      }
+
+      .why-gelato-card {
+        background: var(--light-gray);
+        border-radius: 16px;
+        padding: 40px 32px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .why-gelato-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      .why-gelato-icon {
+        width: 64px;
+        height: 64px;
+        background: rgba(6, 182, 212, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+      }
+
+      .why-gelato-icon svg {
+        width: 28px;
+        height: 28px;
+        stroke: var(--primary);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .why-gelato-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+      }
+
+      .why-gelato-card p {
+        color: var(--gray);
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
+      .why-gelato-stat {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 16px;
+        font-size: 0.85rem;
+        color: var(--primary);
+        font-weight: 500;
+      }
+
+      @media (max-width: 1024px) {
+        .why-gelato-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .why-gelato {
+          padding: 50px 0;
+        }
+
+        .why-gelato-header h2 {
+          font-size: 1.8rem;
+        }
+
+        .why-gelato-header {
+          margin-bottom: 40px;
+        }
+
+        .why-gelato-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .why-gelato-card {
+          padding: 30px 24px;
+        }
+      }
+
       /* ========== GALLERY ========== */
       .gallery {
         padding: 80px 0;
@@ -2104,6 +2221,114 @@
         </div>
       </section>
     </div>
+
+    <!-- PROČ GELATO -->
+    <section class="why-gelato">
+      <div class="container">
+        <div class="why-gelato-header reveal">
+          <h2>Proč právě <span>Gelato?</span></h2>
+          <p>Návrat k tradici. Ruční výroba. Neodolatelná chuť.</p>
+        </div>
+
+        <div class="why-gelato-grid reveal-stagger">
+          <div class="why-gelato-card">
+            <div class="why-gelato-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2a5 5 0 0 1 5 5c0 2.76-2.24 5-5 5s-5-2.24-5-5a5 5 0 0 1 5-5z" />
+                <path d="M17 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-1" />
+                <path d="M7 7H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1" />
+                <path d="M8 21h8" />
+                <path d="M12 17v4" />
+              </svg>
+            </div>
+            <h3>Příprava od A do Z</h3>
+            <p>
+              Ručně mícháme a dohlížíme na celý proces výroby od začátku
+              až do konce. Mnoho času a lásky věnujeme vývoji receptů
+              a netradičním chutím.
+            </p>
+          </div>
+
+          <div class="why-gelato-card">
+            <div class="why-gelato-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </div>
+            <h3>Zdravější pochoutka</h3>
+            <p>
+              Gelato je dietnější variantou ledové pochoutky.
+              Hedvábnější struktura a intenzivnější chuť
+              díky pomalému stloukávání s minimem vzduchu.
+            </p>
+            <div class="why-gelato-stat">
+              Pouze 3,8 % tuku
+            </div>
+          </div>
+
+          <div class="why-gelato-card">
+            <div class="why-gelato-icon">
+              <svg viewBox="0 0 24 24">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <h3>Netradiční zážitek</h3>
+            <p>
+              Neděláme jen zmrzlinu – tvoříme příběh a prožitek.
+              Historické pojízdné kolo, ruční kornouty a originální
+              příchutě, které jinde nenajdete.
+            </p>
+          </div>
+
+          <div class="why-gelato-card">
+            <div class="why-gelato-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="1" y="3" width="15" height="13" rx="2" ry="2" />
+                <path d="M16 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1" />
+              </svg>
+            </div>
+            <h3>Hustší struktura</h3>
+            <p>
+              Gelato se stloukává pomaleji, aby nepojalo příliš vzduchu.
+              Výsledkem je hustší konzistence, která se nabírá
+              špachtličkou – tak jako v Itálii.
+            </p>
+          </div>
+
+          <div class="why-gelato-card">
+            <div class="why-gelato-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <h3>Catering na míru</h3>
+            <p>
+              Historické pojízdné kolo perfektně doplní vaši svatbu,
+              narozeniny nebo firemní event. Přivezeme gelato přímo
+              k vám včetně kompletního servisu.
+            </p>
+          </div>
+
+          <div class="why-gelato-card">
+            <div class="why-gelato-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                <line x1="9" y1="9" x2="9.01" y2="9" />
+                <line x1="15" y1="9" x2="15.01" y2="9" />
+              </svg>
+            </div>
+            <h3>Neodolatelná chuť</h3>
+            <p>
+              Při citlivosti na chlad je gelato únosnější díky vyšší
+              servírovací teplotě. Chuť je intenzivnější a hedvábnější
+              než u klasické zmrzliny.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- GALLERY -->
     <section class="gallery" id="galerie">
