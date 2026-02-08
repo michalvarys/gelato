@@ -1134,7 +1134,7 @@ img {
 .about-inner:not(.reverse) .about-image::before {
   bottom: -80px;
   right: -80px;  
-  background: url('../img/decor/element-bg-2.png') no-repeat center;
+  background: url('../img/decor/element-bg-2.webp') no-repeat center;
   background-size: contain;
   left: auto;
 }
@@ -1143,7 +1143,7 @@ img {
 .about-inner.reverse .about-image::before {
   bottom: -80px;
   left: -80px;  
-  background: url('../img/decor/element-bg.png') no-repeat center;
+  background: url('../img/decor/element-bg.webp') no-repeat center;
   background-size: contain;
   right: auto;
 }
