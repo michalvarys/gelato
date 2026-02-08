@@ -896,12 +896,14 @@ img {
 /* ========== HERO DECOR - Ingredience ========== */
 .hero-decor {
   position: absolute !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: auto;
+  left: auto;
+  bottom: -80px;
+  right: -80px;
+  width: 400px;
+  height: 400px;
   pointer-events: none;
-  overflow: hidden;
+  overflow: visible;
   z-index: 2;
 }
 
@@ -964,15 +966,15 @@ img {
 .decor-coconut.floating { animation: decor-float2 5s ease-in-out infinite both; animation-delay: -1s; }
 
 .decor-berry {
-  bottom: 22%;
-  right: 8%;
+  top: 1%;
+  left: 19%;
   width: 105px;
   transition-delay: 0.15s;
 }
 
-.decor-jahoda{
-  bottom: 25%;
-  right: 1%;
+.decor-jahoda {
+  top: 22%;
+  right: 25%;
   width: 80px;
   transition-delay: 0.25s;
   z-index: -1;
@@ -986,25 +988,25 @@ img {
 
 .decor-karamel {
   bottom: 0%;
-  right: 50px;
-  width: 200px;
+  right: 12%;
+  width: 50%;
   transition-delay: 0.25s;
 }
 
 .decor-boruvka {
-  bottom: 28%;
-  right: 10%;
-  width: 80px;
-  transition-delay: 0.25s; 
+  top: 13%;
+  left: 17%;
+  width: 20%;
+  transition-delay: 0.25s;
   z-index: -1;
 }
 
 .decor-boruvka.floating { animation: decor-float3 8.5s ease-in-out infinite both; animation-delay: -0.5s; }
 
 .decor-ostruzina {
-  bottom: 24%;
-  right: 8%;
-  width: 80px;
+  bottom: 55%;
+  right: 5%;
+  width: 20%;
   transition-delay: 0.25s;
 }
 
@@ -1012,10 +1014,17 @@ img {
 .decor-karamel.floating { animation: decor-float3 5.5s ease-in-out infinite both; animation-delay: -3s; }
 
 .decor-pistachio {
-  bottom: 0%;
+  bottom: 25%;
   left: -50px;
   width: 200px;
   transition-delay: 0.25s;
+}
+
+/* Hero-specific pistachio position (relative to 400x400 box) */
+.hero-decor .decor-pistachio {
+  left: auto;
+  right: 60%;
+  width: 50%;
 }
 
 .decor-pistachio.floating { animation: decor-float4 4.5s ease-in-out infinite both; animation-delay: -0.5s; }
@@ -1037,9 +1046,9 @@ img {
 .decor-leaf-2.floating { animation: decor-float6 4.2s ease-in-out infinite both; animation-delay: -2.5s; }
 
 .kornout {
-  bottom: -80px;
-  right: -80px;
-  width: 400px;
+  bottom: 0;
+  right: 0;
+  width: 100%;
   transition-delay: 0.35s;
   /* Animace zprava místo zoom-in */
   opacity: 0;

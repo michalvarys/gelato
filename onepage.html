@@ -1327,6 +1327,53 @@
 
       /* ========== RESPONSIVE ========== */
       @media (max-width: 1024px) {
+        /* Contained decor box for tablet */
+        .hero-decor {
+          position: absolute !important;
+          top: auto;
+          left: auto;
+          width: 31vh;
+          height: 320px;
+          bottom: -40px;
+          right: -40px;
+          pointer-events: none;
+          z-index: 2;
+          overflow: visible;
+        }
+
+        .kornout {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+        }
+
+        .decor-boruvka,
+        .decor-jahoda,
+        .decor-berry {
+          position: absolute;
+        }
+
+        .decor-boruvka {
+          top: -22%;
+          left: 10%;
+          width: 28%;
+        }
+
+        .decor-jahoda {
+          bottom: 35%;
+          right: 15%;
+          width: 22%;
+          z-index: -1;
+        }
+
+        .decor-berry {
+          bottom: 38%;
+          left: auto;
+          right: 35%;
+          width: 28%;
+        }
+
         .gallery-grid {
           grid-template-columns: repeat(3, 1fr);
         }
@@ -1400,38 +1447,53 @@
           animation: heroFadeUp 0.8s ease-out 0.1s forwards;
         }
 
-        /* Kornout + ingredience visible on mobile */
+        /* Decor box - container for kornout + ingredients */
+        .hero-decor {
+          position: absolute !important;
+          top: auto;
+          left: auto;
+          width: 31vh;
+          height: 250px;
+          bottom: -6%;
+          right: -15%;
+          pointer-events: none;
+          z-index: 2;
+          overflow: visible;
+        }
+
         .kornout {
           display: block !important;
-          bottom: -40px;
-          right: -30px;
-          width: 26vh;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 100%;
         }
 
         .decor-boruvka,
         .decor-jahoda,
         .decor-berry {
           display: block !important;
+          position: absolute;
         }
 
         .decor-boruvka {
-          bottom: 18%;
-          right: 23%;
-          width: 7vh;
+          top: -22%;
+          left: 10%;
+          width: 28%;
         }
 
         .decor-jahoda {
-          bottom: 11%;
-          right: 0%;
-          width: 5vh;
-          z-index: 3;
+          bottom: 35%;
+          right: 20%;
+          width: 22%;
+          z-index: -1;
         }
 
         .decor-berry {
-          bottom: 12%;
+          bottom: 66%;
           left: auto;
-          right: 18%;
-          width: 7vh;
+          right: 35%;
+          width: 28%;
         }
 
         /* Mobile hero background - absolute positioned within hero section */
@@ -1523,60 +1585,137 @@
 
         .hero-content {
           gap: 16px;
+          margin-bottom: 100px;
+        }
+      }
+
+      .hero-content h1 {
+        font-size: 1.9rem;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 6px;
+      }
+
+      .hero-content h1 small {
+        font-size: 1rem;
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 24px;
+      }
+
+      .hero-content .line-bg {
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 4px;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+        color: var(--dark) !important;
+      }
+
+      .hero-content p .line-bg {
+        color: var(--gray) !important;
+      }
+
+      .hero-content p b.line-bg {
+        color: var(--primary) !important;
+      }
+
+      .hero-content h1 .primary {
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 2px 8px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 20px;
+        gap: 12px;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .scroll-indicator {
+        bottom: 24px;
+      }
+
+      /* Landscape mobile - reduce decorative elements */
+      @media (max-width: 768px) and (orientation: landscape) {
+        .hero {
+          min-height: auto;
+          padding: 20px 0 40px;
+        }
+
+        .hero-mobile-logo {
+          width: 80px;
+        }
+
+        /* Just shrink the box - ingredients scale automatically */
+        .hero-decor {
+          width: 140px;
+          height: 140px;
+          bottom: -10px;
+          right: -10px;
+        }
+
+        .scoop-1 {
+          width: 140px;
+          height: 140px;
+          top: -50px;
+          right: -40px;
+        }
+
+        .scoop-2 {
+          width: 100px;
+          height: 100px;
+        }
+
+        .scoop-3 {
+          width: 70px;
+          height: 70px;
+        }
+
+        .scoop-4 {
+          width: 40px;
+          height: 40px;
+        }
+
+        .scoop-5 {
+          width: 80px;
+          height: 80px;
+        }
+
+        .scoop-ring {
+          width: 140px;
+          height: 140px;
+        }
+
+        .hero-wave {
+          height: 100px;
         }
 
         .hero-content h1 {
-          font-size: 1.9rem;
-          background-color: rgba(255, 255, 255, 0.5);
-          padding: 6px;
+          font-size: 1.5rem;
         }
 
         .hero-content h1 small {
-          font-size: 1rem;
+          font-size: 0.85rem;
         }
 
         .hero-content p {
-          font-size: 1.1rem;
-          margin-bottom: 24px;
-        }
-
-        .hero-content .line-bg {
-          background-color: rgba(255, 255, 255, 0.7);
-          padding: 4px;
-          box-decoration-break: clone;
-          -webkit-box-decoration-break: clone;
-          color: var(--dark) !important;
-        }
-
-        .hero-content p .line-bg {
-          color: var(--gray) !important;
-        }
-
-        .hero-content p b.line-bg {
-          color: var(--primary) !important;
-        }
-
-        .hero-content h1 .primary {
-          background-color: rgba(255, 255, 255, 0.7);
-          padding: 2px 8px;
+          font-size: 0.95rem;
+          margin-bottom: 12px;
         }
 
         .hero-buttons {
-          flex-direction: column;
-          width: 100%;
+          flex-direction: row;
           padding: 0 20px;
-          gap: 12px;
         }
+      }
 
-        .hero-buttons .btn {
-          width: 100%;
-          justify-content: center;
-        }
-
-        .scroll-indicator {
-          bottom: 24px;
-        }
-
+      @media (max-width: 768px) {
         .gallery {
           padding: 30px 0;
         }
@@ -1807,6 +1946,10 @@
 
         .inquiry-form h3 {
           font-size: 1.2rem;
+        }
+        .decor-boruvka {
+          top: 1%;
+          left: 8%;
         }
       }
 
