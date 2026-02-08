@@ -338,6 +338,11 @@
         border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
       }
 
+      /* Mobile logo in hero */
+      .hero-mobile-logo {
+        display: none;
+      }
+
       /* ========== REVEALED STATES ========== */
       .hero.revealed .scoop-1 {
         opacity: 1;
@@ -698,6 +703,52 @@
           padding: 40px 0 80px;
           background: none;
           gap: 32px;
+        }
+
+        /* Mobile hero logo */
+        .hero-mobile-logo {
+          display: block;
+          width: 120px;
+          height: auto;
+          margin: 0 auto 0;
+          opacity: 0;
+          transform: translateY(20px);
+          animation: heroFadeUp 0.8s ease-out 0.1s forwards;
+        }
+
+        /* Kornout + ingredience visible on mobile */
+        .kornout {
+          display: block !important;
+          bottom: -40px;
+          right: -30px;
+          width: 150px;
+        }
+
+        .decor-berry,
+        .decor-pistachio,
+        .decor-karamel {
+          display: block !important;
+        }
+
+        .decor-berry {
+          bottom: 18%;
+          right: 2%;
+          left: auto;
+          width: 30px;
+        }
+
+        .decor-pistachio {
+          bottom: 10%;
+          left: auto;
+          right: 28%;
+          width: 35px;
+          z-index: 3;
+        }
+
+        .decor-karamel {
+          bottom: 22%;
+          right: 20%;
+          width: 32px;
         }
 
         /* Scoop shapes - smaller on mobile */
@@ -1244,45 +1295,18 @@
           data-speed="0.8"
           alt=""
         />
-        <!-- <img
-          src="img/decor/list-1.png"
-          class="decor-item decor-leaf-1"
-          data-speed="0.8"
-          alt=""
-        /> 
-        <img
-          src="img/decor/kokos.png"
-          class="decor-item decor-coconut"
-          data-speed="1.5"
-          alt=""
-        />
         <img
           src="img/decor/ostruzina.png"
           class="decor-item decor-berry"
           data-speed="1.0"
           alt=""
-        /> 
-        
+        />
         <img
           src="img/decor/pistacie.png"
           class="decor-item decor-pistachio"
           data-speed="1.8"
           alt=""
         />
-
-        <img
-          src="img/decor/cokolada.png"
-          class="decor-item decor-chocolate"
-          data-speed="1.2"
-          alt=""
-        />
-        <img
-          src="img/decor/list-2.png"
-          class="decor-item decor-leaf-2"
-          data-speed="0.6"
-          alt=""
-        /> -->
-
         <img
           src="img/decor/karamel.png"
           class="decor-item decor-karamel"
@@ -1310,6 +1334,7 @@
       <div class="hero-particle hero-particle-5"></div>
 
       <div class="hero-content">
+        <img src="img/gelato-logo-dark.svg" alt="Gelato!" class="hero-mobile-logo" />
         <div class="hero-line"></div>
         <h1>
           První Italské <span>Gelato!</span>

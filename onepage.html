@@ -570,6 +570,11 @@
         animation-delay: 0.4s;
       }
 
+      /* Mobile logo in hero */
+      .hero-mobile-logo {
+        display: none;
+      }
+
       @keyframes chevronPulse {
         0%,
         100% {
@@ -1384,6 +1389,51 @@
           background: none;
         }
 
+        /* Mobile hero logo */
+        .hero-mobile-logo {
+          display: block;
+          width: 120px;
+          height: auto;
+          margin: 0 auto 0;
+          opacity: 0;
+          transform: translateY(20px);
+          animation: heroFadeUp 0.8s ease-out 0.1s forwards;
+        }
+
+        /* Kornout + ingredience visible on mobile */
+        .kornout {
+          display: block !important;
+          bottom: -40px;
+          right: -30px;
+          width: 150px;
+        }
+
+        .decor-boruvka,
+        .decor-jahoda,
+        .decor-berry {
+          display: block !important;
+        }
+
+        .decor-boruvka {
+          bottom: 15%;
+          right: 16%;
+          width: 35px;
+        }
+
+        .decor-jahoda {
+          bottom: 11%;
+          right: 0%;
+          width: 30px;
+          z-index: 3;
+        }
+
+        .decor-berry {
+          bottom: 12%;
+          left: auto;
+          right: 18%;
+          width: 28px;
+        }
+
         /* Mobile hero background - absolute positioned within hero section */
         .hero::after {
           content: "";
@@ -1472,7 +1522,7 @@
         }
 
         .hero-content {
-          gap: 32px;
+          gap: 16px;
         }
 
         .hero-content h1 {
@@ -2040,6 +2090,11 @@
       <div class="hero-particle hero-particle-5"></div>
 
       <div class="hero-content">
+        <img
+          src="img/gelato-logo-dark.svg"
+          alt="Gelato!"
+          class="hero-mobile-logo"
+        />
         <div class="hero-line"></div>
         <h1>
           První Italské <span>Gelato!</span>
