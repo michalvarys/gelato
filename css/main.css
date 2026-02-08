@@ -8,7 +8,7 @@
 
 /* ========== CSS VARIABLES ========== */
 :root {
-  --primary: #35b2ae;
+  --primary: #84c5c3;
   --primary-dark: #346f69;
   --dark: #1d1d1b;
   --gray: #666;
@@ -91,6 +91,7 @@ img {
   font-family: "Kalnia", serif;
   font-size: 1.8rem;
   color: var(--dark);
+  width: 100px;
 }
 
 .logo span {
