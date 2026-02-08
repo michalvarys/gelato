@@ -106,6 +106,13 @@ img {
   font-size: 1.8rem;
   color: var(--dark);
   width: 100px;
+  transition: width 0.3s ease;
+}
+
+@media (min-width: 769px) {
+  .header.transparent:not(.scrolled) .logo {
+    width: 180px;
+  }
 }
 
 .logo span {
