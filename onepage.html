@@ -14,13 +14,28 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/scroll-to-top.css" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="css/scroll-animations.css" media="print" onload="this.media='all'" />
+    <link
+      rel="stylesheet"
+      href="css/scroll-to-top.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/scroll-animations.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
     <!-- Preload LCP background image -->
-    <link rel="preload" href="img/pobocka.webp" as="image" fetchpriority="high" />
+    <link
+      rel="preload"
+      href="img/pobocka.webp"
+      as="image"
+      fetchpriority="high"
+    />
     <style>
       /* ========== ONEPAGE SPECIFIC STYLES ========== */
 
@@ -92,7 +107,9 @@
       .scoop {
         position: absolute;
         border-radius: 50%;
-        transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        transition:
+          opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
         will-change: transform, opacity;
       }
 
@@ -188,7 +205,9 @@
         height: 600px;
         transform: translate(-50%, -50%) scale(0.5) rotate(45deg);
         opacity: 0;
-        transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1), transform 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition:
+          opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 1.4s cubic-bezier(0.4, 0, 0.2, 1);
         transition-delay: 0.2s;
       }
 
@@ -207,7 +226,9 @@
         border-radius: 100% 100% 0 0;
         transform: translateY(100%);
         opacity: 0;
-        transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        transition:
+          opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
         transition-delay: 0.1s;
       }
 
@@ -375,7 +396,9 @@
         margin: 0 auto 2rem;
         transform: scaleX(0);
         opacity: 0;
-        transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        transition:
+          opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         transition-delay: 0.6s;
       }
 
@@ -401,7 +424,9 @@
         color: var(--dark);
         opacity: 0;
         transform: translateY(30px);
-        transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        transition:
+          opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         transition-delay: 0.7s;
       }
 
@@ -441,7 +466,9 @@
         left: 48%;
         transform: translateX(-50%) scale(0);
         opacity: 0;
-        transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        transition:
+          opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         transition-delay: 1.2s;
         box-shadow: 0 2px 8px rgba(6, 182, 212, 0.4);
         width: 12px;
@@ -474,7 +501,9 @@
         margin-bottom: 40px;
         opacity: 0;
         transform: translateY(20px);
-        transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        transition:
+          opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         transition-delay: 0.9s;
       }
 
@@ -495,7 +524,9 @@
         flex-wrap: wrap;
         opacity: 0;
         transform: translateY(20px);
-        transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        transition:
+          opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         transition-delay: 1.1s;
       }
 
@@ -1567,7 +1598,8 @@
         @keyframes scoopBounce {
           0%,
           100% {
-            transform: translateX(-50%) translateY(6px) scaleX(1.25) scaleY(0.75);
+            transform: translateX(-50%) translateY(6px) scaleX(1.25)
+              scaleY(0.75);
           }
           50% {
             transform: translateX(-50%) translateY(-3px) scaleX(1) scaleY(1);
@@ -2079,7 +2111,12 @@
     <header class="header transparent" id="header">
       <div class="container header-inner">
         <a href="#hero" class="logo">
-          <img src="img/gelato-logo-dark.svg" alt="Gelato! logo" width="472" height="146" />
+          <img
+            src="img/gelato-logo-dark.svg"
+            alt="Gelato! logo"
+            width="472"
+            height="146"
+          />
         </a>
         <nav class="nav" aria-label="Hlavní navigace">
           <a href="#o-nas">Co děláme</a>
@@ -2102,7 +2139,12 @@
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
-        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Menu"
+          aria-expanded="false"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -2143,7 +2185,8 @@
         </a>
         <a
           href="https://maps.google.com/?q=Sokolovská+101,+Karlovy+Vary"
-          target="_blank" rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
           class="mobile-fab-item"
         >
           <span class="mobile-fab-item-icon">
@@ -2180,43 +2223,43 @@
     </div>
 
     <main>
-    <!-- HERO -->
-    <section class="hero" id="hero">
-      <!-- Dekorativní ingredience s parallax efektem -->
-      <div class="hero-decor">
-        <img
-          src="img/gelato-kornout-2.webp"
-          class="decor-item kornout"
-          data-speed="0.1"
-          alt=""
-          width="437"
-          height="657"
-        />
-        <img
-          src="img/decor/boruvka.webp"
-          class="decor-item decor-boruvka"
-          data-speed="0.6"
-          alt=""
-          width="600"
-          height="600"
-        />
-        <img
-          src="img/decor/jahoda.webp"
-          class="decor-item decor-jahoda"
-          data-speed="0.6"
-          alt=""
-          width="113"
-          height="134"
-        />
-        <img
-          src="img/decor/angrest.webp"
-          class="decor-item decor-berry"
-          data-speed="0.6"
-          alt=""
-          width="800"
-          height="800"
-        />
-        <!-- <img
+      <!-- HERO -->
+      <section class="hero" id="hero">
+        <!-- Dekorativní ingredience s parallax efektem -->
+        <div class="hero-decor">
+          <img
+            src="img/gelato-kornout-2.webp"
+            class="decor-item kornout"
+            data-speed="0.1"
+            alt=""
+            width="437"
+            height="657"
+          />
+          <img
+            src="img/decor/boruvka.webp"
+            class="decor-item decor-boruvka"
+            data-speed="0.6"
+            alt=""
+            width="600"
+            height="600"
+          />
+          <img
+            src="img/decor/jahoda.webp"
+            class="decor-item decor-jahoda"
+            data-speed="0.6"
+            alt=""
+            width="113"
+            height="134"
+          />
+          <img
+            src="img/decor/angrest.webp"
+            class="decor-item decor-berry"
+            data-speed="0.6"
+            alt=""
+            width="800"
+            height="800"
+          />
+          <!-- <img
           src="img/decor/kornout-hero.webp"
           class="decor-item kornout"
           data-speed="0.8"
@@ -2228,55 +2271,56 @@
           data-speed="0.6"
           alt=""
         />-->
-      </div>
+        </div>
 
-      <!-- Gelato scoop decorations -->
-      <div class="scoop scoop-1"></div>
-      <div class="scoop scoop-2"></div>
-      <div class="scoop scoop-3"></div>
-      <div class="scoop scoop-4"></div>
-      <div class="scoop scoop-5"></div>
-      <div class="scoop-ring"></div>
+        <!-- Gelato scoop decorations -->
+        <div class="scoop scoop-1"></div>
+        <div class="scoop scoop-2"></div>
+        <div class="scoop scoop-3"></div>
+        <div class="scoop scoop-4"></div>
+        <div class="scoop scoop-5"></div>
+        <div class="scoop-ring"></div>
 
-      <!-- Bottom wave -->
-      <div class="hero-wave"></div>
+        <!-- Bottom wave -->
+        <div class="hero-wave"></div>
 
-      <!-- Floating particles -->
-      <div class="hero-particle hero-particle-1"></div>
-      <div class="hero-particle hero-particle-2"></div>
-      <div class="hero-particle hero-particle-3"></div>
-      <div class="hero-particle hero-particle-4"></div>
-      <div class="hero-particle hero-particle-5"></div>
+        <!-- Floating particles -->
+        <div class="hero-particle hero-particle-1"></div>
+        <div class="hero-particle hero-particle-2"></div>
+        <div class="hero-particle hero-particle-3"></div>
+        <div class="hero-particle hero-particle-4"></div>
+        <div class="hero-particle hero-particle-5"></div>
 
-      <div class="hero-content">
-        <img
-          src="img/gelato-logo-dark.svg"
-          alt="Gelato!"
-          class="hero-mobile-logo"
-          width="472"
-          height="146"
-        />
-        <div class="hero-line"></div>
-        <h1>
-          První Italské <span>Gelato!</span>
-          <small>
-            V Karlo<span class="scoop-letter"
-              ><span class="scoop-dot"></span>v</span
-            >ých Varech
-          </small>
-        </h1>
-        <p>
-          <span class="line-bgg"
-            >Objednejte Gelato! až ke dveřím, nebo jím ohromte hosty na své
-            akci.</span
-          >
-          <span class="mobile-hidden">
-            Zajišťujeme kompletní servis a rozvoz po celém kraji.
-          </span>
-          <!-- <br /><b class="line-bgg">Neděláme jen zmrzlinu, tvoříme zážitek.</b> -->
-        </p>
-        <div class="hero-buttons">
-          <!-- <a href="#pobocka" class="btn btn-outline">
+        <div class="hero-content">
+          <img
+            src="img/gelato-logo-dark.svg"
+            alt="Gelato!"
+            class="hero-mobile-logo"
+            width="472"
+            height="146"
+          />
+          <div class="hero-line"></div>
+          <h1>
+            První Italské Gelato!
+            <!-- <span>Gelato!</span> -->
+            <small>
+              V Karlo<span class="scoop-letter"
+                ><span class="scoop-dot"></span>v</span
+              >ých Varech
+            </small>
+          </h1>
+          <p>
+            <span class="line-bgg"
+              >Objednejte Gelato! až ke dveřím, nebo jím ohromte hosty na své
+              akci.</span
+            >
+            <span class="mobile-hidden">
+              Zajišťujeme kompletní servis a rozvoz po celém kraji.
+            </span>
+            <!-- <br /><b class="line-bgg">Neděláme jen zmrzlinu, tvoříme zážitek.</b> -->
+          </p>
+          <div class="hero-buttons">
+            <!-- <a href="#pobocka" class="btn btn-outline">
             <svg
               viewBox="0 0 24 24"
               width="18"
@@ -2292,78 +2336,85 @@
             </svg>
             <span>Najít pobočku</span>
           </a> -->
-          <a href="#o-nas" class="btn btn-primary">
-            <span class="shimmer-text">Prohlédnout nabídku</span>
-            <svg
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-        <p class="hero-tagline">Neděláme jen zmrzlinu, tvoříme zážitek.</p>
-      </div>
-
-      <a href="#o-nas" class="scroll-indicator" aria-label="Přejít na obsah">
-        <div class="scroll-chevrons">
-          <svg viewBox="0 0 30 18" class="chevron chevron-1">
-            <path
-              d="M2 2L15 15L28 2"
-              stroke="currentColor"
-              stroke-width="4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              fill="none"
-            />
-          </svg>
-          <svg viewBox="0 0 30 18" class="chevron chevron-2">
-            <path
-              d="M2 2L15 15L28 2"
-              stroke="currentColor"
-              stroke-width="4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              fill="none"
-            />
-          </svg>
-          <svg viewBox="0 0 30 18" class="chevron chevron-3">
-            <path
-              d="M2 2L15 15L28 2"
-              stroke="currentColor"
-              stroke-width="4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              fill="none"
-            />
-          </svg>
-        </div>
-      </a>
-    </section>
-
-    <!-- O NÁS / CO DĚLÁME -->
-    <div id="o-nas">
-      <!-- ABOUT: VÝROBA -->
-      <section class="about-section">
-        <div class="container about-inner">
-          <div class="about-content reveal-left">
-            <span class="about-number">01</span>
-            <h2>Výroba</h2>
-            <p>
-              Každý den ráno připravujeme čerstvé gelato podle tradičních
-              italských receptů. Používáme pouze přírodní suroviny nejvyšší
-              kvality – čerstvé ovoce, kvalitní pistácie a belgickou čokoládu.
-            </p>
+            <a href="#o-nas" class="btn btn-primary">
+              <span class="shimmer-text">Prohlédnout nabídku</span>
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
-          <div class="about-image reveal-right">
-            <img src="img/vyroba.webp" alt="Výroba gelata" width="800" height="892" loading="lazy" decoding="async" />
-            <!-- <img
+          <p class="hero-tagline">Neděláme jen zmrzlinu, tvoříme zážitek.</p>
+        </div>
+
+        <a href="#o-nas" class="scroll-indicator" aria-label="Přejít na obsah">
+          <div class="scroll-chevrons">
+            <svg viewBox="0 0 30 18" class="chevron chevron-1">
+              <path
+                d="M2 2L15 15L28 2"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
+            </svg>
+            <svg viewBox="0 0 30 18" class="chevron chevron-2">
+              <path
+                d="M2 2L15 15L28 2"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
+            </svg>
+            <svg viewBox="0 0 30 18" class="chevron chevron-3">
+              <path
+                d="M2 2L15 15L28 2"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
+            </svg>
+          </div>
+        </a>
+      </section>
+
+      <!-- O NÁS / CO DĚLÁME -->
+      <div id="o-nas">
+        <!-- ABOUT: VÝROBA -->
+        <section class="about-section">
+          <div class="container about-inner">
+            <div class="about-content reveal-left">
+              <span class="about-number">01</span>
+              <h2>Výroba</h2>
+              <p>
+                Každý den ráno připravujeme čerstvé gelato podle tradičních
+                italských receptů. Používáme pouze přírodní suroviny nejvyšší
+                kvality – čerstvé ovoce, kvalitní pistácie a belgickou čokoládu.
+              </p>
+            </div>
+            <div class="about-image reveal-right">
+              <img
+                src="img/vyroba.webp"
+                alt="Výroba gelata"
+                width="800"
+                height="892"
+                loading="lazy"
+                decoding="async"
+              />
+              <!-- <img
               src="img/decor/jahoda.webp"
               class="about-ingredient about-ing-1"
               data-speed="0.5"
@@ -2375,840 +2426,923 @@
               data-speed="0.3"
               alt=""
             /> -->
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- ABOUT: PRODEJ -->
-      <section class="about-section">
-        <div class="container about-inner reverse">
-          <div class="about-content reveal-right">
-            <span class="about-number">02</span>
-            <h2>Prodej</h2>
-            <p>
-              V naší prodejně na Sokolovské ulici najdete vždy čerstvou nabídku
-              více než 20 příchutí. Kornouty, poháry, nebo domů – máme pro
-              každého to pravé. Ochutnávka je samozřejmostí.
-            </p>
-          </div>
-          <div class="about-image reveal-left">
-            <img src="img/galerie-gelato-4.webp" alt="Prodejna gelata" width="652" height="816" loading="lazy" decoding="async" />
-            <!-- <img src="img/decor/boruvka.webp" class="about-ingredient about-ing-1" data-speed="0.4" alt="" />
+        <!-- ABOUT: PRODEJ -->
+        <section class="about-section">
+          <div class="container about-inner reverse">
+            <div class="about-content reveal-right">
+              <span class="about-number">02</span>
+              <h2>Prodej</h2>
+              <p>
+                V naší prodejně na Sokolovské ulici najdete vždy čerstvou
+                nabídku více než 20 příchutí. Kornouty, poháry, nebo domů – máme
+                pro každého to pravé. Ochutnávka je samozřejmostí.
+              </p>
+            </div>
+            <div class="about-image reveal-left">
+              <img
+                src="img/galerie-gelato-4.webp"
+                alt="Prodejna gelata"
+                width="652"
+                height="816"
+                loading="lazy"
+                decoding="async"
+              />
+              <!-- <img src="img/decor/boruvka.webp" class="about-ingredient about-ing-1" data-speed="0.4" alt="" />
             <img src="img/decor/angrest.webp" class="about-ingredient about-ing-4" data-speed="0.6" alt="" /> -->
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- ABOUT: DISTRIBUCE -->
-      <section class="about-section">
-        <div class="container about-inner">
-          <div class="about-content reveal-left">
-            <span class="about-number">03</span>
-            <h2>Distribuce</h2>
-            <p>
-              Dodáváme naše gelato do kaváren, restaurací a hotelů po celém
-              Karlovarském kraji. Zajišťujeme pravidelné závozy v chladicích
-              vozech, aby vaši hosté mohli vždy ochutnat to nejčerstvější.
-            </p>
-          </div>
-          <div class="about-image reveal-right">
-            <img src="img/galerie-gelato-2.webp" alt="Distribuce gelata" width="654" height="820" loading="lazy" decoding="async" />
-            <!-- <img src="img/decor/kokos.png" class="about-ingredient about-ing-3" data-speed="0.5" alt="" />
+        <!-- ABOUT: DISTRIBUCE -->
+        <section class="about-section">
+          <div class="container about-inner">
+            <div class="about-content reveal-left">
+              <span class="about-number">03</span>
+              <h2>Distribuce</h2>
+              <p>
+                Dodáváme naše gelato do kaváren, restaurací a hotelů po celém
+                Karlovarském kraji. Zajišťujeme pravidelné závozy v chladicích
+                vozech, aby vaši hosté mohli vždy ochutnat to nejčerstvější.
+              </p>
+            </div>
+            <div class="about-image reveal-right">
+              <img
+                src="img/galerie-gelato-2.webp"
+                alt="Distribuce gelata"
+                width="654"
+                height="820"
+                loading="lazy"
+                decoding="async"
+              />
+              <!-- <img src="img/decor/kokos.png" class="about-ingredient about-ing-3" data-speed="0.5" alt="" />
             <img src="img/decor/karamel.webp" class="about-ingredient about-ing-4" data-speed="0.35" alt="" /> -->
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- ABOUT: CATERING -->
-      <section class="about-section">
-        <div class="container about-inner reverse">
-          <div class="about-content reveal-right">
-            <span class="about-number">04</span>
-            <h2>Catering</h2>
-            <p>
-              Udělejte z vaší akce nezapomenutelný zážitek. Svatby, firemní
-              večírky, narozeniny – přivezeme gelato přímo k vám včetně
-              profesionálního servisu. Kontaktujte nás pro nezávaznou nabídku.
-            </p>
-          </div>
-          <div class="about-image reveal-left">
-            <img src="img/catering-2.webp" alt="Catering gelata" width="498" height="330" loading="lazy" decoding="async" />
-            <!-- <img src="img/decor/jahoda.webp" class="about-ingredient about-ing-1" data-speed="0.45" alt="" />
+        <!-- ABOUT: CATERING -->
+        <section class="about-section">
+          <div class="container about-inner reverse">
+            <div class="about-content reveal-right">
+              <span class="about-number">04</span>
+              <h2>Catering</h2>
+              <p>
+                Udělejte z vaší akce nezapomenutelný zážitek. Svatby, firemní
+                večírky, narozeniny – přivezeme gelato přímo k vám včetně
+                profesionálního servisu. Kontaktujte nás pro nezávaznou nabídku.
+              </p>
+            </div>
+            <div class="about-image reveal-left">
+              <img
+                src="img/catering-2.webp"
+                alt="Catering gelata"
+                width="498"
+                height="330"
+                loading="lazy"
+                decoding="async"
+              />
+              <!-- <img src="img/decor/jahoda.webp" class="about-ingredient about-ing-1" data-speed="0.45" alt="" />
             <img src="img/decor/ostruzina.png" class="about-ingredient about-ing-2" data-speed="0.55" alt="" /> -->
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- PROČ GELATO -->
-    <section class="why-gelato">
-      <div class="container">
-        <div class="why-gelato-header reveal">
-          <h2>Proč právě <span>Gelato?</span></h2>
-          <p>Návrat k tradici. Ruční výroba. Neodolatelná chuť.</p>
-        </div>
-
-        <div class="why-gelato-grid reveal-stagger">
-          <div class="why-gelato-card">
-            <div class="why-gelato-icon">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M12 2a5 5 0 0 1 5 5c0 2.76-2.24 5-5 5s-5-2.24-5-5a5 5 0 0 1 5-5z"
-                />
-                <path d="M17 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-1" />
-                <path d="M7 7H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1" />
-                <path d="M8 21h8" />
-                <path d="M12 17v4" />
-              </svg>
             </div>
-            <h3>Příprava od A do Z</h3>
-            <p>
-              Ručně mícháme a dohlížíme na celý proces výroby od začátku až do
-              konce. Mnoho času a lásky věnujeme vývoji receptů a netradičním
-              chutím.
-            </p>
           </div>
-
-          <div class="why-gelato-card">
-            <div class="why-gelato-icon">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                />
-              </svg>
-            </div>
-            <h3>Zdravější pochoutka</h3>
-            <p>
-              Gelato je dietnější variantou ledové pochoutky. Hedvábnější
-              struktura a intenzivnější chuť díky pomalému stloukávání s minimem
-              vzduchu.
-            </p>
-            <div class="why-gelato-stat">Pouze 3,8 % tuku</div>
-          </div>
-
-          <div class="why-gelato-card">
-            <div class="why-gelato-icon">
-              <svg viewBox="0 0 24 24">
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                />
-              </svg>
-            </div>
-            <h3>Netradiční zážitek</h3>
-            <p>
-              Neděláme jen zmrzlinu – tvoříme příběh a prožitek. Historické
-              pojízdné kolo, kornouty do ruky a originální příchutě, které jinde
-              nenajdete.
-            </p>
-          </div>
-
-          <div class="why-gelato-card">
-            <div class="why-gelato-icon">
-              <svg viewBox="0 0 24 24">
-                <rect x="1" y="3" width="15" height="13" rx="2" ry="2" />
-                <path
-                  d="M16 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1"
-                />
-              </svg>
-            </div>
-            <h3>Hustší struktura</h3>
-            <p>
-              Gelato se stloukává pomaleji, aby nepojalo příliš vzduchu.
-              Výsledkem je hustší konzistence, která se nabírá špachtličkou –
-              tak jako v Itálii.
-            </p>
-          </div>
-
-          <div class="why-gelato-card">
-            <div class="why-gelato-icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-            </div>
-            <h3>Catering na míru</h3>
-            <p>
-              Historické pojízdné kolo perfektně doplní vaši svatbu, narozeniny
-              nebo firemní event. Přivezeme gelato přímo k vám včetně
-              kompletního servisu.
-            </p>
-          </div>
-
-          <div class="why-gelato-card">
-            <div class="why-gelato-icon">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
-                <line x1="9" y1="9" x2="9.01" y2="9" />
-                <line x1="15" y1="9" x2="15.01" y2="9" />
-              </svg>
-            </div>
-            <h3>Neodolatelná chuť</h3>
-            <p>
-              Při citlivosti na chlad je gelato únosnější díky vyšší servírovací
-              teplotě. Chuť je intenzivnější a hedvábnější než u klasické
-              zmrzliny.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section class="gallery" id="galerie">
-      <h2 class="sr-only">Galerie</h2>
-      <div class="gallery-grid reveal-stagger">
-        <div class="gallery-item">
-          <img src="img/galerie-gelato-1.webp" alt="Gelato v kelímku" width="478" height="597" loading="lazy" decoding="async" />
-          <div class="gallery-item-overlay">
-            <span>Klasický kelímek</span>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="img/galerie-gelato-2.webp" alt="Dva kelímky gelata" width="500" height="627" loading="lazy" decoding="async" />
-          <div class="gallery-item-overlay">
-            <span>Dvojitá porce termoboxů</span>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="img/galerie-gelato-3.webp" alt="Kornouty v vitríně" width="500" height="624" loading="lazy" decoding="async" />
-          <div class="gallery-item-overlay">
-            <span>Čerstvé kornouty</span>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="img/galerie-gelato-4.webp" alt="Affogato" width="500" height="626" loading="lazy" decoding="async" />
-          <div class="gallery-item-overlay">
-            <span>Affogato</span>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="img/vlastni-vyroba.webp" alt="Gelato s oplatkami" width="500" height="626" loading="lazy" decoding="async" />
-          <div class="gallery-item-overlay">
-            <span>Děláno s láskou</span>
-          </div>
-        </div>
-        <div class="gallery-item mobile-only">
-          <img src="img/catering-2.webp" alt="Gelato catering" width="498" height="330" loading="lazy" decoding="async" />
-          <div class="gallery-item-overlay">
-            <span>Catering</span>
-          </div>
-        </div>
+        </section>
       </div>
 
-      <div class="instagram-link">
-        více na instagramu
-        <a href="https://instagram.com/gelatokarlovyvary" target="_blank" rel="noopener noreferrer"
-          >@gelatokarlovyvary</a
-        >
-      </div>
-    </section>
-
-    <!-- RECENZE -->
-    <section class="reviews-wrapper" id="recenze">
-      <h2 class="sr-only">Recenze</h2>
-      <div class="marquee-row track-top">
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-1">T</div>
-            <div class="review-author-info">
-              <h3>Tereza Herodesová</h3>
-              <span>Místní průvodce</span>
-            </div>
+      <!-- PROČ GELATO -->
+      <section class="why-gelato">
+        <div class="container">
+          <div class="why-gelato-header reveal">
+            <h2>Proč právě <span>Gelato?</span></h2>
+            <p>Návrat k tradici. Ruční výroba. Neodolatelná chuť.</p>
           </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Vynikající zmrzlina!!! Vyrovná se pravé, italské .. plus jejich auto
-            je špička včetně SPZ
-          </p>
-        </article>
 
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-2">K</div>
-            <div class="review-author-info">
-              <h3>Karolina Šauerová</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Výborné gelato! Sorbety osvěžující, citron kyselý jak má být, mango
-            sladké...za mě nejlepší.
-          </p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-3">V</div>
-            <div class="review-author-info">
-              <h3>Veronika Valešová</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Luxusní zmrzlina, opravdu jedna z nejlepších. Porce jsou obrovské.
-            Velmi milá obsluha a příjemné posezení.
-          </p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-4">M</div>
-            <div class="review-author-info">
-              <h3>Martin Dvořák</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Skvělá káva a zmrzlina ....snad nejlepší co jsem ochutnal. Personál
-            vstřícný, vše super.
-          </p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-5">L</div>
-            <div class="review-author-info">
-              <h3>Las Pegas</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Nejlepší zmrzlina ve Varech! Kvalitní suroviny a skvělá káva.
-            Naprostá spokojenost.
-          </p>
-        </article>
-
-        <!-- Duplikované pro plynulou animaci -->
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-1">T</div>
-            <div class="review-author-info">
-              <h3>Tereza Herodesová</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Vynikající zmrzlina!!! Vyrovná se pravé, italské .. plus jejich auto
-            je špička včetně SPZ
-          </p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-2">K</div>
-            <div class="review-author-info">
-              <h3>Karolina Šauerová</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Výborné gelato! Sorbety osvěžující, citron kyselý jak má být, mango
-            sladké...za mě nejlepší.
-          </p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-3">V</div>
-            <div class="review-author-info">
-              <h3>Veronika Valešová</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Luxusní zmrzlina, opravdu jedna z nejlepších. Porce jsou obrovské.
-            Velmi milá obsluha a příjemné posezení.
-          </p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-4">M</div>
-            <div class="review-author-info">
-              <h3>Martin Dvořák</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Skvělá káva a zmrzlina ....snad nejlepší co jsem ochutnal. Personál
-            vstřícný, vše super.
-          </p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-5">L</div>
-            <div class="review-author-info">
-              <h3>Las Pegas</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Nejlepší zmrzlina ve Varech! Kvalitní suroviny a skvělá káva.
-            Naprostá spokojenost.
-          </p>
-        </article>
-      </div>
-
-      <div class="marquee-row track-bottom">
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-6">M</div>
-            <div class="review-author-info">
-              <h3>Marek Veit</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Návštěvu tohoto podniku si nemohu vynachválit. Zážitek vyplývající z
-            kvality a chutí zmrzlin výrazně převyšuje její cenu.
-          </p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-1">A</div>
-            <div class="review-author-info">
-              <h3>Adam Eschka</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Pravé gelato v KV! Super milá obsluha. Pistaciová a raffaelo úplně
-            geniální!
-          </p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-2">D</div>
-            <div class="review-author-info">
-              <h3>Daniel Vidlak</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Rozmazlený z pražských zmrzlináren musím uznat, že toto je skvost.
-            Kvalitní příchutě, ale především úžasná konzistence.
-          </p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-3">A</div>
-            <div class="review-author-info">
-              <h3>Antonín Petras</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Škoda toho místa na Sokolovské, ale stojí za to si tam tu zmrzku
-            dát. Vždycky je nejen dobrá, ale v ideální teplotě pro výdej.
-          </p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-4">L</div>
-            <div class="review-author-info">
-              <h3>Lukáš Gala</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Pokud chcete zažít úžasnou chuť kvalitní zmrzliny tak určitě
-            vyhledejte. V Karlových Varech lepší zmrzlinu nenajdete.
-          </p>
-        </article>
-
-        <!-- Duplikované pro plynulou animaci -->
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-6">M</div>
-            <div class="review-author-info">
-              <h3>Marek Veit</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Návštěvu tohoto podniku si nemohu vynachválit. Zážitek vyplývající z
-            kvality a chutí zmrzlin výrazně převyšuje její cenu.
-          </p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-1">A</div>
-            <div class="review-author-info">
-              <h3>Adam Eschka</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Pravé gelato v KV! Super milá obsluha. Pistaciová a raffaelo úplně
-            geniální!
-          </p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-2">D</div>
-            <div class="review-author-info">
-              <h3>Daniel Vidlak</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Rozmazlený z pražských zmrzlináren musím uznat, že toto je skvost.
-            Kvalitní příchutě, ale především úžasná konzistence.
-          </p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-3">A</div>
-            <div class="review-author-info">
-              <h3>Antonín Petras</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Škoda toho místa na Sokolovské, ale stojí za to si tam tu zmrzku
-            dát. Vždycky je nejen dobrá, ale v ideální teplotě pro výdej.
-          </p>
-        </article>
-
-        <article class="review-card">
-          <div class="review-author">
-            <div class="review-avatar color-4">L</div>
-            <div class="review-author-info">
-              <h3>Lukáš Gala</h3>
-              <span>Místní průvodce</span>
-            </div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Pokud chcete zažít úžasnou chuť kvalitní zmrzliny tak určitě
-            vyhledejte. V Karlových Varech lepší zmrzlinu nenajdete.
-          </p>
-        </article>
-      </div>
-
-      <div class="google-reviews-link">
-        <a
-          href="https://www.google.com/maps/place/Gelato!/@50.2340807,12.8545382,17z/data=!4m8!3m7!1s0x47a099d6b7241ecb:0x796ab8eb9a069042!8m2!3d50.2339055!4d12.8546059!9m1!1b1!16s%2Fg%2F11fl8drt3y?entry=ttu"
-          target="_blank" rel="noopener noreferrer"
-          rel="noopener noreferrer"
-        >
-          <svg viewBox="0 0 24 24" width="24" height="24">
-            <path
-              fill="#4285F4"
-              d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-            />
-            <path
-              fill="#34A853"
-              d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-            />
-            <path
-              fill="#FBBC05"
-              d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-            />
-            <path
-              fill="#EA4335"
-              d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-            />
-          </svg>
-          Recenze na Google
-        </a>
-      </div>
-    </section>
-
-    <!-- POBOČKA -->
-    <section class="location" id="pobocka">
-      <div class="container location-inner">
-        <div class="location-images">
-          <img src="img/pobocka.webp" alt="Interiér pobočky" width="680" height="347" loading="lazy" decoding="async" />
-          <img src="img/pobocka2.webp" alt="Exteriér pobočky" width="500" height="668" loading="lazy" decoding="async" />
-        </div>
-        <div class="location-content reveal-left">
-          <h2>Kde nás najdete</h2>
-          <p>
-            Naše prodejna se nachází na Sokolovské ulici v Karlových Varech.
-            Přijďte ochutnat kvalitní italské gelato a užijte si příjemnou
-            atmosféru.
-          </p>
-
-          <div class="location-info reveal-stagger">
-            <div class="contact-item">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                />
-              </svg>
-              <div>
-                <h3>Telefon</h3>
-                <p>+420 773 09 58 09</p>
-                <span class="badge">Catering</span>
-                <span class="badge">Svatby</span>
-                <span class="badge">Festivaly</span>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <svg viewBox="0 0 24 24">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <div>
-                <h3>Adresa</h3>
-                <p>Sokolovská 101<br />Karlovy Vary 360 05</p>
-                <span class="badge">Sezónní provoz</span>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-              <div>
-                <h3>Otevírací doba</h3>
-                <p>Po - Ne: 12:00 - 18:00</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-              <div>
-                <h3>E-mail</h3>
-                <p>gelatokv@seznam.cz</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MAP -->
-    <section class="map-section">
-      <div class="map-container reveal-scale">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2548.8!2d12.8744!3d50.2297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a11d9c8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sSokolovsk%C3%A1%20101%2C%20360%2005%20Karlovy%20Vary!5e0!3m2!1scs!2scz!4v1700000000000!5m2!1scs!2scz"
-          title="Mapa - Gelato! Karlovy Vary, Sokolovská 101"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-    </section>
-
-    <!-- POPTÁVKA -->
-    <section class="inquiry" id="poptavka">
-      <div class="container inquiry-inner">
-        <div class="inquiry-info reveal-left">
-          <h2>Máte zájem o catering<span>?</span></h2>
-          <p>
-            Udělejte z vaší akce nezapomenutelný zážitek. Svatby, firemní
-            večírky, festivaly nebo workshopy – přivezeme gelato přímo k vám
-            včetně profesionálního servisu.
-          </p>
-
-          <div class="inquiry-features">
-            <div class="inquiry-feature">
-              <div class="inquiry-feature-icon">
+          <div class="why-gelato-grid reveal-stagger">
+            <div class="why-gelato-card">
+              <div class="why-gelato-icon">
                 <svg viewBox="0 0 24 24">
-                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  <path d="M2 17l10 5 10-5" />
-                  <path d="M2 12l10 5 10-5" />
+                  <path
+                    d="M12 2a5 5 0 0 1 5 5c0 2.76-2.24 5-5 5s-5-2.24-5-5a5 5 0 0 1 5-5z"
+                  />
+                  <path d="M17 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-1" />
+                  <path d="M7 7H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1" />
+                  <path d="M8 21h8" />
+                  <path d="M12 17v4" />
                 </svg>
               </div>
-              <div>
-                <h3>Kompletní servis</h3>
-                <p>Přivezeme vše potřebné včetně vybavení</p>
-              </div>
+              <h3>Příprava od A do Z</h3>
+              <p>
+                Ručně mícháme a dohlížíme na celý proces výroby od začátku až do
+                konce. Mnoho času a lásky věnujeme vývoji receptů a netradičním
+                chutím.
+              </p>
             </div>
 
-            <div class="inquiry-feature">
-              <div class="inquiry-feature-icon">
-                <svg viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12 6 12 12 16 14" />
-                </svg>
-              </div>
-              <div>
-                <h3>Flexibilní termíny</h3>
-                <p>Přizpůsobíme se vašemu programu</p>
-              </div>
-            </div>
-
-            <div class="inquiry-feature">
-              <div class="inquiry-feature-icon">
+            <div class="why-gelato-card">
+              <div class="why-gelato-icon">
                 <svg viewBox="0 0 24 24">
                   <path
                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
                   />
                 </svg>
               </div>
-              <div>
-                <h3>Osobní přístup</h3>
-                <p>Každou akci řešíme individuálně</p>
+              <h3>Zdravější pochoutka</h3>
+              <p>
+                Gelato je dietnější variantou ledové pochoutky. Hedvábnější
+                struktura a intenzivnější chuť díky pomalému stloukávání s
+                minimem vzduchu.
+              </p>
+              <div class="why-gelato-stat">Pouze 3,8 % tuku</div>
+            </div>
+
+            <div class="why-gelato-card">
+              <div class="why-gelato-icon">
+                <svg viewBox="0 0 24 24">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+              </div>
+              <h3>Netradiční zážitek</h3>
+              <p>
+                Neděláme jen zmrzlinu – tvoříme příběh a prožitek. Historické
+                pojízdné kolo, kornouty do ruky a originální příchutě, které
+                jinde nenajdete.
+              </p>
+            </div>
+
+            <div class="why-gelato-card">
+              <div class="why-gelato-icon">
+                <svg viewBox="0 0 24 24">
+                  <rect x="1" y="3" width="15" height="13" rx="2" ry="2" />
+                  <path
+                    d="M16 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1"
+                  />
+                </svg>
+              </div>
+              <h3>Hustší struktura</h3>
+              <p>
+                Gelato se stloukává pomaleji, aby nepojalo příliš vzduchu.
+                Výsledkem je hustší konzistence, která se nabírá špachtličkou –
+                tak jako v Itálii.
+              </p>
+            </div>
+
+            <div class="why-gelato-card">
+              <div class="why-gelato-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <h3>Catering na míru</h3>
+              <p>
+                Historické pojízdné kolo perfektně doplní vaši svatbu,
+                narozeniny nebo firemní event. Přivezeme gelato přímo k vám
+                včetně kompletního servisu.
+              </p>
+            </div>
+
+            <div class="why-gelato-card">
+              <div class="why-gelato-icon">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                  <line x1="9" y1="9" x2="9.01" y2="9" />
+                  <line x1="15" y1="9" x2="15.01" y2="9" />
+                </svg>
+              </div>
+              <h3>Neodolatelná chuť</h3>
+              <p>
+                Při citlivosti na chlad je gelato únosnější díky vyšší
+                servírovací teplotě. Chuť je intenzivnější a hedvábnější než u
+                klasické zmrzliny.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="gallery" id="galerie">
+        <h2 class="sr-only">Galerie</h2>
+        <div class="gallery-grid reveal-stagger">
+          <div class="gallery-item">
+            <img
+              src="img/galerie-gelato-1.webp"
+              alt="Gelato v kelímku"
+              width="478"
+              height="597"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="gallery-item-overlay">
+              <span>Klasický kelímek</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="img/galerie-gelato-2.webp"
+              alt="Dva kelímky gelata"
+              width="500"
+              height="627"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="gallery-item-overlay">
+              <span>Dvojitá porce termoboxů</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="img/galerie-gelato-3.webp"
+              alt="Kornouty v vitríně"
+              width="500"
+              height="624"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="gallery-item-overlay">
+              <span>Čerstvé kornouty</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="img/galerie-gelato-4.webp"
+              alt="Affogato"
+              width="500"
+              height="626"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="gallery-item-overlay">
+              <span>Affogato</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="img/vlastni-vyroba.webp"
+              alt="Gelato s oplatkami"
+              width="500"
+              height="626"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="gallery-item-overlay">
+              <span>Děláno s láskou</span>
+            </div>
+          </div>
+          <div class="gallery-item mobile-only">
+            <img
+              src="img/catering-2.webp"
+              alt="Gelato catering"
+              width="498"
+              height="330"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="gallery-item-overlay">
+              <span>Catering</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="instagram-link">
+          více na instagramu
+          <a
+            href="https://instagram.com/gelatokarlovyvary"
+            target="_blank"
+            rel="noopener noreferrer"
+            >@gelatokarlovyvary</a
+          >
+        </div>
+      </section>
+
+      <!-- RECENZE -->
+      <section class="reviews-wrapper" id="recenze">
+        <h2 class="sr-only">Recenze</h2>
+        <div class="marquee-row track-top">
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-1">T</div>
+              <div class="review-author-info">
+                <h3>Tereza Herodesová</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Vynikající zmrzlina!!! Vyrovná se pravé, italské .. plus jejich
+              auto je špička včetně SPZ
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-2">K</div>
+              <div class="review-author-info">
+                <h3>Karolina Šauerová</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Výborné gelato! Sorbety osvěžující, citron kyselý jak má být,
+              mango sladké...za mě nejlepší.
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-3">V</div>
+              <div class="review-author-info">
+                <h3>Veronika Valešová</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Luxusní zmrzlina, opravdu jedna z nejlepších. Porce jsou obrovské.
+              Velmi milá obsluha a příjemné posezení.
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-4">M</div>
+              <div class="review-author-info">
+                <h3>Martin Dvořák</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Skvělá káva a zmrzlina ....snad nejlepší co jsem ochutnal.
+              Personál vstřícný, vše super.
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-5">L</div>
+              <div class="review-author-info">
+                <h3>Las Pegas</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Nejlepší zmrzlina ve Varech! Kvalitní suroviny a skvělá káva.
+              Naprostá spokojenost.
+            </p>
+          </article>
+
+          <!-- Duplikované pro plynulou animaci -->
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-1">T</div>
+              <div class="review-author-info">
+                <h3>Tereza Herodesová</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Vynikající zmrzlina!!! Vyrovná se pravé, italské .. plus jejich
+              auto je špička včetně SPZ
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-2">K</div>
+              <div class="review-author-info">
+                <h3>Karolina Šauerová</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Výborné gelato! Sorbety osvěžující, citron kyselý jak má být,
+              mango sladké...za mě nejlepší.
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-3">V</div>
+              <div class="review-author-info">
+                <h3>Veronika Valešová</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Luxusní zmrzlina, opravdu jedna z nejlepších. Porce jsou obrovské.
+              Velmi milá obsluha a příjemné posezení.
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-4">M</div>
+              <div class="review-author-info">
+                <h3>Martin Dvořák</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Skvělá káva a zmrzlina ....snad nejlepší co jsem ochutnal.
+              Personál vstřícný, vše super.
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-5">L</div>
+              <div class="review-author-info">
+                <h3>Las Pegas</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Nejlepší zmrzlina ve Varech! Kvalitní suroviny a skvělá káva.
+              Naprostá spokojenost.
+            </p>
+          </article>
+        </div>
+
+        <div class="marquee-row track-bottom">
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-6">M</div>
+              <div class="review-author-info">
+                <h3>Marek Veit</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Návštěvu tohoto podniku si nemohu vynachválit. Zážitek vyplývající
+              z kvality a chutí zmrzlin výrazně převyšuje její cenu.
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-1">A</div>
+              <div class="review-author-info">
+                <h3>Adam Eschka</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Pravé gelato v KV! Super milá obsluha. Pistaciová a raffaelo úplně
+              geniální!
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-2">D</div>
+              <div class="review-author-info">
+                <h3>Daniel Vidlak</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Rozmazlený z pražských zmrzlináren musím uznat, že toto je skvost.
+              Kvalitní příchutě, ale především úžasná konzistence.
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-3">A</div>
+              <div class="review-author-info">
+                <h3>Antonín Petras</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Škoda toho místa na Sokolovské, ale stojí za to si tam tu zmrzku
+              dát. Vždycky je nejen dobrá, ale v ideální teplotě pro výdej.
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-4">L</div>
+              <div class="review-author-info">
+                <h3>Lukáš Gala</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Pokud chcete zažít úžasnou chuť kvalitní zmrzliny tak určitě
+              vyhledejte. V Karlových Varech lepší zmrzlinu nenajdete.
+            </p>
+          </article>
+
+          <!-- Duplikované pro plynulou animaci -->
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-6">M</div>
+              <div class="review-author-info">
+                <h3>Marek Veit</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Návštěvu tohoto podniku si nemohu vynachválit. Zážitek vyplývající
+              z kvality a chutí zmrzlin výrazně převyšuje její cenu.
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-1">A</div>
+              <div class="review-author-info">
+                <h3>Adam Eschka</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Pravé gelato v KV! Super milá obsluha. Pistaciová a raffaelo úplně
+              geniální!
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-2">D</div>
+              <div class="review-author-info">
+                <h3>Daniel Vidlak</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Rozmazlený z pražských zmrzlináren musím uznat, že toto je skvost.
+              Kvalitní příchutě, ale především úžasná konzistence.
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-3">A</div>
+              <div class="review-author-info">
+                <h3>Antonín Petras</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Škoda toho místa na Sokolovské, ale stojí za to si tam tu zmrzku
+              dát. Vždycky je nejen dobrá, ale v ideální teplotě pro výdej.
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-author">
+              <div class="review-avatar color-4">L</div>
+              <div class="review-author-info">
+                <h3>Lukáš Gala</h3>
+                <span>Místní průvodce</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              Pokud chcete zažít úžasnou chuť kvalitní zmrzliny tak určitě
+              vyhledejte. V Karlových Varech lepší zmrzlinu nenajdete.
+            </p>
+          </article>
+        </div>
+
+        <div class="google-reviews-link">
+          <a
+            href="https://www.google.com/maps/place/Gelato!/@50.2340807,12.8545382,17z/data=!4m8!3m7!1s0x47a099d6b7241ecb:0x796ab8eb9a069042!8m2!3d50.2339055!4d12.8546059!9m1!1b1!16s%2Fg%2F11fl8drt3y?entry=ttu"
+            target="_blank"
+            rel="noopener noreferrer"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" width="24" height="24">
+              <path
+                fill="#4285F4"
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+              />
+              <path
+                fill="#34A853"
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+              />
+              <path
+                fill="#FBBC05"
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+              />
+              <path
+                fill="#EA4335"
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+              />
+            </svg>
+            Recenze na Google
+          </a>
+        </div>
+      </section>
+
+      <!-- POBOČKA -->
+      <section class="location" id="pobocka">
+        <div class="container location-inner">
+          <div class="location-images">
+            <img
+              src="img/pobocka.webp"
+              alt="Interiér pobočky"
+              width="680"
+              height="347"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src="img/pobocka2.webp"
+              alt="Exteriér pobočky"
+              width="500"
+              height="668"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="location-content reveal-left">
+            <h2>Kde nás najdete</h2>
+            <p>
+              Naše prodejna se nachází na Sokolovské ulici v Karlových Varech.
+              Přijďte ochutnat kvalitní italské gelato a užijte si příjemnou
+              atmosféru.
+            </p>
+
+            <div class="location-info reveal-stagger">
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+                <div>
+                  <h3>Telefon</h3>
+                  <p>+420 773 09 58 09</p>
+                  <span class="badge">Catering</span>
+                  <span class="badge">Svatby</span>
+                  <span class="badge">Festivaly</span>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <div>
+                  <h3>Adresa</h3>
+                  <p>Sokolovská 101<br />Karlovy Vary 360 05</p>
+                  <span class="badge">Sezónní provoz</span>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                <div>
+                  <h3>Otevírací doba</h3>
+                  <p>Po - Ne: 12:00 - 18:00</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                <div>
+                  <h3>E-mail</h3>
+                  <p>gelatokv@seznam.cz</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <form class="inquiry-form reveal-right" action="#" method="POST">
-          <h3>Vyplňte formulář</h3>
-          <p>Ozveme se vám do 24 hodin.</p>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Jméno a příjmení *</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Jan Novák"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="email">E-mail *</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="jan@email.cz"
-                required
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="phone">Telefon</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="+420 123 456 789"
-              />
-            </div>
-            <div class="form-group">
-              <label for="event-type">Typ akce *</label>
-              <select id="event-type" name="event-type" required>
-                <option value="" disabled selected>Vyberte typ akce</option>
-                <option value="svatba">Svatba</option>
-                <option value="firemni-akce">Firemní akce</option>
-                <option value="narozeniny">Narozeniny / Oslava</option>
-                <option value="festival">Festival / Veřejná akce</option>
-                <option value="workshop">Workshop</option>
-                <option value="jine">Jiné</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="date">Předpokládaný termín</label>
-              <input type="date" id="date" name="date" />
-            </div>
-            <div class="form-group">
-              <label for="guests">Počet hostů</label>
-              <input
-                type="number"
-                id="guests"
-                name="guests"
-                placeholder="cca 50"
-                min="1"
-              />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Zpráva</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Popište nám vaši akci, místo konání a další detaily..."
-            ></textarea>
-          </div>
-
-          <button type="submit" class="btn-submit">
-            Odeslat poptávku
-            <svg viewBox="0 0 24 24">
-              <line x1="22" y1="2" x2="11" y2="13" />
-              <polygon points="22 2 15 22 11 13 2 9 22 2" />
-            </svg>
-          </button>
-
-          <p class="form-note">
-            * Povinné pole. Vaše údaje zpracováváme v souladu s GDPR.
-          </p>
-        </form>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-      <div class="container reveal">
-        <h2>Sledujte nás</h2>
-        <p>
-          Pro novinky a speciální akce nás můžete sledovat na sociálních sítích.
-        </p>
-        <div class="cta-buttons">
-          <a
-            href="https://instagram.com/gelatokarlovyvary"
-            target="_blank" rel="noopener noreferrer"
-            class="btn"
-          >
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-              />
-            </svg>
-            Instagram
-          </a>
-          <a
-            href="https://facebook.com/gelatokarlovyvary"
-            target="_blank" rel="noopener noreferrer"
-            class="btn"
-          >
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-              />
-            </svg>
-            Facebook
-          </a>
+      <!-- MAP -->
+      <section class="map-section">
+        <div class="map-container reveal-scale">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2548.8!2d12.8744!3d50.2297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a11d9c8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sSokolovsk%C3%A1%20101%2C%20360%2005%20Karlovy%20Vary!5e0!3m2!1scs!2scz!4v1700000000000!5m2!1scs!2scz"
+            title="Mapa - Gelato! Karlovy Vary, Sokolovská 101"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
-      </div>
-    </section>
+      </section>
 
+      <!-- POPTÁVKA -->
+      <section class="inquiry" id="poptavka">
+        <div class="container inquiry-inner">
+          <div class="inquiry-info reveal-left">
+            <h2>Máte zájem o catering<span>?</span></h2>
+            <p>
+              Udělejte z vaší akce nezapomenutelný zážitek. Svatby, firemní
+              večírky, festivaly nebo workshopy – přivezeme gelato přímo k vám
+              včetně profesionálního servisu.
+            </p>
+
+            <div class="inquiry-features">
+              <div class="inquiry-feature">
+                <div class="inquiry-feature-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                  </svg>
+                </div>
+                <div>
+                  <h3>Kompletní servis</h3>
+                  <p>Přivezeme vše potřebné včetně vybavení</p>
+                </div>
+              </div>
+
+              <div class="inquiry-feature">
+                <div class="inquiry-feature-icon">
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                </div>
+                <div>
+                  <h3>Flexibilní termíny</h3>
+                  <p>Přizpůsobíme se vašemu programu</p>
+                </div>
+              </div>
+
+              <div class="inquiry-feature">
+                <div class="inquiry-feature-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3>Osobní přístup</h3>
+                  <p>Každou akci řešíme individuálně</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form class="inquiry-form reveal-right" action="#" method="POST">
+            <h3>Vyplňte formulář</h3>
+            <p>Ozveme se vám do 24 hodin.</p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Jméno a příjmení *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Jan Novák"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="jan@email.cz"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+420 123 456 789"
+                />
+              </div>
+              <div class="form-group">
+                <label for="event-type">Typ akce *</label>
+                <select id="event-type" name="event-type" required>
+                  <option value="" disabled selected>Vyberte typ akce</option>
+                  <option value="svatba">Svatba</option>
+                  <option value="firemni-akce">Firemní akce</option>
+                  <option value="narozeniny">Narozeniny / Oslava</option>
+                  <option value="festival">Festival / Veřejná akce</option>
+                  <option value="workshop">Workshop</option>
+                  <option value="jine">Jiné</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Předpokládaný termín</label>
+                <input type="date" id="date" name="date" />
+              </div>
+              <div class="form-group">
+                <label for="guests">Počet hostů</label>
+                <input
+                  type="number"
+                  id="guests"
+                  name="guests"
+                  placeholder="cca 50"
+                  min="1"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Zpráva</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Popište nám vaši akci, místo konání a další detaily..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              Odeslat poptávku
+              <svg viewBox="0 0 24 24">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+            </button>
+
+            <p class="form-note">
+              * Povinné pole. Vaše údaje zpracováváme v souladu s GDPR.
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta">
+        <div class="container reveal">
+          <h2>Sledujte nás</h2>
+          <p>
+            Pro novinky a speciální akce nás můžete sledovat na sociálních
+            sítích.
+          </p>
+          <div class="cta-buttons">
+            <a
+              href="https://instagram.com/gelatokarlovyvary"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+              Instagram
+            </a>
+            <a
+              href="https://facebook.com/gelatokarlovyvary"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+              Facebook
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- FOOTER -->
@@ -3217,7 +3351,13 @@
         <div class="footer-inner">
           <div class="footer-brand">
             <a href="#hero" class="logo">
-              <img src="img/gelato-logo-white.svg" alt="Gelato! logo" width="472" height="146" loading="lazy" />
+              <img
+                src="img/gelato-logo-white.svg"
+                alt="Gelato! logo"
+                width="472"
+                height="146"
+                loading="lazy"
+              />
             </a>
             <p>Italské Gelato vyráběné s láskou v Karlových Varech.</p>
           </div>
@@ -3243,7 +3383,8 @@
             <div class="footer-social">
               <a
                 href="https://instagram.com/gelatokarlovyvary"
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
               >
                 <svg viewBox="0 0 24 24">
@@ -3254,7 +3395,8 @@
               </a>
               <a
                 href="https://facebook.com/gelatokarlovyvary"
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
               >
                 <svg viewBox="0 0 24 24">
