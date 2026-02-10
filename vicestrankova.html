@@ -18,7 +18,12 @@
     <link rel="stylesheet" href="css/scroll-to-top.css" />
     <link rel="stylesheet" href="css/scroll-animations.css" />
     <!-- Preload LCP background image -->
-    <link rel="preload" href="img/pobocka.webp" as="image" fetchpriority="high" />
+    <link
+      rel="preload"
+      href="img/pobocka.webp"
+      as="image"
+      fetchpriority="high"
+    />
     <style>
       /* ========== INDEX PAGE SPECIFIC STYLES ========== */
 
@@ -311,7 +316,7 @@
       .hero-line {
         width: 80px;
         height: 4px;
-        background: linear-gradient(to right, #06b6d4, #14b8a6);
+        background: var(--primary);
         border-radius: 9999px;
         margin: 0 auto 2rem;
         transform: scaleX(0);
@@ -1324,7 +1329,12 @@
     <header class="header transparent" id="header">
       <div class="container header-inner">
         <a href="index.html" class="logo">
-          <img src="img/gelato-logo-dark.svg" alt="Gelato! logo" width="472" height="146" />
+          <img
+            src="img/gelato-logo-dark.svg"
+            alt="Gelato! logo"
+            width="472"
+            height="146"
+          />
         </a>
         <nav class="nav" aria-label="Hlavní navigace">
           <!-- <a href="nabidka.html">Nabídka</a> -->
@@ -1349,7 +1359,12 @@
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
-        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Menu"
+          aria-expanded="false"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -1392,7 +1407,8 @@
         </a>
         <a
           href="https://maps.google.com/?q=Sokolovská+101,+Karlovy+Vary"
-          target="_blank" rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
           class="mobile-fab-item"
         >
           <span class="mobile-fab-item-icon">
@@ -1429,365 +1445,421 @@
     </div>
 
     <main>
-    <!-- HERO -->
-    <section class="hero" id="hero">
-      <!-- Dekorativní ingredience s parallax efektem -->
-      <div class="hero-decor">
-        <img
-          src="img/decor/kornout-hero.webp"
-          class="decor-item kornout"
-          data-speed="0.8"
-          alt=""
-        />
-        <img
-          src="img/decor/ostruzina.webp"
-          class="decor-item decor-berry"
-          data-speed="1.0"
-          alt=""
-        />
+      <!-- HERO -->
+      <section class="hero" id="hero">
+        <!-- Dekorativní ingredience s parallax efektem -->
+        <div class="hero-decor">
+          <img
+            src="img/decor/kornout-hero.webp"
+            class="decor-item kornout"
+            data-speed="0.8"
+            alt=""
+          />
+          <img
+            src="img/decor/ostruzina.webp"
+            class="decor-item decor-berry"
+            data-speed="1.0"
+            alt=""
+          />
+          <img
+            src="img/decor/pistacie.webp"
+            class="decor-item decor-pistachio"
+            data-speed="1.8"
+            alt=""
+          />
+          <img
+            src="img/decor/karamel.webp"
+            class="decor-item decor-karamel"
+            data-speed="0.6"
+            alt=""
+          />
+        </div>
+
+        <!-- Gelato scoop decorations -->
+        <div class="scoop scoop-1"></div>
+        <div class="scoop scoop-2"></div>
+        <div class="scoop scoop-3"></div>
+        <div class="scoop scoop-4"></div>
+        <div class="scoop scoop-5"></div>
+        <div class="scoop-ring"></div>
+
+        <!-- Bottom wave -->
+        <div class="hero-wave"></div>
+
+        <!-- Floating particles -->
+        <div class="hero-particle hero-particle-1"></div>
+        <div class="hero-particle hero-particle-2"></div>
+        <div class="hero-particle hero-particle-3"></div>
+        <div class="hero-particle hero-particle-4"></div>
+        <div class="hero-particle hero-particle-5"></div>
+
+        <div class="hero-content">
+          <img
+            src="img/gelato-logo-dark.svg"
+            alt="Gelato!"
+            class="hero-mobile-logo"
+          />
+          <div class="hero-line"></div>
+          <h1>
+            První Italské <span>Gelato!</span>
+            <small
+              >V Karlo<span class="scoop-letter"
+                ><span class="scoop-dot"></span>v</span
+              >ých Varech</small
+            >
+          </h1>
+          <p>
+            <span class="line-bgg"
+              >Objednejte Gelato! až ke dveřím, nebo jím ohromte hosty na své
+              akci.</span
+            >
+            <span class="mobile-hidden">
+              Zajišťujeme kompletní servis a rozvoz po celém kraji.
+            </span>
+          </p>
+          <div class="hero-buttons">
+            <a href="o-nas.html" class="btn btn-primary">
+              <span class="shimmer-text">Prohlédnout nabídku</span>
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          <p class="hero-tagline">Neděláme jen zmrzlinu, tvoříme zážitek.</p>
+        </div>
+
+        <a href="#quick-links" class="scroll-indicator">
+          <div class="scroll-chevrons">
+            <svg viewBox="0 0 30 18" class="chevron chevron-1">
+              <path
+                d="M2 2L15 15L28 2"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
+            </svg>
+            <svg viewBox="0 0 30 18" class="chevron chevron-2">
+              <path
+                d="M2 2L15 15L28 2"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
+            </svg>
+            <svg viewBox="0 0 30 18" class="chevron chevron-3">
+              <path
+                d="M2 2L15 15L28 2"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
+            </svg>
+          </div>
+        </a>
+      </section>
+
+      <!-- QUICK LINKS -->
+      <section class="quick-links relative" id="quick-links">
         <img
           src="img/decor/pistacie.webp"
-          class="decor-item decor-pistachio"
+          class="decor-item decor-pistachio visible floating"
           data-speed="1.8"
           alt=""
         />
-        <img
-          src="img/decor/karamel.webp"
-          class="decor-item decor-karamel"
-          data-speed="0.6"
-          alt=""
-        />
-      </div>
+        <div class="container">
+          <div class="quick-links-header reveal">
+            <h2>Prozkoumejte náš svět</h2>
+            <p>Zjistěte více o tom, co děláme a jak to děláme</p>
+          </div>
 
-      <!-- Gelato scoop decorations -->
-      <div class="scoop scoop-1"></div>
-      <div class="scoop scoop-2"></div>
-      <div class="scoop scoop-3"></div>
-      <div class="scoop scoop-4"></div>
-      <div class="scoop scoop-5"></div>
-      <div class="scoop-ring"></div>
+          <div class="quick-links-grid reveal-stagger">
+            <a href="galerie.html" class="quick-link-card">
+              <div class="quick-link-icon">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>
+              </div>
+              <h3>Galerie</h3>
+              <p>
+                Nahlédněte do našeho světa gelata prostřednictvím fotografií
+              </p>
+            </a>
 
-      <!-- Bottom wave -->
-      <div class="hero-wave"></div>
+            <a href="o-nas.html" class="quick-link-card">
+              <div class="quick-link-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h3>Co děláme</h3>
+              <p>
+                Poznejte náš příběh, výrobu a vášeň pro pravé italské gelato
+              </p>
+            </a>
 
-      <!-- Floating particles -->
-      <div class="hero-particle hero-particle-1"></div>
-      <div class="hero-particle hero-particle-2"></div>
-      <div class="hero-particle hero-particle-3"></div>
-      <div class="hero-particle hero-particle-4"></div>
-      <div class="hero-particle hero-particle-5"></div>
+            <a href="recenze.html" class="quick-link-card">
+              <div class="quick-link-icon">
+                <svg viewBox="0 0 24 24">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+              </div>
+              <h3>Recenze</h3>
+              <p>Přečtěte si, co o nás říkají naši spokojení zákazníci</p>
+            </a>
 
-      <div class="hero-content">
-        <img src="img/gelato-logo-dark.svg" alt="Gelato!" class="hero-mobile-logo" />
-        <div class="hero-line"></div>
-        <h1>
-          První Italské <span>Gelato!</span>
-          <small
-            >V Karlo<span class="scoop-letter"
-              ><span class="scoop-dot"></span>v</span
-            >ých Varech</small
-          >
-        </h1>
-        <p>
-          <span class="line-bgg"
-            >Objednejte Gelato! až ke dveřím, nebo jím ohromte hosty na své
-            akci.</span
-          >
-          <span class="mobile-hidden">
-            Zajišťujeme kompletní servis a rozvoz po celém kraji.
-          </span>
-        </p>
-        <div class="hero-buttons">
-          <a href="o-nas.html" class="btn btn-primary">
-            <span class="shimmer-text">Prohlédnout nabídku</span>
-            <svg
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
+            <a href="pobocka.html" class="quick-link-card">
+              <div class="quick-link-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <h3>Pobočka</h3>
+              <p>
+                Najděte nás v Karlových Varech a přijďte si pro svou porci
+                štěstí
+              </p>
+            </a>
+          </div>
         </div>
-        <p class="hero-tagline">Neděláme jen zmrzlinu, tvoříme zážitek.</p>
-      </div>
+      </section>
 
-      <a href="#quick-links" class="scroll-indicator">
-        <div class="scroll-chevrons">
-          <svg viewBox="0 0 30 18" class="chevron chevron-1">
-            <path
-              d="M2 2L15 15L28 2"
-              stroke="currentColor"
-              stroke-width="4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              fill="none"
+      <!-- GALLERY -->
+      <section class="gallery">
+        <h2 class="sr-only">Galerie</h2>
+        <div class="gallery-grid reveal-stagger">
+          <div class="gallery-item">
+            <img
+              src="img/galerie-gelato-1.webp"
+              alt="Gelato v kelímku"
+              width="478"
+              height="597"
+              loading="lazy"
+              decoding="async"
             />
-          </svg>
-          <svg viewBox="0 0 30 18" class="chevron chevron-2">
-            <path
-              d="M2 2L15 15L28 2"
-              stroke="currentColor"
-              stroke-width="4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              fill="none"
+            <div class="gallery-item-overlay">
+              <span>Klasický kelímek</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="img/galerie-gelato-2.webp"
+              alt="Dva kelímky gelata"
+              width="654"
+              height="820"
+              loading="lazy"
+              decoding="async"
             />
-          </svg>
-          <svg viewBox="0 0 30 18" class="chevron chevron-3">
-            <path
-              d="M2 2L15 15L28 2"
-              stroke="currentColor"
-              stroke-width="4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              fill="none"
+            <div class="gallery-item-overlay">
+              <span>Dvojitá porce termoboxů</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="img/galerie-gelato-3.webp"
+              alt="Kornouty v vitríně"
+              width="656"
+              height="818"
+              loading="lazy"
+              decoding="async"
             />
-          </svg>
-        </div>
-      </a>
-    </section>
-
-    <!-- QUICK LINKS -->
-    <section class="quick-links relative" id="quick-links">
-      <img
-        src="img/decor/pistacie.webp"
-        class="decor-item decor-pistachio visible floating"
-        data-speed="1.8"
-        alt=""
-      />
-      <div class="container">
-        <div class="quick-links-header reveal">
-          <h2>Prozkoumejte náš svět</h2>
-          <p>Zjistěte více o tom, co děláme a jak to děláme</p>
-        </div>
-
-        <div class="quick-links-grid reveal-stagger">
-          <a href="galerie.html" class="quick-link-card">
-            <div class="quick-link-icon">
-              <svg viewBox="0 0 24 24">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                <circle cx="8.5" cy="8.5" r="1.5" />
-                <polyline points="21 15 16 10 5 21" />
-              </svg>
+            <div class="gallery-item-overlay">
+              <span>Čerstvé kornouty</span>
             </div>
-            <h3>Galerie</h3>
-            <p>Nahlédněte do našeho světa gelata prostřednictvím fotografií</p>
-          </a>
-
-          <a href="o-nas.html" class="quick-link-card">
-            <div class="quick-link-icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-            </div>
-            <h3>Co děláme</h3>
-            <p>Poznejte náš příběh, výrobu a vášeň pro pravé italské gelato</p>
-          </a>
-
-          <a href="recenze.html" class="quick-link-card">
-            <div class="quick-link-icon">
-              <svg viewBox="0 0 24 24">
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                />
-              </svg>
-            </div>
-            <h3>Recenze</h3>
-            <p>Přečtěte si, co o nás říkají naši spokojení zákazníci</p>
-          </a>
-
-          <a href="pobocka.html" class="quick-link-card">
-            <div class="quick-link-icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-            </div>
-            <h3>Pobočka</h3>
-            <p>
-              Najděte nás v Karlových Varech a přijďte si pro svou porci štěstí
-            </p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section class="gallery">
-      <h2 class="sr-only">Galerie</h2>
-      <div class="gallery-grid reveal-stagger">
-        <div class="gallery-item">
-          <img src="img/galerie-gelato-1.webp" alt="Gelato v kelímku" width="478" height="597" loading="lazy" decoding="async" />
-          <div class="gallery-item-overlay">
-            <span>Klasický kelímek</span>
           </div>
-        </div>
-        <div class="gallery-item">
-          <img src="img/galerie-gelato-2.webp" alt="Dva kelímky gelata" width="654" height="820" loading="lazy" decoding="async" />
-          <div class="gallery-item-overlay">
-            <span>Dvojitá porce termoboxů</span>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="img/galerie-gelato-3.webp" alt="Kornouty v vitríně" width="656" height="818" loading="lazy" decoding="async" />
-          <div class="gallery-item-overlay">
-            <span>Čerstvé kornouty</span>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="img/galerie-gelato-4.webp" alt="Affogato" width="652" height="816" loading="lazy" decoding="async" />
-          <div class="gallery-item-overlay">
-            <span>Affogato</span>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="img/galerie-gelato-5.webp" alt="Gelato s oplatkami" width="652" height="816" loading="lazy" decoding="async" />
-          <div class="gallery-item-overlay">
-            <span>Děláno s láskou</span>
-          </div>
-        </div>
-        <div class="gallery-item mobile-only">
-          <img src="img/galerie-1.webp" alt="Gelato catering" width="680" height="347" loading="lazy" decoding="async" />
-          <div class="gallery-item-overlay">
-            <span>Catering</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="instagram-link">
-        více na instagramu
-        <a href="https://instagram.com/gelatokarlovyvary" target="_blank" rel="noopener noreferrer"
-          >@gelatokarlovyvary</a
-        >
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact">
-      <div class="container contact-inner">
-        <div class="contact-content reveal-left">
-          <h2>Kontaktujte nás</h2>
-          <p>
-            Máte dotaz, nebo zájem o catering? Neváhejte se na nás obrátit. Rádi
-            vám pomůžeme.
-          </p>
-
-          <div class="contact-info reveal-stagger">
-            <div class="contact-item">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                />
-              </svg>
-              <div>
-                <h4>Telefon</h4>
-                <p>+420 773 09 58 09</p>
-                <div class="contact-badges">
-                  <span class="badge">Catering</span>
-                  <span class="badge">Svatby</span>
-                  <span class="badge">Festivaly</span>
-                </div>
-              </div>
+          <div class="gallery-item">
+            <img
+              src="img/galerie-gelato-4.webp"
+              alt="Affogato"
+              width="652"
+              height="816"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="gallery-item-overlay">
+              <span>Affogato</span>
             </div>
-
-            <div class="contact-item">
-              <svg viewBox="0 0 24 24">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <div>
-                <h4>Adresa</h4>
-                <p>Sokolovská 101<br />Karlovy Vary 360 05</p>
-                <div class="contact-badges">
-                  <span class="badge">Sezónní provoz</span>
-                </div>
-              </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="img/galerie-gelato-5.webp"
+              alt="Gelato s oplatkami"
+              width="652"
+              height="816"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="gallery-item-overlay">
+              <span>Děláno s láskou</span>
             </div>
-
-            <div class="contact-item">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-              <div>
-                <h4>Otevírací doba</h4>
-                <p>Po - Ne: 12:00 - 18:00</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-              <div>
-                <h4>E-mail</h4>
-                <p>info@gelato.cz</p>
-              </div>
+          </div>
+          <div class="gallery-item mobile-only">
+            <img
+              src="img/galerie-1.webp"
+              alt="Gelato catering"
+              width="680"
+              height="347"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="gallery-item-overlay">
+              <span>Catering</span>
             </div>
           </div>
         </div>
 
-        <div class="contact-map reveal-right">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2548.8!2d12.8744!3d50.2297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a11d9c8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sSokolovsk%C3%A1%20101%2C%20360%2005%20Karlovy%20Vary!5e0!3m2!1scs!2scz!4v1700000000000!5m2!1scs!2scz"
-            title="Mapa - Gelato! Karlovy Vary, Sokolovská 101"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          >
-          </iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-      <div class="container reveal">
-        <h2>Sledujte nás</h2>
-        <p>
-          Pro novinky a speciální akce nás můžete sledovat na sociálních sítích.
-        </p>
-        <div class="cta-buttons">
+        <div class="instagram-link">
+          více na instagramu
           <a
             href="https://instagram.com/gelatokarlovyvary"
-            target="_blank" rel="noopener noreferrer"
-            class="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+            >@gelatokarlovyvary</a
           >
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-              />
-            </svg>
-            Instagram
-          </a>
-          <a
-            href="https://facebook.com/gelatokarlovyvary"
-            target="_blank" rel="noopener noreferrer"
-            class="btn"
-          >
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-              />
-            </svg>
-            Facebook
-          </a>
         </div>
-      </div>
-    </section>
+      </section>
 
+      <!-- CONTACT -->
+      <section class="contact">
+        <div class="container contact-inner">
+          <div class="contact-content reveal-left">
+            <h2>Kontaktujte nás</h2>
+            <p>
+              Máte dotaz, nebo zájem o catering? Neváhejte se na nás obrátit.
+              Rádi vám pomůžeme.
+            </p>
+
+            <div class="contact-info reveal-stagger">
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+                <div>
+                  <h4>Telefon</h4>
+                  <p>+420 773 09 58 09</p>
+                  <div class="contact-badges">
+                    <span class="badge">Catering</span>
+                    <span class="badge">Svatby</span>
+                    <span class="badge">Festivaly</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <div>
+                  <h4>Adresa</h4>
+                  <p>Sokolovská 101<br />Karlovy Vary 360 05</p>
+                  <div class="contact-badges">
+                    <span class="badge">Sezónní provoz</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                <div>
+                  <h4>Otevírací doba</h4>
+                  <p>Po - Ne: 12:00 - 18:00</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                <div>
+                  <h4>E-mail</h4>
+                  <p>info@gelato.cz</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-map reveal-right">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2548.8!2d12.8744!3d50.2297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a11d9c8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sSokolovsk%C3%A1%20101%2C%20360%2005%20Karlovy%20Vary!5e0!3m2!1scs!2scz!4v1700000000000!5m2!1scs!2scz"
+              title="Mapa - Gelato! Karlovy Vary, Sokolovská 101"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta">
+        <div class="container reveal">
+          <h2>Sledujte nás</h2>
+          <p>
+            Pro novinky a speciální akce nás můžete sledovat na sociálních
+            sítích.
+          </p>
+          <div class="cta-buttons">
+            <a
+              href="https://instagram.com/gelatokarlovyvary"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+              Instagram
+            </a>
+            <a
+              href="https://facebook.com/gelatokarlovyvary"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+              Facebook
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- FOOTER -->
@@ -1796,7 +1868,13 @@
         <div class="footer-inner">
           <div class="footer-brand">
             <a href="index.html" class="logo">
-              <img src="img/gelato-logo-white.svg" alt="Gelato! logo" width="472" height="146" loading="lazy" />
+              <img
+                src="img/gelato-logo-white.svg"
+                alt="Gelato! logo"
+                width="472"
+                height="146"
+                loading="lazy"
+              />
             </a>
             <p>Pravé italské gelato vyráběné s láskou v Karlových Varech.</p>
           </div>
@@ -1821,7 +1899,8 @@
             <div class="footer-social">
               <a
                 href="https://instagram.com/gelatokarlovyvary"
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
               >
                 <svg viewBox="0 0 24 24">
@@ -1832,7 +1911,8 @@
               </a>
               <a
                 href="https://facebook.com/gelatokarlovyvary"
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
               >
                 <svg viewBox="0 0 24 24">
