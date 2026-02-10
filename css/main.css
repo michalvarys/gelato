@@ -113,6 +113,22 @@ img {
   .header.transparent:not(.scrolled) .logo {
     width: 180px;
   }
+
+  .header.transparent .logo {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  .header.transparent.revealed .logo {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease-out 0.3s, transform 0.8s ease-out 0.3s, width 0.3s ease;
+  }
+
+  .header.transparent.scrolled .logo {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .logo span {
