@@ -1021,6 +1021,17 @@
         padding: 100px 0;
         background: var(--white);
         overflow-x: hidden;
+        position: relative;
+      }
+
+      .location-zmrzlina {
+        position: absolute;
+        bottom: 0px;
+        right: 0%;
+        width: 25%;
+        height: auto;
+        z-index: 10;
+        pointer-events: none;
       }
 
       .location-inner {
@@ -1818,6 +1829,12 @@
 
         .location-content h2 {
           font-size: 1.6rem;
+        }
+
+        .location-zmrzlina {
+          width: 120px;
+          bottom: 0px;
+          right: 0%;
         }
 
         .location-images {
@@ -3143,6 +3160,15 @@
             </div>
           </div>
         </div>
+        <img
+          src="img/zmrzlina.webp"
+          alt="Ruka s kornoutem zmrzliny"
+          class="location-zmrzlina"
+          width="500"
+          height="462"
+          loading="lazy"
+          decoding="async"
+        />
       </section>
 
       <!-- MAP -->
