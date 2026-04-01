@@ -88,11 +88,11 @@
 
       .location-zmrzlina {
         position: absolute;
-        bottom: 10px;
+        bottom: 1%;
         right: -8%;
         width: 29%;
         height: auto;
-        z-index: 10;
+        z-index: 1;
         pointer-events: none;
       }
       .hamburger span {
@@ -789,7 +789,7 @@
         }
         /* ========== HERO CONTENT (centered) ========== */
         .hero-inner {
-          padding: 15% 5%;
+          padding: 0% 5% 20%;
           gap: 20px;
         }
       }
@@ -1654,7 +1654,11 @@
         }
 
         .location-zmrzlina {
-          display: none;
+          /* display: none; */
+          width: 35%;
+          top: 28%;
+          bottom: unset;
+          right: -3%;
         }
 
         .form-row {
@@ -1756,13 +1760,13 @@
         <div class="hero-inner">
           <!-- Fabrica + Logo top -->
           <div class="hero-logos">
-            <!-- <img
+            <img
               src="img/fabrica-gelato-white.png"
               alt="Fabrica Gelato"
               class="hero-fabrica"
-            /> -->
+            />
             <img
-              src="img/gelato-kruh.png"
+              src="img/gelato-logo-white.svg"
               alt="Gelato!"
               class="hero-logo"
               width="472"
@@ -1857,11 +1861,11 @@
               </div>
             </div>
           </div>
-          <img
+          <!-- <img
             src="img/fabrica-gelato-white.png"
             alt="Fabrica Gelato"
             class="hero-fabrica-bottom"
-          />
+          /> -->
         </div>
 
         <!-- Slide indicator -->
@@ -1877,6 +1881,7 @@
           <span class="scroll-cue-text">Objevte více</span>
           <span class="scroll-cue-line"></span>
         </a>
+
         <img
           src="img/zmrzlina.webp"
           alt="Ruka s kornoutem zmrzliny"
