@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="s_gelato_why" name="Gelato Why">
+    <section class="s_gelato_why gl-why o_cc o_cc5 theme_gelato_page" data-snippet="s_gelato_why" id="proc-gelato">
+        <div class="container">
+            <div class="gl-why-header">
+                <h2>Pro&#269; pr&#225;v&#283; <span>Gelato?</span></h2>
+                <p>N&#225;vrat k tradici. Ru&#269;n&#237; v&#253;roba. Neodolateln&#225; chu&#357;.</p>
+            </div>
+
+            <div class="gl-why-grid">
+                <div class="gl-why-card gl-fade-up">
+                    <div class="gl-why-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2a5 5 0 0 1 5 5c0 2.76-2.24 5-5 5s-5-2.24-5-5a5 5 0 0 1 5-5z"/>
+                            <path d="M17 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-1"/>
+                            <path d="M7 7H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1"/>
+                            <path d="M8 21h8"/>
+                            <path d="M12 17v4"/>
+                        </svg>
+                    </div>
+                    <h3>P&#345;&#237;prava od A do Z</h3>
+                    <p>
+                        Ru&#269;n&#283; m&#237;ch&#225;me a dohl&#237;&#382;&#237;me na cel&#253; proces v&#253;roby od za&#269;&#225;tku a&#382; do
+                        konce. Mnoho &#269;asu a l&#225;sky v&#283;nujeme v&#253;voji recept&#367; a netradi&#269;n&#237;m
+                        chut&#237;m.
+                    </p>
+                </div>
+
+                <div class="gl-why-card gl-fade-up">
+                    <div class="gl-why-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3>Zdrav&#283;j&#353;&#237; pochoutka</h3>
+                    <p>
+                        Gelato je diet&#283;j&#353;&#237; variantou ledov&#233; pochoutky. Hedv&#225;bn&#283;j&#353;&#237;
+                        struktura a intenzivn&#283;j&#353;&#237; chu&#357; d&#237;ky pomal&#233;mu stlouk&#225;v&#225;n&#237; s
+                        minimem vzduchu.
+                    </p>
+                    <div class="gl-why-stat">Pouze 3,8 % tuku</div>
+                </div>
+
+                <div class="gl-why-card gl-fade-up">
+                    <div class="gl-why-icon">
+                        <svg viewBox="0 0 24 24">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3>Netradi&#269;n&#237; z&#225;&#382;itek</h3>
+                    <p>
+                        Ned&#283;l&#225;me jen zmrzlinu &#8211; tvo&#345;&#237;me p&#345;&#237;b&#283;h a pro&#382;itek. Historick&#233;
+                        poj&#237;zdn&#233; kolo, kornouty do ruky a origin&#225;ln&#237; p&#345;&#237;chut&#283;, kter&#233;
+                        jinde nenajdete.
+                    </p>
+                </div>
+
+                <div class="gl-why-card gl-fade-up">
+                    <div class="gl-why-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="1" y="3" width="15" height="13" rx="2" ry="2"/>
+                            <path d="M16 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1"/>
+                        </svg>
+                    </div>
+                    <h3>Hust&#353;&#237; struktura</h3>
+                    <p>
+                        Gelato se stlouk&#225;v&#225; pomaleji, aby nepojalo p&#345;&#237;li&#353; vzduchu.
+                        V&#253;sledkem je hust&#353;&#237; konzistence, kter&#225; se nab&#237;r&#225; &#353;pa&#269;tli&#269;kou &#8211;
+                        tak jako v It&#225;lii.
+                    </p>
+                </div>
+
+                <div class="gl-why-card gl-fade-up">
+                    <div class="gl-why-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>Catering na m&#237;ru</h3>
+                    <p>
+                        Historick&#233; poj&#237;zdn&#233; kolo perfektn&#283; dopln&#237; va&#353;i svatbu,
+                        narozeniny nebo firemn&#237; event. P&#345;ivezeme gelato p&#345;&#237;mo k v&#225;m
+                        v&#269;etn&#283; kompletn&#237;ho servisu.
+                    </p>
+                </div>
+
+                <div class="gl-why-card gl-fade-up">
+                    <div class="gl-why-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                            <line x1="9" y1="9" x2="9.01" y2="9"/>
+                            <line x1="15" y1="9" x2="15.01" y2="9"/>
+                        </svg>
+                    </div>
+                    <h3>Neodolateln&#225; chu&#357;</h3>
+                    <p>
+                        P&#345;i citlivosti na chlad je gelato &#250;nosn&#283;j&#353;&#237; d&#237;ky vy&#353;&#353;&#237;
+                        serv&#237;rovac&#237; teplot&#283;. Chu&#357; je intenzivn&#283;j&#353;&#237; a hedv&#225;bn&#283;j&#353;&#237; ne&#382; u
+                        klasick&#233; zmrzliny.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+</odoo>

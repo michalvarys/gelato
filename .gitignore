@@ -1,5 +1,10 @@
 node_modules
 screenshots
+__pycache__/
+*.pyc
 
 *.pdf
 .DS_STORE
+
+# Chrome Debug project-local data
+.chromedebug/

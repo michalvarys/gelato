@@ -1,0 +1,45 @@
+services:
+  web:
+    container_name: gelato-web
+    image: odoo:18
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8071:8069"
+    volumes:
+      - ./theme_gelato:/mnt/extra-addons/theme_gelato
+      - gelato-web-data:/var/lib/odoo
+    environment:
+      HOST: db
+      USER: gelato
+      PASSWORD: gelato
+    command: >
+      odoo
+        --addons-path=/mnt/extra-addons,/usr/lib/python3/dist-packages/odoo/addons
+        -r gelato -w gelato
+        --db_host=db --db_port=5432
+        --db-filter=gelato
+
+  db:
+    container_name: gelato-db
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: gelato
+      POSTGRES_USER: gelato
+      POSTGRES_PASSWORD: gelato
+    volumes:
+      - gelato-db-data:/var/lib/postgresql/data
+    ports:
+      - "5473:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gelato -d gelato"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  gelato-web-data:
+  gelato-db-data:

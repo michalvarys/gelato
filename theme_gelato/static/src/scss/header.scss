@@ -1,0 +1,75 @@
+// ============================================================================
+// Gelato Theme - Header Styles
+// Restyle the default Odoo navbar to match the dark gelato theme
+// ============================================================================
+
+#wrapwrap > header {
+    background: $gl-dark-bg !important;
+    border-bottom: none !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3) !important;
+
+    .navbar {
+        background: $gl-dark-bg !important;
+        border: none !important;
+        min-height: 70px;
+
+        .container, .container-fluid {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    // Logo
+    .navbar-brand {
+        img {
+            max-height: 50px;
+        }
+
+        span {
+            color: $gl-white !important;
+        }
+    }
+
+    // Nav links
+    .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 0.95rem;
+        font-weight: 400;
+        font-family: $gl-font-body;
+
+        // Odoo sets .active on ALL anchor links when on the same page — ignore it
+        &.active {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        &:hover,
+        &.gl-scrollspy-active {
+            color: $gl-primary !important;
+        }
+    }
+
+    // Dropdown menus
+    .dropdown-menu {
+        background: $gl-dark-alt;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        .dropdown-item {
+            color: rgba(255, 255, 255, 0.7);
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.05);
+                color: $gl-primary;
+            }
+        }
+    }
+
+    // User menu / admin buttons
+    #top_menu_collapse .nav-link,
+    .o_frontend_to_backend_nav a {
+        color: rgba(255, 255, 255, 0.7) !important;
+
+        &:hover {
+            color: $gl-primary !important;
+        }
+    }
+} // end #wrapwrap > header

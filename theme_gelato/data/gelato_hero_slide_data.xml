@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data noupdate="1">
+
+    <record id="hero_slide_1" model="gelato.hero.slide">
+        <field name="name">Vlastní výroba</field>
+        <field name="headline">Čerstvé gelato</field>
+        <field name="headline_accent">každý den</field>
+        <field name="subtitle">Každé ráno připravujeme gelato podle tradičních italských receptů. Používáme pouze přírodní suroviny nejvyšší kvality.</field>
+        <field name="button_text">Více o výrobě</field>
+        <field name="button_url">#showcase</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="hero_slide_2" model="gelato.hero.slide">
+        <field name="name">20+ příchutí</field>
+        <field name="headline">Příchutě, které</field>
+        <field name="headline_accent">jinde nenajdete</field>
+        <field name="subtitle">V naší prodejně najdete vždy čerstvou nabídku více než 20 příchutí. Kornouty, poháry, nebo domů – máme pro každého to pravé.</field>
+        <field name="button_text">Prohlédnout nabídku</field>
+        <field name="button_url">#showcase</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="hero_slide_3" model="gelato.hero.slide">
+        <field name="name">Distribuce</field>
+        <field name="headline">Gelato pro vaše</field>
+        <field name="headline_accent">podnikání</field>
+        <field name="subtitle">Dodáváme naše gelato do kaváren, restaurací a hotelů po celém Karlovarském kraji. Pravidelné závozy v chladicích vozech.</field>
+        <field name="button_text">Zjistit více</field>
+        <field name="button_url">#showcase</field>
+        <field name="sequence">30</field>
+    </record>
+
+    <record id="hero_slide_4" model="gelato.hero.slide">
+        <field name="name">Catering</field>
+        <field name="headline">Gelato přímo</field>
+        <field name="headline_accent">na vaší akci</field>
+        <field name="subtitle">Svatby, firemní večírky, festivaly. Přivezeme gelato přímo k vám včetně kompletního profesionálního servisu.</field>
+        <field name="button_text">Poptat catering</field>
+        <field name="button_url">#poptavka</field>
+        <field name="sequence">40</field>
+    </record>
+
+</data>
+</odoo>

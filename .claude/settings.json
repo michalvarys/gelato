@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(xmllint --noout /Volumes/ext-msi/capone/gelato/v3/gelato-homepage.xml)"
     ]
   }
 }
